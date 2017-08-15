@@ -1,7 +1,181 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="63165312-f4ce-4f87-b740-4e5f1a810523" name="Default" comment="" />
+    <list default="true" id="63165312-f4ce-4f87-b740-4e5f1a810523" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/phantomjs/IEDriverServer.exe" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/phantomjs/ZHConverter.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/phantomjs/chromedriver.exe" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/phantomjs/phantomjs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/phantomjs/phantomjs.exe" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/ClassListData.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/bootstrap/css/bootstrap.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/bootstrap/css/bootstrap.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/bootstrap/css/bootstrap.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/bootstrap/css/bootstrap.min.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/bootstrap/fonts/glyphicons-halflings-regular.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/bootstrap/fonts/glyphicons-halflings-regular.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/bootstrap/fonts/glyphicons-halflings-regular.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/bootstrap/fonts/glyphicons-halflings-regular.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/bootstrap/fonts/glyphicons-halflings-regular.woff2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/bootstrap/js/bootstrap.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/bootstrap/js/bootstrap.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/bootstrap/js/npm.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/construct.zip" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/dist/css/AdminLTE.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/dist/css/AdminLTE.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/dist/css/fonts.googleapis.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/dist/css/skins/_all-skins.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/dist/css/skins/_all-skins.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/dist/css/skins/skin-black-light.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/dist/css/skins/skin-black-light.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/dist/css/skins/skin-black.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/dist/css/skins/skin-black.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/dist/css/skins/skin-blue-light.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/dist/css/skins/skin-blue-light.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/dist/css/skins/skin-blue.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/dist/css/skins/skin-blue.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/dist/css/skins/skin-green-light.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/dist/css/skins/skin-green-light.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/dist/css/skins/skin-green.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/dist/css/skins/skin-green.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/dist/css/skins/skin-purple-light.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/dist/css/skins/skin-purple-light.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/dist/css/skins/skin-purple.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/dist/css/skins/skin-purple.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/dist/css/skins/skin-red-light.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/dist/css/skins/skin-red-light.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/dist/css/skins/skin-red.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/dist/css/skins/skin-red.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/dist/css/skins/skin-yellow-light.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/dist/css/skins/skin-yellow-light.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/dist/css/skins/skin-yellow.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/dist/css/skins/skin-yellow.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/dist/img/daohang.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/dist/img/hand.ani" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/dist/img/step1.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/dist/img/step2.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/dist/img/step3.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/dist/img/step4.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/dist/img/step5.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/dist/img/step6.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/dist/img/tishi/step1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/dist/img/tishi/step2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/dist/img/tishi/step3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/dist/img/tishi/step4.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/dist/img/tishi/step5.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/dist/img/tishi/step6.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/dist/img/tishi1/step1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/dist/img/tishi1/step2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/dist/img/tishi1/step3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/dist/img/tishi1/step4.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/dist/img/tishi1/step5.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/dist/img/tishi1/step6.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/dist/js/app.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/dist/js/app.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/dist/js/configs.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/dist/js/daohang.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/dist/js/daohang.js.bak" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/dist/js/shileiUtils.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/index.html.bak" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/add/css/contain.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/add/css/jquery.qtip.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/add/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/add/js/facetTreeFragmentCollection.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/add/js/tree.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/extraction/css/base.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/extraction/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/extraction/js/2.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/extraction/js/example1.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/extraction/js/jit-yc.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/extraction/js/myjs.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/extraction/tmptest/testAPI.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/facet/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/facet/js/angularjs/angular.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/facet/js/angularjs/angular.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/facet/js/controller.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/facet/js/d3js/d3.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/facet/js/d3js/d3.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/facet/js/datguijs/dat.gui.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/facet/js/datguijs/dat.gui.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/facet/js/echartjs/echarts.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/facet/js/facetTreeFragmentCollection.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/facet/js/gundongtiao.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/facet/js/jQuery/jquery-1.7.2.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/facet/js/jQuery/jquery-2.2.3.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/facet/js/jQuery/jquery-ui.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/facet/js/jQuery/jquery-ui.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/facet/js/jQuery/jquery.qtip.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/facet/js/jQuery/jquery.qtip.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/facet/js/jQuery/jquery.qtip.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/facet/js/jquery.slimscroll.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/facet/js/slimScroll/jquery.slimscroll.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/facet/js/slimScroll/jquery.slimscroll.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/facet/js/tree.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/kg/a1.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/kg/demojs/BuildSimpleTree.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/kg/demojs/dataTool.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/kg/demojs/drawmap2.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/kg/demojs/echarts.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/kg/demojs/getXML.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/kg/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/kg/js/d3.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/kg/js/d3.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/kg/js/d3.min.v4.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/kg/js/d3_tree_main.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/kg/js/dat.gui.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/kg/js/drawMap.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/kg/js/jquery-1.8.0.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/kg/js/jquery-1.8.0.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/kg/js/jquery-1.9.1.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/kg/js/jquery-ui.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/kg/js/jquery.qtip-1.0.0-rc3.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/kg/js/jquery.qtip.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/kg/js/jquery.qtip.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/kg/js/knowledge-tree-1.0.0.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/kg/js/svg.draggable.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/kg/testss2.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/relationship/a1.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/relationship/getXML.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/relationship/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/relationship/js/dataTool.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/relationship/js/echarts.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/relationship/js/echarts.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/relationship/js/myJs2.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/relationship/js/test1.gexf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/relationship/test1.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/relationship/testss.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/relationship/testss2.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/spider/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/spider/js/controller.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/spider/js/echarts.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/spider/js/fenye.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/spider/js/jquery.slimscroll.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/spider/js/meihua.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/spider/js/pic0.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/spider/js/pic1.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/spider/js/pic2.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/plugins/angularjs/angular.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/plugins/angularjs/angular.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/plugins/d3js/d3.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/plugins/d3js/d3.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/plugins/d3js/d3.v3.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/plugins/datguijs/dat.gui.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/plugins/datguijs/dat.gui.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/plugins/echartjs/echarts.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/plugins/jQuery/jquery-1.7.2.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/plugins/jQuery/jquery-2.2.3.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/plugins/jQuery/jquery-ui.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/plugins/jQuery/jquery-ui.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/plugins/jQuery/jquery.qtip.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/plugins/jQuery/jquery.qtip.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/plugins/jQuery/jquery.qtip.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/plugins/slimScroll/jquery.slimscroll.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/plugins/slimScroll/jquery.slimscroll.min.js" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <ignored path="Yotta.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -40,11 +214,9 @@
       <file leaf-file-name="SourceController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Yotta/spider/controller/SourceController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="355">
-              <caret line="18" column="26" lean-forward="true" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="261">
+              <caret line="18" column="26" lean-forward="false" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -52,8 +224,8 @@
       <file leaf-file-name="spider.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/resources/static/module/module3/pages/spider/spider.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-428">
-              <caret line="40" column="3" lean-forward="true" selection-start-line="40" selection-start-column="3" selection-end-line="40" selection-end-column="3" />
+            <state relative-caret-position="1160">
+              <caret line="40" column="3" lean-forward="false" selection-start-line="40" selection-start-column="3" selection-end-line="40" selection-end-column="3" />
               <folding />
             </state>
           </provider>
@@ -62,8 +234,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/resources/static/module/module3/pages/spider/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-5355">
-              <caret line="139" column="71" lean-forward="false" selection-start-line="139" selection-start-column="56" selection-end-line="139" selection-end-column="71" />
+            <state relative-caret-position="377">
+              <caret line="336" column="0" lean-forward="false" selection-start-line="336" selection-start-column="0" selection-end-line="336" selection-end-column="0" />
               <folding>
                 <element signature="n#section#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#div#0;n#div#0;n#div#0;n#section#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
@@ -106,6 +278,9 @@
       <find>知识森林</find>
     </findStrings>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="GradleLocalSettings">
     <option name="externalProjectsViewState">
       <projects_view />
@@ -120,7 +295,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/Yotta/spider/domain/FacetRelationSimple.java" />
         <option value="$PROJECT_DIR$/src/main/java/Yotta/spider/domain/FacetRelation.java" />
         <option value="$PROJECT_DIR$/src/main/java/Yotta/spider/domain/Facet.java" />
         <option value="$PROJECT_DIR$/src/main/java/Yotta/spider/domain/AssembleTextSimple.java" />
@@ -171,6 +345,7 @@
         <option value="$PROJECT_DIR$/src/resources/static/module/module3/index.html" />
         <option value="$PROJECT_DIR$/src/resources/static/module/module3/pages/spider/spider.js" />
         <option value="$PROJECT_DIR$/src/resources/static/module/module3/pages/spider/index.html" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -199,6 +374,9 @@
     <option name="width" value="1942" />
     <option name="height" value="1042" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
@@ -214,8 +392,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -282,201 +459,10 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Yotta" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Yotta" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="module" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="module3" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Yotta" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Yotta" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="module" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="module3" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pages" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="spider" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Yotta" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Yotta" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="module" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="module3" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pages" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Yotta" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Yotta" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="module" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="module3" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dist" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Yotta" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Yotta" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="module" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Yotta" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Yotta" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="module" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="construct" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1092,7 +1078,8 @@
       <workItem from="1502087895473" duration="4911000" />
       <workItem from="1502278997383" duration="10351000" />
       <workItem from="1502331512016" duration="57938000" />
-      <workItem from="1502589013647" duration="17625000" />
+      <workItem from="1502589013647" duration="18482000" />
+      <workItem from="1502781951243" duration="613000" />
     </task>
     <servers />
   </component>
@@ -1129,7 +1116,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="160323000" />
+    <option name="totallyTimeSpent" value="161793000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1145,34 +1132,34 @@
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32938388" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5021322" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32897863" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31990522" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32897863" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24784017" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991362" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1938445" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.49303135" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32938388" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3270142" sideWeight="0.4978678" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31990522" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24784017" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991362" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3270142" sideWeight="0.4978678" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5069686" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32819906" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1214,6 +1201,32 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="processedProjectFiles" value="true" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
       <collection />
@@ -1236,19 +1249,10 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-commons/1.13.0.RELEASE/spring-data-commons-1.13.0.RELEASE.jar!/org/springframework/data/repository/CrudRepository.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="11" column="20" lean-forward="false" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-commons/1.13.0.RELEASE/spring-data-commons-1.13.0.RELEASE-sources.jar!/org/springframework/data/repository/CrudRepository.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="92" column="9" lean-forward="false" selection-start-line="92" selection-start-column="9" selection-end-line="92" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1270,7 +1274,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="256">
           <caret line="25" column="11" lean-forward="false" selection-start-line="25" selection-start-column="11" selection-end-line="25" selection-end-column="11" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1313,7 +1316,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="16" column="9" lean-forward="false" selection-start-line="16" selection-start-column="9" selection-end-line="16" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1329,7 +1331,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="645">
           <caret line="49" column="12" lean-forward="false" selection-start-line="49" selection-start-column="12" selection-end-line="49" selection-end-column="12" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1407,7 +1408,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="68" column="38" lean-forward="false" selection-start-line="68" selection-start-column="38" selection-end-line="68" selection-end-column="38" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1429,7 +1429,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-20">
           <caret line="221" column="33" lean-forward="true" selection-start-line="221" selection-start-column="33" selection-end-line="221" selection-end-column="33" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1452,7 +1451,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="434">
           <caret line="43" column="9" lean-forward="false" selection-start-line="43" selection-start-column="9" selection-end-line="43" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1460,7 +1458,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="36" column="17" lean-forward="false" selection-start-line="36" selection-start-column="17" selection-end-line="36" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1468,7 +1465,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="145">
           <caret line="12" column="9" lean-forward="true" selection-start-line="12" selection-start-column="3" selection-end-line="12" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1476,9 +1472,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="319">
           <caret line="11" column="4" lean-forward="false" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="4" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1486,7 +1479,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="232">
           <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1494,9 +1486,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="30" column="4" lean-forward="true" selection-start-line="30" selection-start-column="4" selection-end-line="30" selection-end-column="11" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1504,7 +1493,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="174">
           <caret line="6" column="12" lean-forward="false" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1512,7 +1500,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="67">
           <caret line="5" column="4" lean-forward="false" selection-start-line="5" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1520,7 +1507,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="1730" column="1" lean-forward="false" selection-start-line="1730" selection-start-column="1" selection-end-line="1730" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1528,7 +1514,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-435">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1536,7 +1521,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="35" column="9" lean-forward="false" selection-start-line="35" selection-start-column="9" selection-end-line="35" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1544,7 +1528,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1552,7 +1535,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="317">
           <caret line="85" column="11" lean-forward="true" selection-start-line="85" selection-start-column="11" selection-end-line="85" selection-end-column="11" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1560,9 +1542,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="145">
           <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="22" selection-end-column="26" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1570,27 +1549,15 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="401">
           <caret line="29" column="26" lean-forward="false" selection-start-line="29" selection-start-column="26" selection-end-line="29" selection-end-column="26" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/resources/static/module/module3/dist/img/tishi1/step1.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/resources/static/module/module3/dist/img/tishi1/step2.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/static/module/module3/dist/img/tishi1/step1.png" />
+    <entry file="file://$PROJECT_DIR$/src/resources/static/module/module3/dist/img/tishi1/step2.png" />
     <entry file="file://$PROJECT_DIR$/src/resources/static/module/construct/dist/js/daohang.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="35" column="9" lean-forward="false" selection-start-line="35" selection-start-column="9" selection-end-line="35" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1598,32 +1565,37 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="348">
           <caret line="63" column="44" lean-forward="true" selection-start-line="63" selection-start-column="20" selection-end-line="63" selection-end-column="44" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Yotta/spider/controller/SourceController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="355">
-          <caret line="18" column="26" lean-forward="true" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="261">
+          <caret line="18" column="26" lean-forward="false" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/resources/static/module/module3/pages/spider/spider.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-428">
-          <caret line="40" column="3" lean-forward="true" selection-start-line="40" selection-start-column="3" selection-end-line="40" selection-end-column="3" />
+        <state relative-caret-position="1160">
+          <caret line="40" column="3" lean-forward="false" selection-start-line="40" selection-start-column="3" selection-end-line="40" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="319">
+          <caret line="11" column="31" lean-forward="true" selection-start-line="11" selection-start-column="31" selection-end-line="11" selection-end-column="31" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/resources/static/module/module3/pages/spider/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-5355">
-          <caret line="139" column="71" lean-forward="false" selection-start-line="139" selection-start-column="56" selection-end-line="139" selection-end-column="71" />
+        <state relative-caret-position="377">
+          <caret line="336" column="0" lean-forward="false" selection-start-line="336" selection-start-column="0" selection-end-line="336" selection-end-column="0" />
           <folding>
             <element signature="n#section#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#div#0;n#div#0;n#div#0;n#section#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />

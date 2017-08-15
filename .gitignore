@@ -1,2 +1,12 @@
+### Example user template template
+### Example user template
+
+# IntelliJ project files
+.idea
+*.iml
 src/resources/phantomjs
 src/resources/static/module/construct
+src/resources/static/module/module2/
+target
+#target/generated-sources/
+#target/generated-test-sources/
