@@ -1,181 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="63165312-f4ce-4f87-b740-4e5f1a810523" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/phantomjs/IEDriverServer.exe" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/phantomjs/ZHConverter.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/phantomjs/chromedriver.exe" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/phantomjs/phantomjs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/phantomjs/phantomjs.exe" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/ClassListData.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/bootstrap/css/bootstrap.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/bootstrap/css/bootstrap.css.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/bootstrap/css/bootstrap.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/bootstrap/css/bootstrap.min.css.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/bootstrap/fonts/glyphicons-halflings-regular.eot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/bootstrap/fonts/glyphicons-halflings-regular.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/bootstrap/fonts/glyphicons-halflings-regular.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/bootstrap/fonts/glyphicons-halflings-regular.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/bootstrap/fonts/glyphicons-halflings-regular.woff2" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/bootstrap/js/bootstrap.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/bootstrap/js/bootstrap.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/bootstrap/js/npm.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/construct.zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/dist/css/AdminLTE.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/dist/css/AdminLTE.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/dist/css/fonts.googleapis.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/dist/css/skins/_all-skins.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/dist/css/skins/_all-skins.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/dist/css/skins/skin-black-light.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/dist/css/skins/skin-black-light.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/dist/css/skins/skin-black.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/dist/css/skins/skin-black.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/dist/css/skins/skin-blue-light.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/dist/css/skins/skin-blue-light.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/dist/css/skins/skin-blue.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/dist/css/skins/skin-blue.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/dist/css/skins/skin-green-light.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/dist/css/skins/skin-green-light.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/dist/css/skins/skin-green.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/dist/css/skins/skin-green.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/dist/css/skins/skin-purple-light.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/dist/css/skins/skin-purple-light.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/dist/css/skins/skin-purple.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/dist/css/skins/skin-purple.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/dist/css/skins/skin-red-light.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/dist/css/skins/skin-red-light.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/dist/css/skins/skin-red.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/dist/css/skins/skin-red.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/dist/css/skins/skin-yellow-light.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/dist/css/skins/skin-yellow-light.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/dist/css/skins/skin-yellow.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/dist/css/skins/skin-yellow.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/dist/img/daohang.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/dist/img/hand.ani" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/dist/img/step1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/dist/img/step2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/dist/img/step3.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/dist/img/step4.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/dist/img/step5.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/dist/img/step6.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/dist/img/tishi/step1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/dist/img/tishi/step2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/dist/img/tishi/step3.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/dist/img/tishi/step4.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/dist/img/tishi/step5.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/dist/img/tishi/step6.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/dist/img/tishi1/step1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/dist/img/tishi1/step2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/dist/img/tishi1/step3.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/dist/img/tishi1/step4.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/dist/img/tishi1/step5.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/dist/img/tishi1/step6.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/dist/js/app.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/dist/js/app.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/dist/js/configs.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/dist/js/daohang.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/dist/js/daohang.js.bak" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/dist/js/shileiUtils.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/index.html.bak" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/add/css/contain.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/add/css/jquery.qtip.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/add/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/add/js/facetTreeFragmentCollection.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/add/js/tree.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/extraction/css/base.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/extraction/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/extraction/js/2.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/extraction/js/example1.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/extraction/js/jit-yc.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/extraction/js/myjs.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/extraction/tmptest/testAPI.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/facet/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/facet/js/angularjs/angular.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/facet/js/angularjs/angular.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/facet/js/controller.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/facet/js/d3js/d3.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/facet/js/d3js/d3.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/facet/js/datguijs/dat.gui.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/facet/js/datguijs/dat.gui.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/facet/js/echartjs/echarts.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/facet/js/facetTreeFragmentCollection.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/facet/js/gundongtiao.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/facet/js/jQuery/jquery-1.7.2.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/facet/js/jQuery/jquery-2.2.3.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/facet/js/jQuery/jquery-ui.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/facet/js/jQuery/jquery-ui.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/facet/js/jQuery/jquery.qtip.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/facet/js/jQuery/jquery.qtip.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/facet/js/jQuery/jquery.qtip.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/facet/js/jquery.slimscroll.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/facet/js/slimScroll/jquery.slimscroll.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/facet/js/slimScroll/jquery.slimscroll.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/facet/js/tree.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/kg/a1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/kg/demojs/BuildSimpleTree.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/kg/demojs/dataTool.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/kg/demojs/drawmap2.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/kg/demojs/echarts.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/kg/demojs/getXML.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/kg/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/kg/js/d3.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/kg/js/d3.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/kg/js/d3.min.v4.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/kg/js/d3_tree_main.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/kg/js/dat.gui.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/kg/js/drawMap.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/kg/js/jquery-1.8.0.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/kg/js/jquery-1.8.0.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/kg/js/jquery-1.9.1.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/kg/js/jquery-ui.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/kg/js/jquery.qtip-1.0.0-rc3.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/kg/js/jquery.qtip.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/kg/js/jquery.qtip.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/kg/js/knowledge-tree-1.0.0.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/kg/js/svg.draggable.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/kg/testss2.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/relationship/a1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/relationship/getXML.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/relationship/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/relationship/js/dataTool.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/relationship/js/echarts.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/relationship/js/echarts.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/relationship/js/myJs2.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/relationship/js/test1.gexf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/relationship/test1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/relationship/testss.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/relationship/testss2.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/spider/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/spider/js/controller.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/spider/js/echarts.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/spider/js/fenye.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/spider/js/jquery.slimscroll.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/spider/js/meihua.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/spider/js/pic0.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/spider/js/pic1.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/pages/spider/js/pic2.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/plugins/angularjs/angular.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/plugins/angularjs/angular.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/plugins/d3js/d3.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/plugins/d3js/d3.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/plugins/d3js/d3.v3.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/plugins/datguijs/dat.gui.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/plugins/datguijs/dat.gui.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/plugins/echartjs/echarts.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/plugins/jQuery/jquery-1.7.2.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/plugins/jQuery/jquery-2.2.3.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/plugins/jQuery/jquery-ui.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/plugins/jQuery/jquery-ui.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/plugins/jQuery/jquery.qtip.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/plugins/jQuery/jquery.qtip.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/plugins/jQuery/jquery.qtip.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/plugins/slimScroll/jquery.slimscroll.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/static/module/construct/plugins/slimScroll/jquery.slimscroll.min.js" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="63165312-f4ce-4f87-b740-4e5f1a810523" name="Default" comment="" />
     <ignored path="Yotta.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -456,6 +282,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Yotta" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Yotta" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value=".idea" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1079,7 +919,7 @@
       <workItem from="1502278997383" duration="10351000" />
       <workItem from="1502331512016" duration="57938000" />
       <workItem from="1502589013647" duration="18482000" />
-      <workItem from="1502781951243" duration="613000" />
+      <workItem from="1502781951243" duration="772000" />
     </task>
     <servers />
   </component>
@@ -1116,7 +956,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="161793000" />
+    <option name="totallyTimeSpent" value="161952000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1146,7 +986,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32897863" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24784017" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29535636" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991362" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1938445" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1316,13 +1156,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="16" column="9" lean-forward="false" selection-start-line="16" selection-start-column="9" selection-end-line="16" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2523">
-          <caret line="117" column="17" lean-forward="true" selection-start-line="117" selection-start-column="17" selection-end-line="117" selection-end-column="17" />
           <folding />
         </state>
       </provider>
@@ -1429,6 +1262,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-20">
           <caret line="221" column="33" lean-forward="true" selection-start-line="221" selection-start-column="33" selection-end-line="221" selection-end-column="33" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1580,6 +1414,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1160">
           <caret line="40" column="3" lean-forward="false" selection-start-line="40" selection-start-column="3" selection-end-line="40" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="751">
+          <caret line="117" column="17" lean-forward="true" selection-start-line="117" selection-start-column="17" selection-end-line="117" selection-end-column="17" />
           <folding />
         </state>
       </provider>
