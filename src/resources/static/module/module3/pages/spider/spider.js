@@ -1,6 +1,8 @@
 var myApp = angular.module("myApp", ['ui.bootstrap', 'ngAnimate']);
 var sourceId = "";
 
+
+
 $(function () {
     $("#example1").DataTable();
 });
