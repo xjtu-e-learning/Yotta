@@ -18,6 +18,9 @@
        folder instead of downloading all of them to reduce the load. -->
   <link rel="stylesheet" href="../../dist/css/skins/_all-skins.min.css">
 <!-- <script type="text/javascript">ip = ffsfdsf；</script> -->
+  <!-- bootstrap datepicker -->
+  <link rel="stylesheet" href="../../plugins/datepicker/datepicker3.css">
+
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -99,7 +102,7 @@
 
 
     <!-- Main content 页面主题内容 -->
-    <section class="content">
+    <section class="content" ng-app="myApp" data-ng-controller="domainCtrl">
 
         <div class="row">
 
@@ -137,8 +140,9 @@
                                     <img src="../../dist/img/wikicn.jpg" alt="Product Image">
                                 </div>
                                 <div class="product-info">
-                                    <a href="javascript:setSourceCookie('中文维基百科')">
-                                        <span class="label label-danger pull-right">点我</span></a>
+                                    <a href="#" ng-click="sourceChanged('1', '中文维基百科', '百科类')">
+                                    <span class="label label-danger pull-right">点我</span></a>
+                                    <!--<button type="submit" class="btn btn-warning btn-flat pull-right" ng-click="sourceChanged('1', '中文维基百科', '百科类')">点我</button>-->
                                     <a href="https://zh.wikipedia.org/" target="_blank" class="product-title">中文维基百科
                                         <span class="label label-info pull-right">中文</span></a>
                                     <span class="product-description">
@@ -152,6 +156,9 @@
                                     <img src="../../dist/img/wikien.jpg" alt="Product Image">
                                 </div>
                                 <div class="product-info">
+                                    <a href="#" ng-click="sourceChanged('2', '英文维基百科', '百科类')">
+                                        <span class="label label-danger pull-right">点我</span></a>
+                                    <!--<button type="submit" class="btn btn-warning btn-flat pull-right" ng-click="sourceChanged('2', '英文维基百科', '百科类')">点我</button>-->
                                     <a href="https://www.wikipedia.org/" target="_blank" class="product-title">英文维基百科
                                         <span class="label label-warning pull-right">英文</span></a>
                                     <span class="product-description">
@@ -165,6 +172,9 @@
                                     <img src="../../dist/img/baidubaike-50x50.jpg" alt="Product Image">
                                 </div>
                                 <div class="product-info">
+                                    <a href="#" ng-click="sourceChanged('3', '百度百科', '百科类')">
+                                        <span class="label label-danger pull-right">点我</span></a>
+                                    <!--<button type="submit" class="btn btn-warning btn-flat pull-right" ng-click="sourceChanged('3', '百度百科', '百科类')">点我</button>-->
                                     <a href="https://baike.baidu.com/" target="_blank" class="product-title">百度百科
                                         <span class="label label-info pull-right">中文</span></a>
                                     <span class="product-description">
@@ -201,6 +211,9 @@
                                     <img src="../../dist/img/zhihu.jpg" alt="Product Image">
                                 </div>
                                 <div class="product-info">
+                                    <a href="#" ng-click="sourceChanged('4', '知乎', '问答类')">
+                                        <span class="label label-danger pull-right">点我</span></a>
+                                    <!--<button type="submit" class="btn btn-warning btn-flat pull-right" ng-click="sourceChanged('4', '知乎', '问答类')">点我</button>-->
                                     <a href="https://www.zhihu.com/" target="_blank" class="product-title">知乎
                                         <span class="label label-info pull-right">中文</span></a>
                                     <span class="product-description">
@@ -214,6 +227,9 @@
                                     <img src="../../dist/img/quora.jpg" alt="Product Image">
                                 </div>
                                 <div class="product-info">
+                                    <a href="#" ng-click="sourceChanged('5', 'Quora', '问答类')">
+                                        <span class="label label-danger pull-right">点我</span></a>
+                                    <!--<button type="submit" class="btn btn-warning btn-flat pull-right" ng-click="sourceChanged('5', 'Quora', '问答类')">点我</button>-->
                                     <a href="https://www.quora.com/" target="_blank" class="product-title">Quora
                                         <span class="label label-warning pull-right">英文</span></a>
                                     <span class="product-description">
@@ -227,6 +243,9 @@
                                     <img src="../../dist/img/so.jpg" alt="Product Image">
                                 </div>
                                 <div class="product-info">
+                                    <a href="#" ng-click="sourceChanged('6', 'StackOverflow', '问答类')">
+                                        <span class="label label-danger pull-right">点我</span></a>
+                                    <!--<button type="submit" class="btn btn-warning btn-flat pull-right" ng-click="sourceChanged('6', 'StackOverflow', '问答类')">点我</button>-->
                                     <a href="https://stackoverflow.com/" target="_blank" class="product-title">StackOverflow
                                         <span class="label label-warning pull-right">英文</span></a>
                                     <span class="product-description">
@@ -263,6 +282,9 @@
                                     <img src="../../dist/img/csdn.jpg" alt="Product Image">
                                 </div>
                                 <div class="product-info">
+                                    <a href="#" ng-click="sourceChanged('7', 'CSDN', '博客类')">
+                                        <span class="label label-danger pull-right">点我</span></a>
+                                    <!--<button type="submit" class="btn btn-warning btn-flat pull-right" ng-click="sourceChanged('7', 'CSDN', '博客类')">点我</button>-->
                                     <a href="http://www.csdn.net/" target="_blank" class="product-title">CSDN
                                         <span class="label label-info pull-right">中文</span></a>
                                     <span class="product-description">
@@ -287,57 +309,122 @@
 
 
             <!-- 右侧内容区域 -->
-            <div class="col-md-9" ng-app="rightApp">
+            <div class="col-md-9">
 
                 <!-- 领域信息 -->
-                <div id="domain" class="row" data-ng-controller="domainCtrl">
-                    <!-- 自定义内容区域 -->
-                    <div class="panel panel-default">
-                        <div class="panel-heading">领域列表</div>
-                        <table class="table table-striped table-hover table-responsive">
-                            <thead>
-                            <tr>
-                                <th>领域ID</th>
-                                <th>领域名</th>
-                                <th>数据源ID</th>
-                                <th>数据源名</th>
-                                <th>数据源类别</th>
-                                <th width="120">操作</th>
-                            </tr>
-                            </thead>
-                            <tbody id="domain-body">
+                <div id="domain" class="row">
+                    <div class="box">
+                        <div class="box-header">
+                            <h3 class="box-title">领域列表</h3>
+
+                            <!-- 按钮触发模态框 -->
+                            <button class="btn btn-danger  pull-right" data-toggle="modal" data-target="#domainModal">
+                                添加领域
+                            </button>
+                            <!-- 模态框（Modal） -->
+                            <div class="modal fade" id="domainModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                                                &times;
+                                            </button>
+                                            <h4 class="modal-title" id="myModalLabel">
+                                                添加领域
+                                            </h4>
+                                        </div>
+                                        <!--添加领域的字段信息-->
+                                        <div class="modal-body">
+                                            <!--  模态框内容，我在此处添加一个表单 -->
+                                            <form class="form-horizontal" role="form">
+                                                <div class="box-body">
+                                                    <div class="form-group">
+                                                        <label for="domainName" class="col-sm-2 control-label">领域名</label>
+
+                                                        <div class="col-sm-10">
+                                                            <input type="email" class="form-control" id="domainName" placeholder="Email">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="domainUrl" class="col-sm-2 control-label">领域链接</label>
+
+                                                        <div class="col-sm-10">
+                                                            <input type="password" class="form-control" id="domainUrl" placeholder="Password">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="domainSource" class="col-sm-2 control-label">数据源</label>
+
+                                                        <div class="col-sm-10">
+                                                            <select id="domainSource" class="form-control select2 select2-hidden-accessible" style="width: 100%;" tabindex="-1" aria-hidden="true">
+                                                                <option selected="selected">中文维基百科</option>
+                                                                <option>英文维基百科</option>
+                                                                <option>百度百科</option>
+                                                                <option>知乎</option>
+                                                                <option>Quora</option>
+                                                                <option>StackOverflow</option>
+                                                                <option>CSDN</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-default pull-left" data-dismiss="modal">关闭
+                                            </button>
+                                            <button type="button" class="btn btn-primary">
+                                                提交更改
+                                            </button>
+                                        </div>
+                                    </div><!-- /.modal-content -->
+                                </div><!-- /.modal -->
+                            </div>
+
+
+
+
+                        </div>
+                        <!-- /.box-header -->
+                        <div class="box-body table-responsive no-padding">
+                            <table class="table table-hover">
+                                <tbody><tr>
+                                    <th>领域ID</th>
+                                    <th>领域名</th>
+                                    <th>数据源名</th>
+                                    <th>数据源类别</th>
+                                    <th>操作</th>
+                                </tr>
                                 <tr data-ng-repeat="domain in domains">
                                     <td  scope='row' data-ng-bind="domain.domainId"></td>
                                     <td><a href="{{ domain.domainUrl }}" target='_blank'>{{ domain.domainName }}</a></td>
-                                    <td data-ng-bind="sourceId"></td>
                                     <td data-ng-bind="sourceName"></td>
                                     <td data-ng-bind="sourceType"></td>
-                                    <td>
+                                    <td align="">
                                         <a href="">详情</a>
                                         <a href="">修改</a>
                                         <a href="">删除</a>
+                                        <a href="">点我</a>
                                     </td>
                                 </tr>
-                            </tbody>
-                        </table>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- /.box-body -->
                     </div>
 
                     <!-- 分页  -->
                     <div class="text-right">
                         <ul uib-pagination  total-items="totalItems" ng-model="currentPage"
-                                        items-per-page = "numPerPage" max-size="maxSize"
-                                        class="pagination" first-text="首页"
-                                        previous-text="上一页" next-text="下一页" last-text="末页"
-                                        boundary-links="true" ng-change="pageChanged()" force-ellipses="false">
+                            items-per-page = "numPerPage" max-size="maxSize"
+                            class="pagination" first-text="首页"
+                            previous-text="上一页" next-text="下一页" last-text="末页"
+                            boundary-links="true" ng-change="pageChanged()" force-ellipses="false">
                         </ul>
                     </div>
 
                 </div>
-
-
-
             </div>
-
 
 
 
@@ -390,13 +477,22 @@
 <!-- AdminLTE App -->
 <script src="../../dist/js/app.min.js"></script>
 
+<!-- DataTables -->
+<script src="../../plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="../../plugins/datatables/dataTables.bootstrap.min.js"></script>
+<!-- SlimScroll -->
+<script src="../../plugins/slimScroll/jquery.slimscroll.min.js"></script>
+<!-- FastClick -->
+<script src="../../plugins/fastclick/fastclick.js"></script>
+<!--bootstrap datepicker-->
+<script src="../../plugins/datepicker/bootstrap-datepicker.js"></script>
+
 <!--Angular -->
 <script src="http://cdn.bootcss.com/angular.js/1.5.8/angular.js"></script>
 <script src="http://cdn.bootcss.com/angular.js/1.5.8/angular-animate.js"></script>
 <!--<script src="http://cdn.bootcss.com/angular.js/1.5.8/angular-sanitize.js"></script>-->
 <script src="http://cdn.bootcss.com/angular-ui-bootstrap/2.1.3/ui-bootstrap-tpls.min.js"></script>
 <!--<script src="http://cdn.bootcss.com/angular-ui-bootstrap/2.1.3/ui-bootstrap.js"></script>-->
-
 
 <!-- 个人的插件 -->
 <!-- 自己写的js -->

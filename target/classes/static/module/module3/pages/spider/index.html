@@ -99,7 +99,7 @@
 
 
     <!-- Main content 页面主题内容 -->
-    <section class="content">
+    <section class="content" ng-app="myApp" data-ng-controller="domainCtrl">
 
         <div class="row">
 
@@ -137,8 +137,11 @@
                                     <img src="../../dist/img/wikicn.jpg" alt="Product Image">
                                 </div>
                                 <div class="product-info">
+                                    <a href="#" ng-click="sourceChanged('1', '中文维基百科', '百科类')">
+                                    <span class="label label-danger pull-right">点我</span></a>
+                                    <!--<button type="submit" class="btn btn-warning btn-flat pull-right" ng-click="sourceChanged('1', '中文维基百科', '百科类')">点我</button>-->
                                     <a href="https://zh.wikipedia.org/" target="_blank" class="product-title">中文维基百科
-                                        <span class="label label-info pull-right">中文网站</span></a>
+                                        <span class="label label-info pull-right">中文</span></a>
                                     <span class="product-description">
                                         维基百科是一个多语言、内容自由、任何人都能参与的协作计划,其目标是建立一个完整、准确且中立的百科全书。
                                     </span>
@@ -150,8 +153,11 @@
                                     <img src="../../dist/img/wikien.jpg" alt="Product Image">
                                 </div>
                                 <div class="product-info">
+                                    <a href="#" ng-click="sourceChanged('2', '英文维基百科', '百科类')">
+                                        <span class="label label-danger pull-right">点我</span></a>
+                                    <!--<button type="submit" class="btn btn-warning btn-flat pull-right" ng-click="sourceChanged('2', '英文维基百科', '百科类')">点我</button>-->
                                     <a href="https://www.wikipedia.org/" target="_blank" class="product-title">英文维基百科
-                                        <span class="label label-warning pull-right">英文网站</span></a>
+                                        <span class="label label-warning pull-right">英文</span></a>
                                     <span class="product-description">
                                         Wikipedia is a free online encyclopedia, created and edited by volunteers around the world and hosted by the Wikimedia Foundation.
                                     </span>
@@ -163,8 +169,11 @@
                                     <img src="../../dist/img/baidubaike-50x50.jpg" alt="Product Image">
                                 </div>
                                 <div class="product-info">
+                                    <a href="#" ng-click="sourceChanged('3', '百度百科', '百科类')">
+                                        <span class="label label-danger pull-right">点我</span></a>
+                                    <!--<button type="submit" class="btn btn-warning btn-flat pull-right" ng-click="sourceChanged('3', '百度百科', '百科类')">点我</button>-->
                                     <a href="https://baike.baidu.com/" target="_blank" class="product-title">百度百科
-                                        <span class="label label-info pull-right">中文网站</span></a>
+                                        <span class="label label-info pull-right">中文</span></a>
                                     <span class="product-description">
                                         百度百科是一部内容开放、自由的网络百科全书,旨在创造一个涵盖所有领域知识,服务所有互联网用户的中文知识性百科全书。
                                     </span>
@@ -199,8 +208,11 @@
                                     <img src="../../dist/img/zhihu.jpg" alt="Product Image">
                                 </div>
                                 <div class="product-info">
+                                    <a href="#" ng-click="sourceChanged('4', '知乎', '问答类')">
+                                        <span class="label label-danger pull-right">点我</span></a>
+                                    <!--<button type="submit" class="btn btn-warning btn-flat pull-right" ng-click="sourceChanged('4', '知乎', '问答类')">点我</button>-->
                                     <a href="https://www.zhihu.com/" target="_blank" class="product-title">知乎
-                                        <span class="label label-info pull-right">中文网站</span></a>
+                                        <span class="label label-info pull-right">中文</span></a>
                                     <span class="product-description">
                                         一个真实的网络问答社区,帮助你寻找答案,分享知识。
                                     </span>
@@ -212,8 +224,11 @@
                                     <img src="../../dist/img/quora.jpg" alt="Product Image">
                                 </div>
                                 <div class="product-info">
+                                    <a href="#" ng-click="sourceChanged('5', 'Quora', '问答类')">
+                                        <span class="label label-danger pull-right">点我</span></a>
+                                    <!--<button type="submit" class="btn btn-warning btn-flat pull-right" ng-click="sourceChanged('5', 'Quora', '问答类')">点我</button>-->
                                     <a href="https://www.quora.com/" target="_blank" class="product-title">Quora
-                                        <span class="label label-warning pull-right">英文网站</span></a>
+                                        <span class="label label-warning pull-right">英文</span></a>
                                     <span class="product-description">
                                         Quora is a place to gain and share knowledge.
                                     </span>
@@ -225,8 +240,11 @@
                                     <img src="../../dist/img/so.jpg" alt="Product Image">
                                 </div>
                                 <div class="product-info">
+                                    <a href="#" ng-click="sourceChanged('6', 'StackOverflow', '问答类')">
+                                        <span class="label label-danger pull-right">点我</span></a>
+                                    <!--<button type="submit" class="btn btn-warning btn-flat pull-right" ng-click="sourceChanged('6', 'StackOverflow', '问答类')">点我</button>-->
                                     <a href="https://stackoverflow.com/" target="_blank" class="product-title">StackOverflow
-                                        <span class="label label-warning pull-right">英文网站</span></a>
+                                        <span class="label label-warning pull-right">英文</span></a>
                                     <span class="product-description">
                                         <em>Stack Overflow</em> is the largest, most trusted online community for developers to learn, share&#8203; &#8203;their programming &#8203;knowledge, and build their careers...
                                     </span>
@@ -261,8 +279,11 @@
                                     <img src="../../dist/img/csdn.jpg" alt="Product Image">
                                 </div>
                                 <div class="product-info">
+                                    <a href="#" ng-click="sourceChanged('7', 'CSDN', '博客类')">
+                                        <span class="label label-danger pull-right">点我</span></a>
+                                    <!--<button type="submit" class="btn btn-warning btn-flat pull-right" ng-click="sourceChanged('7', 'CSDN', '博客类')">点我</button>-->
                                     <a href="http://www.csdn.net/" target="_blank" class="product-title">CSDN
-                                        <span class="label label-info pull-right">中文网站</span></a>
+                                        <span class="label label-info pull-right">中文</span></a>
                                     <span class="product-description">
                                         中国最大的IT社区和服务平台，为中国的软件开发者和IT从业者提供知识传播、职业发展、软件开发等全生命周期服务。
                                     </span>
@@ -285,10 +306,10 @@
 
 
             <!-- 右侧内容区域 -->
-            <div class="col-md-9" ng-app="rightApp">
+            <div class="col-md-9">
 
                 <!-- 领域信息 -->
-                <div id="domain" class="row" data-ng-controller="domainCtrl">
+                <div id="domain" class="row">
                     <!-- 自定义内容区域 -->
                     <div class="panel panel-default">
                         <div class="panel-heading">领域列表</div>
@@ -297,7 +318,6 @@
                             <tr>
                                 <th>领域ID</th>
                                 <th>领域名</th>
-                                <th>数据源ID</th>
                                 <th>数据源名</th>
                                 <th>数据源类别</th>
                                 <th width="120">操作</th>
@@ -307,7 +327,6 @@
                                 <tr data-ng-repeat="domain in domains">
                                     <td  scope='row' data-ng-bind="domain.domainId"></td>
                                     <td><a href="{{ domain.domainUrl }}" target='_blank'>{{ domain.domainName }}</a></td>
-                                    <td data-ng-bind="sourceId"></td>
                                     <td data-ng-bind="sourceName"></td>
                                     <td data-ng-bind="sourceType"></td>
                                     <td>
@@ -332,6 +351,65 @@
 
                 </div>
 
+
+
+                <!-- 领域信息 -->
+                <div class="box">
+                    <div class="box-header">
+                        <h3 class="box-title">领域列表</h3>
+
+                        <div class="box-tools">
+                            <div class="input-group input-group-sm" style="width: 150px;">
+                                <input type="text" name="table_search" class="form-control pull-right" placeholder="Search">
+
+                                <div class="input-group-btn">
+                                    <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body table-responsive no-padding">
+                        <table class="table table-hover">
+                            <tbody><tr>
+                                <th>ID</th>
+                                <th>User</th>
+                                <th>Date</th>
+                                <th>Status</th>
+                                <th>Reason</th>
+                            </tr>
+                            <tr>
+                                <td>183</td>
+                                <td>John Doe</td>
+                                <td>11-7-2014</td>
+                                <td><span class="label label-success">Approved</span></td>
+                                <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+                            </tr>
+                            <tr>
+                                <td>219</td>
+                                <td>Alexander Pierce</td>
+                                <td>11-7-2014</td>
+                                <td><span class="label label-warning">Pending</span></td>
+                                <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+                            </tr>
+                            <tr>
+                                <td>657</td>
+                                <td>Bob Doe</td>
+                                <td>11-7-2014</td>
+                                <td><span class="label label-primary">Approved</span></td>
+                                <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+                            </tr>
+                            <tr>
+                                <td>175</td>
+                                <td>Mike Doe</td>
+                                <td>11-7-2014</td>
+                                <td><span class="label label-danger">Denied</span></td>
+                                <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+                            </tr>
+                            </tbody></table>
+                    </div>
+                    <!-- /.box-body -->
+                </div>
 
 
             </div>
@@ -388,13 +466,20 @@
 <!-- AdminLTE App -->
 <script src="../../dist/js/app.min.js"></script>
 
+<!-- DataTables -->
+<script src="../../plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="../../plugins/datatables/dataTables.bootstrap.min.js"></script>
+<!-- SlimScroll -->
+<script src="../../plugins/slimScroll/jquery.slimscroll.min.js"></script>
+<!-- FastClick -->
+<script src="../../plugins/fastclick/fastclick.js"></script>
+
 <!--Angular -->
 <script src="http://cdn.bootcss.com/angular.js/1.5.8/angular.js"></script>
 <script src="http://cdn.bootcss.com/angular.js/1.5.8/angular-animate.js"></script>
 <!--<script src="http://cdn.bootcss.com/angular.js/1.5.8/angular-sanitize.js"></script>-->
 <script src="http://cdn.bootcss.com/angular-ui-bootstrap/2.1.3/ui-bootstrap-tpls.min.js"></script>
 <!--<script src="http://cdn.bootcss.com/angular-ui-bootstrap/2.1.3/ui-bootstrap.js"></script>-->
-
 
 <!-- 个人的插件 -->
 <!-- 自己写的js -->
