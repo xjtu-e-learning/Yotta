@@ -14,13 +14,23 @@ import org.springframework.web.bind.annotation.*;
  *  主题自动爬取，不是手动
  * Created by 18710 on 2017/8/9.
  */
-//@RestController
-//@RequestMapping(value="/spiderWikiTopic")
-@RestController("/topic")
+@RestController
+@RequestMapping(value="/topic")
 public class SpiderTopicController {
 
     @Autowired
     private SpiderTopicService spiderTopicService;
+
+    @GetMapping(value = "/getTopicByDomainId")
+    @ApiOperation(value = "根据领域Id判断主题数据是否爬取", notes = "输入领域Id，判断主题数据是否爬取")
+    public ResponseEntity getTopicByDomainId(@RequestParam(value = "domainId", defaultValue = "1") Long domainId) {
+        // 根据领域ID判断主题数据是否爬取
+        Result result = spiderTopicService.getTopicByDomainId(domainId);
+        if (result.getCode() != ResultEnum.SUCCESS.getCode()) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(result);
+        }
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
 
     @GetMapping(value = "/storeTopicByDomainId")
     @ApiOperation(value = "根据领域Id爬取主题", notes = "输入领域Id，爬取主题及其上下位关系信息")

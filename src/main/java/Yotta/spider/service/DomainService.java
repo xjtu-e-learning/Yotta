@@ -34,19 +34,28 @@ public class DomainService {
     @Autowired
     private DomainRepository domainRepository;
 
-
-
     /**
      * 插入领域
      * @param domain 需要插入的领域
      * @return 插入结果
      */
     public Result insertDomain(Domain domain) {
-        Domain domain1 = domainRepository.save(domain);
-        if (domain1 != null) {
-            return ResultUtil.success(ResultEnum.SUCCESS.getCode(), ResultEnum.SUCCESS.getMsg(), domain1);
+        if (domainRepository.findByDomainNameAndSourceId(domain.getDomainName(), domain.getSourceId()) == null) {
+            Domain domain1 = domainRepository.save(domain);
+            if (domain1 != null) {
+                return ResultUtil.success(ResultEnum.SUCCESS.getCode(), ResultEnum.SUCCESS.getMsg(), domain1);
+            } else {
+                return ResultUtil.error(ResultEnum.DOMAININSERT_ERROR.getCode(), ResultEnum.DOMAININSERT_ERROR.getMsg());
+            }
         } else {
-            return ResultUtil.error(ResultEnum.DOMAININSERT_ERROR.getCode(), ResultEnum.DOMAININSERT_ERROR.getMsg());
+            if (domain.getDomainName() == null || "".equals(domain.getDomainName()) || domain.getDomainName().length() == 0) {
+                // 插入领域名不能为空
+                return ResultUtil.error(ResultEnum.DOMAININSERTNOTNULL_ERROR.getCode(), ResultEnum.DOMAININSERTNOTNULL_ERROR.getMsg());
+            } else {
+                // 不能插入重复的
+                return ResultUtil.error(ResultEnum.DOMAININSERTDUPLICATE_ERROR.getCode(), ResultEnum.DOMAININSERTDUPLICATE_ERROR.getMsg());
+            }
+
         }
     }
 

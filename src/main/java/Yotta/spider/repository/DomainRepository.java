@@ -19,6 +19,8 @@ public interface DomainRepository extends JpaRepository<Domain, Long>, JpaSpecif
 
     Domain findByDomainName(String domainName);
 
+    Domain findByDomainNameAndSourceId(String domainName, Long sourceId);
+
     List<Domain> findBySourceId(Long sourceId);
 
     List<Domain> findAll();
