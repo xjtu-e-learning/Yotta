@@ -43,6 +43,19 @@ public class SpiderTopicService {
     @Autowired
     private TopicRelationRepository topicRelationRepository;
 
+    /**
+     * 根据 领域Id 判断主题数据是否爬取
+     * @param domainId 领域主题ID
+     * @return
+     */
+    public Result getTopicByDomainId(Long domainId) {
+        if (topicRepository.findByDomainId(domainId).size() != 0) { // 判断是否已经爬取过该领域的主题信息
+            return ResultUtil.success(ResultEnum.SUCCESS.getCode(), ResultEnum.SUCCESS.getMsg(), topicRepository.findByDomainId(domainId).size());
+        } else {
+            logger.info("领域ID为：" + domainId + "，对应的主题信息没有爬取");
+            return ResultUtil.error(ResultEnum.DOMAINTOPICNOTSPIDER_ERROR.getCode(), ResultEnum.DOMAINTOPICNOTSPIDER_ERROR.getMsg());
+        }
+    }
 
     /**
      * 根据领域名爬取主题信息

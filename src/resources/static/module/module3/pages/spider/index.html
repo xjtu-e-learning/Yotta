@@ -102,7 +102,7 @@
 
 
     <!-- Main content 页面主题内容 -->
-    <section class="content" ng-app="myApp" data-ng-controller="domainCtrl">
+    <section class="content" ng-app="myApp" ng-controller="domainCtrl">
 
         <div class="row">
 
@@ -317,75 +317,74 @@
                         <div class="box-header">
                             <h3 class="box-title">领域列表</h3>
 
+                            <!--增加领域-->
                             <!-- 按钮触发模态框 -->
-                            <button class="btn btn-danger  pull-right" data-toggle="modal" data-target="#domainModal">
+                            <button class="btn btn-danger  pull-right" data-toggle="modal" ng-click="openModalInsertDomain()">
                                 添加领域
                             </button>
+                            <script type="text/ng-template" id="modalInsertDomain.html">
                             <!-- 模态框（Modal） -->
-                            <div class="modal fade" id="domainModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-                                                &times;
-                                            </button>
-                                            <h4 class="modal-title" id="myModalLabel">
-                                                添加领域
-                                            </h4>
-                                        </div>
-                                        <!--添加领域的字段信息-->
-                                        <div class="modal-body">
-                                            <!--  模态框内容，我在此处添加一个表单 -->
-                                            <form class="form-horizontal" role="form">
-                                                <div class="box-body">
-                                                    <div class="form-group">
-                                                        <label for="domainName" class="col-sm-2 control-label">领域名</label>
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"  ng-click="cancel()">
+                                        &times;
+                                    </button>
+                                    <h4 class="modal-title">
+                                        添加领域
+                                    </h4>
+                                </div>
+                                <!--添加领域的字段信息-->
+                                <div class="modal-body">
+                                    <!--  模态框内容，我在此处添加一个表单 -->
+                                    <form class="form-horizontal" role="form">
+                                        <div class="box-body">
+                                            <div class="form-group">
+                                                <label class="col-sm-2 control-label">领域名</label>
 
-                                                        <div class="col-sm-10">
-                                                            <input type="email" class="form-control" id="domainName" placeholder="Email">
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label for="domainUrl" class="col-sm-2 control-label">领域链接</label>
-
-                                                        <div class="col-sm-10">
-                                                            <input type="password" class="form-control" id="domainUrl" placeholder="Password">
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label for="domainSource" class="col-sm-2 control-label">数据源</label>
-
-                                                        <div class="col-sm-10">
-                                                            <select id="domainSource" class="form-control select2 select2-hidden-accessible" style="width: 100%;" tabindex="-1" aria-hidden="true">
-                                                                <option selected="selected">中文维基百科</option>
-                                                                <option>英文维基百科</option>
-                                                                <option>百度百科</option>
-                                                                <option>知乎</option>
-                                                                <option>Quora</option>
-                                                                <option>StackOverflow</option>
-                                                                <option>CSDN</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
+                                                <div class="col-sm-10">
+                                                    <input type="text" class="form-control" placeholder="领域名" ng-model="insertDomainName">
                                                 </div>
-                                            </form>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-sm-2 control-label">领域链接</label>
+
+                                                <div class="col-sm-10">
+                                                    <input type="text" class="form-control" placeholder="领域链接" ng-model="insertDomainUrl">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-sm-2 control-label">数据源</label>
+
+                                                <div class="col-sm-10">
+                                                    <input type="text" class="form-control" placeholder="{{sourceName}}"  disabled="">
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label class="col-sm-2 control-label">备注</label>
+                                                <div class="col-sm-10">
+                                                    <textarea class="form-control select2 select2-hidden-accessible" rows="3" placeholder="Enter ..."  ng-model="insertDomainNote"></textarea>
+                                                </div>
+                                            </div>
+
                                         </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-default pull-left" data-dismiss="modal">关闭
-                                            </button>
-                                            <button type="button" class="btn btn-primary">
-                                                提交更改
-                                            </button>
-                                        </div>
-                                    </div><!-- /.modal-content -->
-                                </div><!-- /.modal -->
-                            </div>
-
-
-
-
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default pull-left" data-dismiss="modal" ng-click="cancel()">关闭
+                                    </button>
+                                    <button type="button" class="btn btn-primary" ng-click="ok()">
+                                        确定
+                                    </button>
+                                </div>
+                            </script>
+                            <!--结束增加领域-->
                         </div>
                         <!-- /.box-header -->
+
+
+
+
+
                         <div class="box-body table-responsive no-padding">
                             <table class="table table-hover">
                                 <tbody><tr>
@@ -395,16 +394,146 @@
                                     <th>数据源类别</th>
                                     <th>操作</th>
                                 </tr>
-                                <tr data-ng-repeat="domain in domains">
-                                    <td  scope='row' data-ng-bind="domain.domainId"></td>
-                                    <td><a href="{{ domain.domainUrl }}" target='_blank'>{{ domain.domainName }}</a></td>
+                                <!-- $index指示第几行数据，可以回传js控制 -->
+                                <tr data-ng-repeat="domain in domains track by $index">
+                                    <td scope='row' data-ng-bind="domain.domainId" id="domainId"></td>
+                                    <td><a href="{{ domain.domainUrl }}" id="domainUrl" target='_blank'>{{ domain.domainName }}</a></td>
                                     <td data-ng-bind="sourceName"></td>
                                     <td data-ng-bind="sourceType"></td>
                                     <td align="">
-                                        <a href="">详情</a>
-                                        <a href="">修改</a>
-                                        <a href="">删除</a>
-                                        <a href="">点我</a>
+
+                                        <button class="btn btn-primary btn-xs" data-toggle="modal" ng-click="openModalDomainDetail($index)">详情</button>
+                                        <!--领域详情信息-->
+                                        <script type="text/ng-template" id="modalDomainDetail.html">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true" ng-click="cancel()">
+                                                    &times;
+                                                </button>
+                                                <h4 class="modal-title">
+                                                    领域详细信息
+                                                </h4>
+                                            </div>
+                                            <div class="modal-body">
+                                                <!--  模态框内容，我在此处添加一个表单 -->
+                                                <form class="form-horizontal" role="form">
+                                                    <div class="box-body">
+                                                        <div class="form-group">
+                                                            <label class="col-sm-2 control-label">领域ID</label>
+                                                            <div class="col-sm-10">
+                                                                <label class="control-label">
+                                                                    <span class="badge bg-red">{{ detailDomainId }}</span>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="col-sm-2 control-label">领域名</label>
+                                                            <div class="col-sm-10">
+                                                                <label class="control-label">
+                                                                    <span class="badge bg-yellow">{{ detailDomainName }}</span>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="col-sm-2 control-label">领域链接</label>
+                                                            <div class="col-sm-10">
+                                                                <label class="control-label">
+                                                                    <!--<span class="badge bg-light-blue">-->
+                                                                        <a href="{{ detailDomainUrl }}" target='_blank'>{{ detailDomainUrl }}</a>
+                                                                    <!--</span>-->
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="col-sm-2 control-label">领域说明</label>
+                                                            <div class="col-sm-10">
+                                                                <label class="control-label">
+                                                                    <span class="badge bg-light-blue">{{ detailDomainNote }}</span>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="col-sm-2 control-label">数据源ID</label>
+                                                            <div class="col-sm-10">
+                                                                <label class="control-label">
+                                                                    <span class="badge bg-green">{{ detailSourceId }}</span>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="col-sm-2 control-label">数据源名</label>
+                                                            <div class="col-sm-10">
+                                                                <label class="control-label">
+                                                                    <span class="badge bg-red">{{ detailSourceName }}</span>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="col-sm-2 control-label">类型
+                                                            </label>
+                                                            <div class="col-sm-10">
+                                                                <label class="control-label">
+                                                                    <span class="badge bg-yellow">{{ detailSourceType }}</span>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="col-sm-2 control-label">主题信息
+                                                            </label>
+                                                            <div class="col-sm-10">
+                                                                <label class="control-label">
+                                                                    <span class="badge bg-light-blue">{{ detailTopic }}</span>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="col-sm-2 control-label">爬取
+                                                            </label>
+                                                            <div class="col-sm-10">
+                                                                <button type="button" class="btn btn-success {{detailTopicSpiderDisabled}}" ng-click="spiderTopicByDomainId()">爬取主题</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-default pull-left" data-dismiss="modal" ng-click="cancel()">关闭
+                                                </button>
+                                                <button type="button" class="btn btn-primary" ng-click="ok()">
+                                                    确定
+                                                </button>
+                                            </div>
+                                        </script>
+                                        <!--结束领域详情信息-->
+
+                                        <button class="btn btn-primary btn-xs" data-toggle="modal" ng-click="openModalDomainModify($index)">修改</button>
+                                        <!--领域修改信息-->
+                                        <script type="text/ng-template" id="modalDomainModify.html">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true" ng-click="cancel()">
+                                                    &times;
+                                                </button>
+                                                <h4 class="modal-title">
+                                                    领域详细信息
+                                                </h4>
+                                            </div>
+                                            <div class="modal-body">
+                                                <!--  模态框内容，我在此处添加一个表单 -->
+
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-default pull-left" data-dismiss="modal" ng-click="cancel()">关闭
+                                                </button>
+                                                <button type="button" class="btn btn-primary" ng-click="ok()">
+                                                    确定
+                                                </button>
+                                            </div>
+                                        </script>
+                                        <!--结束领域详情信息-->
+
+                                        <button class="btn btn-danger btn-xs" ng-click="domainDelete($index)">删除</button>
+
+                                        <button class="btn btn-primary btn-xs" ng-click="domainTopicInfo($index)">点我</button>
+
                                     </td>
                                 </tr>
                                 </tbody>
