@@ -137,20 +137,32 @@ myApp.controller('domainCtrl', function($scope, $uibModal, $http) {
     };
 
     // 修改领域信息 模态框
-    $scope.openModalDomainModify = function() {
+    $scope.openModalDomainModify = function($index) {
 
         var modalInstance = $uibModal.open({
             templateUrl : 'modalDomainModify.html',//script标签中定义的id
             controller : 'modalCtrlmodalDomainModify',//modal对应的Controller
             resolve : {
-                sourceId : function() {//data作为modal的controller传入的参数
-                    return sourceId;//用于传递数据
+                domainId : function() {//data作为modal的controller传入的参数
+                    console.log($scope.domains[$index]);
+                    console.log($index);
+                    return $scope.domains[$index].domainId;//用于传递数据
+                },
+                domainName : function() {//data作为modal的controller传入的参数
+                    return $scope.domains[$index].domainName;//用于传递数据
+                },
+                domainUrl : function() {//data作为modal的controller传入的参数
+                    return $scope.domains[$index].domainUrl;//用于传递数据
+                },
+                domainNote : function() {//data作为modal的controller传入的参数
+                    return $scope.domains[$index].note;//用于传递数据
                 },
                 sourceName : function() {//data作为modal的controller传入的参数
                     return $scope.sourceName;//用于传递数据
                 }
             }
         })
+
     };
 
 });
@@ -240,24 +252,29 @@ myApp.controller('modalCtrlmodalDomainDetail', function($scope, $http, $uibModal
 });
 
 // 领域修改 模态框对应的Controller
-myApp.controller('modalCtrlmodalDomainModify', function($scope, $http, $uibModalInstance, sourceId, sourceName) {
+myApp.controller('modalCtrlmodalDomainModify', function($scope, $http, $uibModalInstance,
+                                    domainId, domainName, domainUrl, domainNote, sourceName) {
 
-    $scope.sourceName = sourceName;
+    $scope.detailDomainId = domainId;
+    $scope.detailDomainName = domainName;
+    $scope.detailDomainUrl = domainUrl;
+    $scope.detailDomainNote = domainNote;
+    $scope.detailDomainSource = sourceName;
+    $scope.detailDomainSourceOpt = ["中文维基百科", "英文维基百科", "百度百科", "知乎", "Quora", "StackOverflow", "CSDN"];
 
     //在这里处理要进行的操作
     $scope.ok = function() {
         $http({
-            // http://localhost:8080/domain/insertDomain?domainId=11&domainName=aaa&domainUrl=aa&note=aa&sourceId=3
             url : 'http://' + ip + '/domain/insertDomain?domainName=' + $scope.insertDomainName + '&domainUrl='
             + $scope.insertDomainUrl + '&note=' + $scope.insertDomainNote + '&sourceId=' + sourceId,
             method : 'get',
         }).success(function(response) {
-            alert("插入成功");
-            console.log("插入领域信息成功，code为：" + response.code + "，msg为：" + response.msg);
+            alert("更新成功");
+            console.log("更新领域信息成功，code为：" + response.code + "，msg为：" + response.msg);
             console.log(response.data);
         }).error(function(response){
-            alert("插入领域信息失败，code为：" + response.code + "，msg为：" + response.msg);
-            console.log("插入领域信息失败，code为：" + response.code + "，msg为：" + response.msg);
+            alert("更新领域信息失败，code为：" + response.code + "，msg为：" + response.msg);
+            console.log("更新领域信息失败，code为：" + response.code + "，msg为：" + response.msg);
         });
         $uibModalInstance.close();
     };

@@ -518,7 +518,40 @@
                                             </div>
                                             <div class="modal-body">
                                                 <!--  模态框内容，我在此处添加一个表单 -->
-
+                                                <form class="form-horizontal" role="form">
+                                                    <div class="box-body">
+                                                        <div class="form-group">
+                                                            <label class="col-sm-2 control-label">领域ID</label>
+                                                            <div class="col-sm-10">
+                                                                <input type="text" class="form-control" value="{{ detailDomainId }}">
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="col-sm-2 control-label">领域名</label>
+                                                            <div class="col-sm-10">
+                                                                <input type="text" class="form-control" value="{{ detailDomainName }}">
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="col-sm-2 control-label">领域链接</label>
+                                                            <div class="col-sm-10">
+                                                                <input type="text" class="form-control" value="{{ detailDomainUrl }}">
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="col-sm-2 control-label">领域说明</label>
+                                                            <div class="col-sm-10">
+                                                                <input type="text" class="form-control" value="{{ detailDomainNote }}">
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="col-sm-2 control-label">数据源名</label>
+                                                            <div class="col-sm-10">
+                                                                <select class="form-control" ng-model="detailDomainSource" ng-options="opt for opt in detailDomainSourceOpt"></select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </form>
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-default pull-left" data-dismiss="modal" ng-click="cancel()">关闭
@@ -528,7 +561,7 @@
                                                 </button>
                                             </div>
                                         </script>
-                                        <!--结束领域详情信息-->
+                                        <!--结束领域修改信息-->
 
                                         <button class="btn btn-danger btn-xs" ng-click="domainDelete($index)">删除</button>
 

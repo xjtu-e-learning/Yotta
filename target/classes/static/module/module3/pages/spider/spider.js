@@ -137,20 +137,32 @@ myApp.controller('domainCtrl', function($scope, $uibModal, $http) {
     };
 
     // 修改领域信息 模态框
-    $scope.openModalDomainModify = function() {
+    $scope.openModalDomainModify = function($index) {
 
         var modalInstance = $uibModal.open({
             templateUrl : 'modalDomainModify.html',//script标签中定义的id
             controller : 'modalCtrlmodalDomainModify',//modal对应的Controller
             resolve : {
-                sourceId : function() {//data作为modal的controller传入的参数
-                    return sourceId;//用于传递数据
+                domainId : function() {//data作为modal的controller传入的参数
+                    console.log($scope.domains[$index]);
+                    console.log($index);
+                    return $scope.domains[$index].domainId;//用于传递数据
+                },
+                domainName : function() {//data作为modal的controller传入的参数
+                    return $scope.domains[$index].domainName;//用于传递数据
+                },
+                domainUrl : function() {//data作为modal的controller传入的参数
+                    return $scope.domains[$index].domainUrl;//用于传递数据
+                },
+                domainNote : function() {//data作为modal的controller传入的参数
+                    return $scope.domains[$index].note;//用于传递数据
                 },
                 sourceName : function() {//data作为modal的controller传入的参数
                     return $scope.sourceName;//用于传递数据
                 }
             }
         })
+
     };
 
 });
@@ -194,14 +206,13 @@ myApp.controller('modalCtrlmodalDomainDetail', function($scope, $http, $uibModal
         url : 'http://' + ip + '/topic/getTopicByDomainId?domainId=' + domainId,
         method : 'get'
     }).success(function(response) {
-        $scope.detailTopic = "未爬取"; // 记录的总条数
-        console.log("获取领域信息成功，code为：" + response.code + "，msg为：" + response.msg);
-        console.log(response.data);
+        $scope.detailTopic = "主题已爬取，主题数为：" + response.data; // 记录的总条数
+        $scope.detailTopicSpiderDisabled = "disabled";
+        console.log("领域下的主题数据已经爬取，code为：" + response.code + "，msg为：" + response.msg);
     }).error(function(response){
-        alert("获取领域信息失败，code为：" + response.code + "，msg为：" + response.msg +
-            "，数据源ID为：" + sourceId + "，数据源名为：" + sourceName);
-        console.log("获取领域信息失败，code为：" + response.code + "，msg为：" + response.msg +
-            "，数据源ID为：" + sourceId + "，数据源名为：" + sourceName);
+        $scope.detailTopic = "主题未爬取，需要重新爬取";
+        $scope.detailTopicSpiderDisabled = "";
+        console.log("领域下的主题数据还没有爬取，code为：" + response.code + "，msg为：" + response.msg);
     });
 
 
@@ -218,16 +229,39 @@ myApp.controller('modalCtrlmodalDomainDetail', function($scope, $http, $uibModal
         $uibModalInstance.close();
     };
 
+    // 点击“关闭”按钮
     $scope.cancel = function() {
         $uibModalInstance.dismiss('cancel');
+    };
+
+    // 点击“爬取主题”后进行主题爬取
+    $scope.spiderTopicByDomainId = function() {
+        alert("开始爬取主题");
+        $http({
+            url : 'http://' + ip + '/topic/storeTopicByDomainId?domainId=' + domainId,
+            method : 'get'
+        }).success(function(response) {
+            alert("爬取主题成功");
+            console.log("领域下的主题数据爬取成功，code为：" + response.code + "，msg为：" + response.msg + "，主题信息为：" + response.data);
+        }).error(function(response){
+            alert("爬取主题失败");
+            console.log("领域下的主题数据爬取失败，code为：" + response.code + "，msg为：" + response.msg);
+        });
     }
 
 });
 
 // 领域修改 模态框对应的Controller
-myApp.controller('modalCtrlmodalDomainModify', function($scope, $http, $uibModalInstance, sourceId, sourceName) {
+myApp.controller('modalCtrlmodalDomainModify', function($scope, $http, $uibModalInstance,
+                                    domainId, domainName, domainUrl, domainNote, sourceName) {
 
-    $scope.sourceName = sourceName;
+    $scope.detailDomainId = domainId;
+    $scope.detailDomainName = domainName;
+    $scope.detailDomainUrl = domainUrl;
+    $scope.detailDomainNote = domainNote;
+    temp = domainSourceNameModify(sourceName);
+    $("#eeee").value = new String(temp);
+    console.log(temp);
 
     //在这里处理要进行的操作
     $scope.ok = function() {
