@@ -109,28 +109,28 @@ myApp.controller('domainCtrl', function($scope, $uibModal, $http) {
             templateUrl : 'modalDomainDetail.html',//script标签中定义的id
             controller : 'modalCtrlmodalDomainDetail',//modal对应的Controller
             resolve : {
-                domainId : function() {//data作为modal的controller传入的参数
+                domainId : function() { // 领域Id
                     console.log($scope.domains[$index]);
                     console.log($index);
-                    return $scope.domains[$index].domainId;//用于传递数据
+                    return $scope.domains[$index].domainId;
                 },
-                domainName : function() {//data作为modal的controller传入的参数
-                    return $scope.domains[$index].domainName;//用于传递数据
+                domainName : function() { // 领域名
+                    return $scope.domains[$index].domainName;
                 },
-                domainUrl : function() {//data作为modal的controller传入的参数
-                    return $scope.domains[$index].domainUrl;//用于传递数据
+                domainUrl : function() { // 领域链接
+                    return $scope.domains[$index].domainUrl;
                 },
-                domainNote : function() {//data作为modal的controller传入的参数
-                    return $scope.domains[$index].note;//用于传递数据
+                domainNote : function() { // 领域说明
+                    return $scope.domains[$index].note;
                 },
-                sourceId : function() {//data作为modal的controller传入的参数
-                    return sourceId;//用于传递数据
+                sourceId : function() { // 数据源Id
+                    return sourceId;
                 },
-                sourceName : function() {//data作为modal的controller传入的参数
-                    return $scope.sourceName;//用于传递数据
+                sourceName : function() { // 数据源名
+                    return $scope.sourceName;
                 },
-                sourceType : function() {//data作为modal的controller传入的参数
-                    return $scope.sourceType;//用于传递数据
+                sourceType : function() { // 数据源类型
+                    return $scope.sourceType;
                 }
             }
         })
@@ -143,22 +143,25 @@ myApp.controller('domainCtrl', function($scope, $uibModal, $http) {
             templateUrl : 'modalDomainModify.html',//script标签中定义的id
             controller : 'modalCtrlmodalDomainModify',//modal对应的Controller
             resolve : {
-                domainId : function() {//data作为modal的controller传入的参数
+                domainId : function() { // 领域Id
                     console.log($scope.domains[$index]);
                     console.log($index);
-                    return $scope.domains[$index].domainId;//用于传递数据
+                    return $scope.domains[$index].domainId;
                 },
-                domainName : function() {//data作为modal的controller传入的参数
-                    return $scope.domains[$index].domainName;//用于传递数据
+                domainName : function() { // 领域名
+                    return $scope.domains[$index].domainName;
                 },
-                domainUrl : function() {//data作为modal的controller传入的参数
-                    return $scope.domains[$index].domainUrl;//用于传递数据
+                domainUrl : function() { // 领域链接
+                    return $scope.domains[$index].domainUrl;
                 },
-                domainNote : function() {//data作为modal的controller传入的参数
-                    return $scope.domains[$index].note;//用于传递数据
+                domainNote : function() { // 领域说明
+                    return $scope.domains[$index].note;
                 },
-                sourceName : function() {//data作为modal的controller传入的参数
-                    return $scope.sourceName;//用于传递数据
+                sourceName : function() { // 数据源名
+                    return $scope.sourceName;
+                },
+                domain : function() { // 领域对象
+                    return $scope.domains[$index];
                 }
             }
         })
@@ -253,7 +256,7 @@ myApp.controller('modalCtrlmodalDomainDetail', function($scope, $http, $uibModal
 
 // 领域修改 模态框对应的Controller
 myApp.controller('modalCtrlmodalDomainModify', function($scope, $http, $uibModalInstance,
-                                    domainId, domainName, domainUrl, domainNote, sourceName) {
+                                    domainId, domainName, domainUrl, domainNote, sourceName, domain) {
 
     $scope.detailDomainId = domainId;
     $scope.detailDomainName = domainName;
@@ -264,10 +267,28 @@ myApp.controller('modalCtrlmodalDomainModify', function($scope, $http, $uibModal
 
     //在这里处理要进行的操作
     $scope.ok = function() {
+        // console.log(domainId);
+        // console.log($scope.detailDomainId);
+        // console.log($scope.detailDomainName);
+        // console.log($scope.detailDomainUrl);
+        // console.log($scope.detailDomainNote);
+        // console.log($scope.detailDomainSource);
+        // 得到更新后的数据源Id
+        var sourceId = 1;
+        for(var i = 0; i < $scope.detailDomainSourceOpt.length; i++){
+            if($scope.detailDomainSourceOpt[i] == $scope.detailDomainSource){
+                sourceId = i + 1;
+            }
+        }
+        // console.log(sourceId);
         $http({
-            url : 'http://' + ip + '/domain/insertDomain?domainName=' + $scope.insertDomainName + '&domainUrl='
-            + $scope.insertDomainUrl + '&note=' + $scope.insertDomainNote + '&sourceId=' + sourceId,
-            method : 'get',
+            url : 'http://' + ip + '/domain/updateDomain?domainId=' + domainId
+            + '&domainId=' + $scope.detailDomainId
+            + '&domainName=' + $scope.detailDomainName
+            + '&domainUrl=' + $scope.detailDomainUrl
+            + '&note=' + $scope.detailDomainNote
+            + '&sourceId=' + sourceId,
+            method : 'get'
         }).success(function(response) {
             alert("更新成功");
             console.log("更新领域信息成功，code为：" + response.code + "，msg为：" + response.msg);

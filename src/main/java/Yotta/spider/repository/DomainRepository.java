@@ -27,8 +27,8 @@ public interface DomainRepository extends JpaRepository<Domain, Long>, JpaSpecif
 
     @Modifying(clearAutomatically = true)
     @Transactional
-    @Query("update Domain d set domainName = ?2, domainUrl = ?3, note = ?4, sourceId = ?5 where d.domainId = ?1")
-    void updateByDomainId(Long domainId, String domainName, String domainUrl, String note, Long sourceId);
+    @Query("update Domain d set d.domainId = ?2, d.domainName = ?3, d.domainUrl = ?4, d.note = ?5, d.sourceId = ?6 where d.domainId = ?1")
+    void updateByDomainId(Long domainId, Long newDomainId, String domainName, String domainUrl, String note, Long sourceId);
 
 //    @Modifying(clearAutomatically = true)
 //    @Transactional

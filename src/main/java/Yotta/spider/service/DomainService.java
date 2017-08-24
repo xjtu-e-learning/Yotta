@@ -77,11 +77,12 @@ public class DomainService {
     /**
      * 根据领域Id 更新领域
      * @param domainId 领域id
+     * @param newDomain 新增加的领域信息
      * @return 更新结果
      */
     public Result updateDomain(Long domainId, Domain newDomain) {
         try {
-            domainRepository.updateByDomainId(domainId, newDomain.getDomainName(), newDomain.getDomainUrl(), newDomain.getNote(), newDomain.getSourceId());
+            domainRepository.updateByDomainId(domainId, newDomain.getDomainId(), newDomain.getDomainName(), newDomain.getDomainUrl(), newDomain.getNote(), newDomain.getSourceId());
             return ResultUtil.success(ResultEnum.SUCCESS.getCode(), ResultEnum.SUCCESS.getMsg(), "更新成功");
         } catch (Exception e) {
             logger.error("更新失败");
