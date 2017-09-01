@@ -183,6 +183,28 @@ myApp.controller('domainCtrl', function($scope, $uibModal, $http) {
                 "，领域ID为：" + $scope.domains[$index].domainId);
         });
     };
+
+
+    /**
+     * 显示该领域下的主题信息
+     **/
+    $scope.domainTopicInfo = function($index) {
+
+        $http({
+            url : 'http://' + ip + '/domain/deleteDomain?domainId=' + $scope.domains[$index].domainId,
+            method : 'get'
+        }).success(function(response) {
+            alert("删除领域信息成功，code为：" + response.code + "，msg为：" + response.msg);
+            console.log("删除领域信息成功，code为：" + response.code + "，msg为：" + response.msg);
+        }).error(function(response){
+            alert("删除领域信息失败，code为：" + response.code + "，msg为：" + response.msg +
+                "，领域ID为：" + $scope.domains[$index].domainId);
+            console.log("获取领域信息失败，code为：" + response.code + "，msg为：" + response.msg +
+                "，领域ID为：" + $scope.domains[$index].domainId);
+        });
+    };
+
+
 });
 
 

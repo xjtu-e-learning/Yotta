@@ -311,7 +311,7 @@
             <!-- 右侧内容区域 -->
             <div class="col-md-9">
 
-                <!-- 领域信息 -->
+                <!-- 领域信息开始 -->
                 <div id="domain" class="row">
                     <div class="box">
                         <div class="box-header">
@@ -586,6 +586,306 @@
                     </div>
 
                 </div>
+                <!--领域信息结束-->
+
+
+
+                <!-- 主题信息开始 -->
+                <div id="topic" class="row">
+                    <div class="box">
+                        <div class="box-header">
+                            <h3 class="box-title">主题列表</h3>
+
+                            <!--增加主题-->
+                            <!-- 按钮触发模态框 -->
+                            <button class="btn btn-danger  pull-right" data-toggle="modal" ng-click="openModalInsertTopic()">
+                                添加主题
+                            </button>
+                            <script type="text/ng-template" id="modalInsertTopic.html">
+                                <!-- 模态框（Modal） -->
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"  ng-click="cancel()">
+                                        &times;
+                                    </button>
+                                    <h4 class="modal-title">
+                                        添加主题
+                                    </h4>
+                                </div>
+                                <!--添加主题的字段信息-->
+                                <div class="modal-body">
+                                    <!--  模态框内容，我在此处添加一个表单 -->
+                                    <form class="form-horizontal" role="form">
+                                        <div class="box-body">
+                                            <div class="form-group">
+                                                <label class="col-sm-2 control-label">主题名</label>
+                                                <div class="col-sm-10">
+                                                    <input type="text" class="form-control" placeholder="主题名" ng-model="insertTopicName">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-sm-2 control-label">主题链接</label>
+                                                <div class="col-sm-10">
+                                                    <input type="text" class="form-control" placeholder="主题链接" ng-model="insertTopicUrl">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-sm-2 control-label">父主题名</label>
+                                                <div class="col-sm-10">
+                                                    <select class="form-control" ng-model="insertParentTopic" ng-options="opt for opt in insertParentTopicOpt"></select>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label class="col-sm-2 control-label">领域名</label>
+                                                <div class="col-sm-10">
+                                                    <input type="text" class="form-control" placeholder="{{sourceName}}"  disabled="">
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default pull-left" data-dismiss="modal" ng-click="cancel()">关闭
+                                    </button>
+                                    <button type="button" class="btn btn-primary" ng-click="ok()">
+                                        确定
+                                    </button>
+                                </div>
+                            </script>
+                            <!--结束增加主题-->
+                        </div>
+                        <!-- /.box-header -->
+
+
+
+
+
+                        <div class="box-body table-responsive no-padding">
+                            <table class="table table-hover">
+                                <tbody><tr>
+                                    <th>主题ID</th>
+                                    <th>主题名</th>
+                                    <th>子主题</th>
+                                    <th>领域名</th>
+                                    <th>操作</th>
+                                </tr>
+                                <!-- $index指示第几行数据，可以回传js控制 -->
+                                <tr data-ng-repeat="topic in topics track by $index">
+                                    <td scope='row' data-ng-bind="topic.topicId" id="topicId"></td>
+                                    <td><a href="{{ topic.topicUrl }}" id="topicUrl" target='_blank'>{{ topic.topicName }}</a></td>
+                                    <td data-ng-bind="childTopics"></td>
+                                    <td data-ng-bind="topicDomain"></td>
+                                    <td align="">
+
+                                        <button class="btn btn-primary btn-xs" data-toggle="modal" ng-click="openModalTopicDetail($index)">详情</button>
+                                        <!--主题详情信息-->
+                                        <script type="text/ng-template" id="modalTopicDetail.html">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true" ng-click="cancel()">
+                                                    &times;
+                                                </button>
+                                                <h4 class="modal-title">
+                                                    主题详细信息
+                                                </h4>
+                                            </div>
+                                            <div class="modal-body">
+                                                <!--  模态框内容，我在此处添加一个表单 -->
+                                                <form class="form-horizontal" role="form">
+                                                    <div class="box-body">
+                                                        <div class="form-group">
+                                                            <label class="col-sm-2 control-label">主题ID</label>
+                                                            <div class="col-sm-10">
+                                                                <label class="control-label">
+                                                                    <span class="badge bg-red">{{ detailTopicId }}</span>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="col-sm-2 control-label">主题名</label>
+                                                            <div class="col-sm-10">
+                                                                <label class="control-label">
+                                                                    <span class="badge bg-yellow">{{ detailTopicName }}</span>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="col-sm-2 control-label">主题链接</label>
+                                                            <div class="col-sm-10">
+                                                                <label class="control-label">
+                                                                    <!--<span class="badge bg-light-blue">-->
+                                                                    <a href="{{ detailTopicUrl }}" target='_blank'>{{ detailTopicUrl }}</a>
+                                                                    <!--</span>-->
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="col-sm-2 control-label">主题级数</label>
+                                                            <div class="col-sm-10">
+                                                                <label class="control-label">
+                                                                    <span class="badge bg-light-blue">{{ detailTopicLayer }}</span>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="col-sm-2 control-label">父主题</label>
+                                                            <div class="col-sm-10">
+                                                                <label class="control-label">
+                                                                    <span class="badge bg-light-blue">{{ detailParentTopics }}</span>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="col-sm-2 control-label">子主题</label>
+                                                            <div class="col-sm-10">
+                                                                <label class="control-label">
+                                                                    <span class="badge bg-light-blue">{{ detailChildTopics }}</span>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="col-sm-2 control-label">领域ID</label>
+                                                            <div class="col-sm-10">
+                                                                <label class="control-label">
+                                                                    <span class="badge bg-green">{{ detailDomainId }}</span>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="col-sm-2 control-label">领域名</label>
+                                                            <div class="col-sm-10">
+                                                                <label class="control-label">
+                                                                    <span class="badge bg-red">{{ detailDomainName }}</span>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="col-sm-2 control-label">分面及碎片信息
+                                                            </label>
+                                                            <div class="col-sm-10">
+                                                                <label class="control-label">
+                                                                    <span class="badge bg-light-blue">{{ detailFacetAndFragment }}</span>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="col-sm-2 control-label">爬取
+                                                            </label>
+                                                            <div class="col-sm-10">
+                                                                <button type="button" class="btn btn-success {{detailFacetAndFragmentSpiderDisabled}}" ng-click="spiderFacetAndFragmentByTopicId()">爬取分面及碎片</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-default pull-left" data-dismiss="modal" ng-click="cancel()">关闭
+                                                </button>
+                                                <button type="button" class="btn btn-primary" ng-click="ok()">
+                                                    确定
+                                                </button>
+                                            </div>
+                                        </script>
+                                        <!--结束主题详情信息-->
+
+                                        <button class="btn btn-primary btn-xs" data-toggle="modal" ng-click="openModalTopicModify($index)">修改</button>
+                                        <!--主题修改信息-->
+                                        <script type="text/ng-template" id="modalTopicModify.html">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true" ng-click="cancel()">
+                                                    &times;
+                                                </button>
+                                                <h4 class="modal-title">
+                                                    主题详细信息
+                                                </h4>
+                                            </div>
+                                            <div class="modal-body">
+                                                <!--  模态框内容，我在此处添加一个表单 -->
+                                                <form class="form-horizontal" role="form">
+                                                    <div class="box-body">
+                                                        <div class="form-group">
+                                                            <label class="col-sm-2 control-label">主题ID</label>
+                                                            <div class="col-sm-10">
+                                                                <input type="text" class="form-control" value="{{ detailTopicId }}" ng-model="detailTopicId" >
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="col-sm-2 control-label">主题名</label>
+                                                            <div class="col-sm-10">
+                                                                <input type="text" class="form-control" value="{{ detailTopicName }}" ng-model="detailTopicName" >
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="col-sm-2 control-label">主题链接</label>
+                                                            <div class="col-sm-10">
+                                                                <input type="text" class="form-control" value="{{ detailTopicUrl }}" ng-model="detailTopicUrl" >
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="col-sm-2 control-label">主题级数</label>
+                                                            <div class="col-sm-10">
+                                                                <input type="text" class="form-control" value="{{ detailTopicLayer }}" ng-model="detailTopicLayer" >
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="col-sm-2 control-label">父主题</label>
+                                                            <div class="col-sm-10">
+                                                                <input type="text" class="form-control" value="{{ detailParentTopics }}" ng-model="detailParentTopics" >
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="col-sm-2 control-label">子主题</label>
+                                                            <div class="col-sm-10">
+                                                                <input type="text" class="form-control" value="{{ detailChildTopics }}" ng-model="detailChildTopics" >
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="col-sm-2 control-label">领域名</label>
+                                                            <div class="col-sm-10">
+                                                                <select class="form-control" ng-model="detailTopicDomain" ng-options="opt for opt in detailTopicDomainOpt"></select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-default pull-left" data-dismiss="modal" ng-click="cancel()">关闭
+                                                </button>
+                                                <button type="button" class="btn btn-primary" ng-click="ok()">
+                                                    确定
+                                                </button>
+                                            </div>
+                                        </script>
+                                        <!--结束领域修改信息-->
+
+                                        <button class="btn btn-danger btn-xs" ng-click="topicDelete($index)">删除</button>
+
+                                        <button class="btn btn-primary btn-xs" ng-click="domainTopicInfo($index)">点我</button>
+
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- /.box-body -->
+                    </div>
+
+                    <!-- 分页  -->
+                    <div class="text-right">
+                        <ul uib-pagination  total-items="totalItems" ng-model="currentPage"
+                            items-per-page = "numPerPage" max-size="maxSize"
+                            class="pagination" first-text="首页"
+                            previous-text="上一页" next-text="下一页" last-text="末页"
+                            boundary-links="true" ng-change="pageChanged()" force-ellipses="false">
+                        </ul>
+                    </div>
+
+                </div>
+                <!--主题信息结束-->
+
+
+
+
             </div>
 
 
