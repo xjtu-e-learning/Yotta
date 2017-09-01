@@ -12,8 +12,8 @@ var sourceId = "";
  */
 myApp.controller('domainCtrl', function($scope, $uibModal, $http) {
 
-    sourceId = "2";
-    $scope.sourceName = "英文维基百科";
+    sourceId = "1";
+    $scope.sourceName = "中文维基百科";
     $scope.sourceType = "百科类";
 
     var ascOrder = true;
@@ -21,6 +21,9 @@ myApp.controller('domainCtrl', function($scope, $uibModal, $http) {
     $scope.numPerPage = 5; // 每页显示的条数
     $scope.maxSize = 100;
 
+    /**
+     * 页面加载时默认显示的数据源下的领域信息
+     */
     $http({
         url : 'http://' + ip + '/domain/getDomainBySourceIdAndPagingAndSorting?page='
                 + $scope.currentPage + '&size=' + $scope.numPerPage + '&ascOrder=' + ascOrder + '&sourceId=' + sourceId,
@@ -56,7 +59,9 @@ myApp.controller('domainCtrl', function($scope, $uibModal, $http) {
         });
     };
 
-    // 领域切换时使用
+    /**
+     *  数据源：数据源切换时使用，点击不同数据源显示其下的领域信息
+     */
     $scope.sourceChanged = function(sourceID, sourceName, sourceType) {
         var oldSourceName = $scope.sourceName;
         var oldSourceType = $scope.sourceType;
@@ -85,7 +90,9 @@ myApp.controller('domainCtrl', function($scope, $uibModal, $http) {
         });
     };
 
-    // 添加领域信息 模态框
+    /**
+     * 领域：添加领域信息 模态框
+     */
     $scope.openModalInsertDomain = function() {
 
         var modalInstance = $uibModal.open({
@@ -102,7 +109,9 @@ myApp.controller('domainCtrl', function($scope, $uibModal, $http) {
         })
     };
 
-    // 领域信息详情 模态框
+    /**
+     * 领域：领域信息详情 模态框
+     */
     $scope.openModalDomainDetail = function($index) {
 
         var modalInstance = $uibModal.open({
@@ -136,7 +145,9 @@ myApp.controller('domainCtrl', function($scope, $uibModal, $http) {
         })
     };
 
-    // 修改领域信息 模态框
+    /**
+     * 领域：修改领域信息 模态框
+     */
     $scope.openModalDomainModify = function($index) {
 
         var modalInstance = $uibModal.open({
@@ -168,7 +179,9 @@ myApp.controller('domainCtrl', function($scope, $uibModal, $http) {
 
     };
 
-    // 删除领域信息
+    /**
+     * 领域：删除领域信息
+     */
     $scope.domainDelete = function($index) {
         $http({
             url : 'http://' + ip + '/domain/deleteDomain?domainId=' + $scope.domains[$index].domainId,
@@ -183,6 +196,41 @@ myApp.controller('domainCtrl', function($scope, $uibModal, $http) {
                 "，领域ID为：" + $scope.domains[$index].domainId);
         });
     };
+
+
+    /**
+     * 领域：显示该领域下的主题信息
+     **/
+    $scope.domainTopicInfo = function($index) {
+        var domain = $scope.domains[$index];
+        var oldDomainId = domain.domainId;
+        var oldDomainName = domain.domainName;
+        $http({
+            url : 'http://' + ip + '/domain/getDomainBySourceIdAndPagingAndSorting?page=1&size='
+            + $scope.numPerPage + '&ascOrder=' + ascOrder + '&sourceId=' + sourceId,
+            method : 'get',
+        }).success(function(response) {
+            $scope.sourceName = sourceName;
+            $scope.sourceType = sourceType;
+            console.log("$scope.sourceId: " + sourceId);
+            console.log("$scope.sourceName: " + $scope.sourceName);
+            console.log("$scope.sourceType: " + $scope.sourceType);
+            $scope.totalItems = response.data.totalElements;
+            $scope.domains = response.data.content;
+            console.log("获取领域信息成功，code为：" + response.code + "，msg为：" + response.msg);
+            console.log(response.data);
+        }).error(function(response){
+            alert("获取领域信息失败，code为：" + response.code + "，msg为：" + response.msg +
+                "，数据源ID为：" + sourceId + "，数据源名为：" + sourceName);
+            console.log("获取领域信息失败，code为：" + response.code + "，msg为：" + response.msg +
+                "，数据源ID为：" + sourceId + "，数据源名为：" + sourceName);
+            $scope.sourceName = oldSourceName;
+            $scope.sourceType = oldSourceType;
+        });
+
+    };
+
+
 });
 
 

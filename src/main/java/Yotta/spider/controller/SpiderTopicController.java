@@ -21,6 +21,20 @@ public class SpiderTopicController {
     @Autowired
     private SpiderTopicService spiderTopicService;
 
+    @GetMapping(value = "/getTopicByDomainIdAndPagingAndSorting")
+    @ApiOperation(value = "根据查询条件，分页查询主题", notes = "根据查询条件，分页查询主题")
+    public ResponseEntity getTopicByDomainIdAndPagingAndSorting(
+            @RequestParam(value = "page", defaultValue = "1") Integer page,
+            @RequestParam(value = "size", defaultValue = "3") Integer size,
+            @RequestParam(value = "ascOrder", defaultValue = "true") boolean ascOrder,
+            @RequestParam(value = "domainId", defaultValue = "1") Long domainId) {
+        Result result = spiderTopicService.getTopicByDomainIdAndPagingAndSorting(page - 1, size, ascOrder, domainId);
+        if (result.getCode() != ResultEnum.SUCCESS.getCode()) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(result);
+        }
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
+
     @GetMapping(value = "/getTopicByDomainId")
     @ApiOperation(value = "根据领域Id判断主题数据是否爬取", notes = "输入领域Id，判断主题数据是否爬取")
     public ResponseEntity getTopicByDomainId(@RequestParam(value = "domainId", defaultValue = "1") Long domainId) {

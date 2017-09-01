@@ -2,6 +2,7 @@ package Yotta.spider.repository;
 
 import Yotta.spider.domain.Topic;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 
 import java.util.List;
 
@@ -10,8 +11,10 @@ import java.util.List;
  * 继承JpaRepository数据接口
  * Created by yuanhao on 2017/5/1.
  */
-public interface TopicRepository extends JpaRepository<Topic, Long>{
+public interface TopicRepository extends JpaRepository<Topic, Long>, JpaSpecificationExecutor<Topic> {
 
     List<Topic> findByDomainId(Long domainId);
+
+    List<Topic> findAll();
 
 }

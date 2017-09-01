@@ -10,8 +10,15 @@ import Yotta.utils.ResultUtil;
 import org.jsoup.nodes.Document;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Root;
 import java.net.URLEncoder;
 import java.util.*;
 
@@ -42,6 +49,59 @@ public class SpiderTopicService {
     private TopicRepository topicRepository;
     @Autowired
     private TopicRelationRepository topicRelationRepository;
+
+    /**
+     * 获取分页主题数据，按照主题ID排序 (带查询条件：根据同一领域Id下的数据)
+     * @param page 第几页的数据
+     * @param size 每页数据的大小
+     * @param ascOrder 是否升序
+     * @param domainId 领域Id (查询条件)
+     * @return 分页排序的数据
+     */
+    public Result getTopicByDomainIdAndPagingAndSorting(Integer page, Integer size, boolean ascOrder, Long domainId) {
+        // 页数是从0开始计数的
+        Sort.Direction direction = Sort.Direction.ASC;
+        if (!ascOrder) {
+            direction = Sort.Direction.DESC;
+        }
+        Pageable pageable = new PageRequest(page, size, direction, "domainId");
+        // lamada表达式的写法
+        Page<Topic> topicPage = topicRepository.findAll(
+                (Root<Topic> root, CriteriaQuery<?> query, CriteriaBuilder criteriaBuilder) -> {
+                    return criteriaBuilder.equal(root.get("domainId").as(Long.class), domainId);
+                }, pageable);
+        return topicPageJudge(topicPage);
+//        Page<Domain> domainPage = domainRepository.findAll(new Specification<Domain>(){
+//            @Override
+//            public Predicate toPredicate(Root<Domain> root, CriteriaQuery<?> query, CriteriaBuilder criteriaBuilder) {
+//                // 多个条件查询
+////                Predicate p1 = criteriaBuilder.equal(root.get("domainId").as(Long.class), domainId);
+////                Predicate p2 = criteriaBuilder.equal(root.get("domainName").as(String.class), domainName);
+////                Predicate p3 = criteriaBuilder.equal(root.get("sourceId").as(Long.class), sourceId);
+////                query.where(criteriaBuilder.and(p1,p2,p3));
+////                return query.getRestriction();
+//                return criteriaBuilder.equal(root.get("sourceId").as(Long.class), sourceId);
+//            }
+//        }, pageable);
+    }
+
+    /**
+     * 根据分页查询的结果，返回不同的状态。
+     * 1. totalElements为 0：说明没有查到数据，查询领域失败
+     * 2. number大于totalPages：说明查询的页数大于最大页数，返回失败
+     * 3. 成功返回分页数据
+     * @param domainPage 分页查询结果
+     * @return 返回查询结果
+     */
+    public Result topicPageJudge(Page<Topic> topicPage) {
+        if (topicPage.getTotalElements() == 0) { // 没有查到数据
+            return ResultUtil.error(ResultEnum.TOPICQUERY_ERROR.getCode(), ResultEnum.TOPICQUERY_ERROR.getMsg());
+        } else if (topicPage.getNumber() >= topicPage.getTotalPages()) { // 查询的页数超过最大页数
+            return ResultUtil.error(ResultEnum.PAGE_ERROR.getCode(), ResultEnum.PAGE_ERROR.getMsg());
+        }
+        // 返回查询的内容
+        return ResultUtil.success(ResultEnum.SUCCESS.getCode(), ResultEnum.SUCCESS.getMsg(), topicPage);
+    }
 
     /**
      * 根据 领域Id 判断主题数据是否爬取

@@ -1,26 +1,30 @@
 var myApp = angular.module("myApp", ['ui.bootstrap', 'ngAnimate']);
 var sourceId = "";
 
-
-
-// $(function () {
-//     $("#example1").DataTable();
-// });
-
-/**
- * 领域分页查询显示
- */
 myApp.controller('domainCtrl', function($scope, $uibModal, $http) {
 
-    sourceId = "2";
-    $scope.sourceName = "英文维基百科";
+    /*******************************************************************************
+     ********************************* 领域分页查询显示 *****************************
+     *******************************************************************************/
+    sourceId = "1";
+    $scope.sourceName = "中文维基百科";
     $scope.sourceType = "百科类";
-
+    // 领域分页设置
     var ascOrder = true;
     $scope.currentPage = 1; // 当前页
     $scope.numPerPage = 5; // 每页显示的条数
     $scope.maxSize = 100;
+    // 主题分页设置
+    var ascOrder = true;
+    $scope.topicCurrentPage = 1; // 当前页
+    $scope.topicNumPerPage = 5; // 每页显示的条数
+    $scope.topicMaxSize = 100;
+    var selectedDomainId = 1; // 保存需要查看的领域Id信息
+    var selectedDomainName = '空'; // 保存需要查看的领域名信息
 
+    /**
+     * 页面加载时默认显示的数据源下的领域信息
+     */
     $http({
         url : 'http://' + ip + '/domain/getDomainBySourceIdAndPagingAndSorting?page='
                 + $scope.currentPage + '&size=' + $scope.numPerPage + '&ascOrder=' + ascOrder + '&sourceId=' + sourceId,
@@ -56,7 +60,9 @@ myApp.controller('domainCtrl', function($scope, $uibModal, $http) {
         });
     };
 
-    // 领域切换时使用
+    /**
+     *  数据源：数据源切换时使用，点击不同数据源显示其下的领域信息
+     */
     $scope.sourceChanged = function(sourceID, sourceName, sourceType) {
         var oldSourceName = $scope.sourceName;
         var oldSourceType = $scope.sourceType;
@@ -85,7 +91,9 @@ myApp.controller('domainCtrl', function($scope, $uibModal, $http) {
         });
     };
 
-    // 添加领域信息 模态框
+    /**
+     * 领域：添加领域信息 模态框
+     */
     $scope.openModalInsertDomain = function() {
 
         var modalInstance = $uibModal.open({
@@ -102,7 +110,9 @@ myApp.controller('domainCtrl', function($scope, $uibModal, $http) {
         })
     };
 
-    // 领域信息详情 模态框
+    /**
+     * 领域：领域信息详情 模态框
+     */
     $scope.openModalDomainDetail = function($index) {
 
         var modalInstance = $uibModal.open({
@@ -136,7 +146,9 @@ myApp.controller('domainCtrl', function($scope, $uibModal, $http) {
         })
     };
 
-    // 修改领域信息 模态框
+    /**
+     * 领域：修改领域信息 模态框
+     */
     $scope.openModalDomainModify = function($index) {
 
         var modalInstance = $uibModal.open({
@@ -168,7 +180,9 @@ myApp.controller('domainCtrl', function($scope, $uibModal, $http) {
 
     };
 
-    // 删除领域信息
+    /**
+     * 领域：删除领域信息
+     */
     $scope.domainDelete = function($index) {
         $http({
             url : 'http://' + ip + '/domain/deleteDomain?domainId=' + $scope.domains[$index].domainId,
@@ -186,10 +200,155 @@ myApp.controller('domainCtrl', function($scope, $uibModal, $http) {
 
 
     /**
-     * 显示该领域下的主题信息
-     **/
+     * 领域：显示该领域下的主题信息
+     */
     $scope.domainTopicInfo = function($index) {
+        selectedDomainId = $scope.domains[$index].domainId; // 保存选中的领域信息，用于分页的时候使用
+        selectedDomainName = $scope.domains[$index].domainName; // 保存选中的领域信息，用于分页的时候使用
+        var oldDomainId = $scope.domains[$index].domainId; // 保存点击前的领域信息，用户恢复现场
+        var oldDomainName = $scope.domains[$index].domainName;
+        $http({
+            url : 'http://' + ip + '/topic/getTopicByDomainIdAndPagingAndSorting?page=1&size='
+            + $scope.topicNumPerPage + '&ascOrder=' + ascOrder + '&domainId=' + $scope.domains[$index].domainId,
+            method : 'get'
+        }).success(function(response) {
+            $scope.topicDomain = $scope.domains[$index].domainName;
+            console.log("$scope.domains[$index].domainName: " + $scope.domains[$index].domainName);
+            $scope.topicTotalItems = response.data.totalElements;
+            $scope.topics = response.data.content;
+            console.log("获取主题信息成功，code为：" + response.code + "，msg为：" + response.msg);
+            console.log(response.data);
+        }).error(function(response){
+            alert("获取主题信息失败，code为：" + response.code + "，msg为：" + response.msg +
+                "，领域ID为：" + oldDomainId + "，领域名为：" + oldDomainName);
+            console.log("获取主题信息失败，code为：" + response.code + "，msg为：" + response.msg +
+                "，领域ID为：" + oldDomainId + "，领域名为：" + oldDomainName);
+            $scope.topicDomain = oldDomainName;
+        });
 
+    };
+
+
+
+
+    /*******************************************************************************
+     ********************************* 主题 ****************************************
+     *******************************************************************************/
+    /**
+     * 主题：主题分页点击下一页等的操作
+     */
+    $scope.topicPageChanged = function() {
+        console.log("进入主题页面切换状态");
+        $http({
+            url : 'http://' + ip + '/topic/getTopicByDomainIdAndPagingAndSorting?page='
+            + $scope.topicCurrentPage + '&size=' + $scope.topicNumPerPage + '&ascOrder=' + ascOrder + '&domainId=' + selectedDomainId,
+            method : 'get'
+        }).success(function(response) {
+            $scope.topicTotalItems = response.data.totalElements;
+            $scope.topics = response.data.content;
+            console.log("获取主题信息成功，code为：" + response.code + "，msg为：" + response.msg);
+            console.log(response.data);
+        }).error(function(response){
+            alert("获取主题信息失败，code为：" + response.code + "，msg为：" + response.msg +
+                "，领域ID为：" + selectedDomainId + "，领域名为：" + selectedDomainName);
+            console.log("获取主题信息失败，code为：" + response.code + "，msg为：" + response.msg +
+                "，领域ID为：" + selectedDomainId + "，领域名为：" + selectedDomainName);
+        });
+    };
+
+    /**
+     * 主题：添加主题信息 模态框
+     */
+    $scope.openModalInsertTopic = function() {
+
+        var modalInstance = $uibModal.open({
+            templateUrl : 'modalInsertDomain.html',//script标签中定义的id
+            controller : 'modalCtrlmodalInsertDomain',//modal对应的Controller
+            resolve : {
+                sourceId : function() {//data作为modal的controller传入的参数
+                    return sourceId;//用于传递数据
+                },
+                sourceName : function() {//data作为modal的controller传入的参数
+                    return $scope.sourceName;//用于传递数据
+                }
+            }
+        })
+    };
+
+    /**
+     * 主题：主题信息详情 模态框
+     */
+    $scope.openModalTopicDetail = function($index) {
+
+        var modalInstance = $uibModal.open({
+            templateUrl : 'modalDomainDetail.html',//script标签中定义的id
+            controller : 'modalCtrlmodalDomainDetail',//modal对应的Controller
+            resolve : {
+                domainId : function() { // 领域Id
+                    console.log($scope.domains[$index]);
+                    console.log($index);
+                    return $scope.domains[$index].domainId;
+                },
+                domainName : function() { // 领域名
+                    return $scope.domains[$index].domainName;
+                },
+                domainUrl : function() { // 领域链接
+                    return $scope.domains[$index].domainUrl;
+                },
+                domainNote : function() { // 领域说明
+                    return $scope.domains[$index].note;
+                },
+                sourceId : function() { // 数据源Id
+                    return sourceId;
+                },
+                sourceName : function() { // 数据源名
+                    return $scope.sourceName;
+                },
+                sourceType : function() { // 数据源类型
+                    return $scope.sourceType;
+                }
+            }
+        })
+    };
+
+    /**
+     * 主题：修改主题信息 模态框
+     */
+    $scope.openModalTopicModify = function($index) {
+
+        var modalInstance = $uibModal.open({
+            templateUrl : 'modalDomainModify.html',//script标签中定义的id
+            controller : 'modalCtrlmodalDomainModify',//modal对应的Controller
+            resolve : {
+                domainId : function() { // 领域Id
+                    console.log($scope.domains[$index]);
+                    console.log($index);
+                    return $scope.domains[$index].domainId;
+                },
+                domainName : function() { // 领域名
+                    return $scope.domains[$index].domainName;
+                },
+                domainUrl : function() { // 领域链接
+                    return $scope.domains[$index].domainUrl;
+                },
+                domainNote : function() { // 领域说明
+                    return $scope.domains[$index].note;
+                },
+                sourceName : function() { // 数据源名
+                    return $scope.sourceName;
+                },
+                domain : function() { // 领域对象
+                    return $scope.domains[$index];
+                }
+            }
+        })
+
+    };
+
+    /**
+     * 主题：删除主题信息
+     */
+    $scope.topicDelete = function($index) {
         $http({
             url : 'http://' + ip + '/domain/deleteDomain?domainId=' + $scope.domains[$index].domainId,
             method : 'get'
@@ -205,9 +364,74 @@ myApp.controller('domainCtrl', function($scope, $uibModal, $http) {
     };
 
 
+    /**
+     * 主题：显示该主题下的主题上下位关系信息
+     */
+    $scope.topicRelationInfo = function($index) {
+        selectedDomainId = $scope.domains[$index].domainId; // 保存选中的领域信息，用于分页的时候使用
+        selectedDomainName = $scope.domains[$index].domainName; // 保存选中的领域信息，用于分页的时候使用
+        var oldDomainId = $scope.domains[$index].domainId; // 保存点击前的领域信息，用户恢复现场
+        var oldDomainName = $scope.domains[$index].domainName;
+        $http({
+            url : 'http://' + ip + '/topic/getTopicByDomainIdAndPagingAndSorting?page=1&size='
+            + $scope.topicNumPerPage + '&ascOrder=' + ascOrder + '&domainId=' + $scope.domains[$index].domainId,
+            method : 'get'
+        }).success(function(response) {
+            $scope.topicDomain = $scope.domains[$index].domainName;
+            console.log("$scope.domains[$index].domainName: " + $scope.domains[$index].domainName);
+            $scope.topicTotalItems = response.data.totalElements;
+            $scope.topics = response.data.content;
+            console.log("获取主题信息成功，code为：" + response.code + "，msg为：" + response.msg);
+            console.log(response.data);
+        }).error(function(response){
+            alert("获取主题信息失败，code为：" + response.code + "，msg为：" + response.msg +
+                "，领域ID为：" + oldDomainId + "，领域名为：" + oldDomainName);
+            console.log("获取主题信息失败，code为：" + response.code + "，msg为：" + response.msg +
+                "，领域ID为：" + oldDomainId + "，领域名为：" + oldDomainName);
+            $scope.topicDomain = oldDomainName;
+        });
+
+    };
+
+    /**
+     * 主题：显示该主题下的分面信息
+     */
+    $scope.topicFacetInfo = function($index) {
+        selectedDomainId = $scope.domains[$index].domainId; // 保存选中的领域信息，用于分页的时候使用
+        selectedDomainName = $scope.domains[$index].domainName; // 保存选中的领域信息，用于分页的时候使用
+        var oldDomainId = $scope.domains[$index].domainId; // 保存点击前的领域信息，用户恢复现场
+        var oldDomainName = $scope.domains[$index].domainName;
+        $http({
+            url : 'http://' + ip + '/topic/getTopicByDomainIdAndPagingAndSorting?page=1&size='
+            + $scope.topicNumPerPage + '&ascOrder=' + ascOrder + '&domainId=' + $scope.domains[$index].domainId,
+            method : 'get'
+        }).success(function(response) {
+            $scope.topicDomain = $scope.domains[$index].domainName;
+            console.log("$scope.domains[$index].domainName: " + $scope.domains[$index].domainName);
+            $scope.topicTotalItems = response.data.totalElements;
+            $scope.topics = response.data.content;
+            console.log("获取主题信息成功，code为：" + response.code + "，msg为：" + response.msg);
+            console.log(response.data);
+        }).error(function(response){
+            alert("获取主题信息失败，code为：" + response.code + "，msg为：" + response.msg +
+                "，领域ID为：" + oldDomainId + "，领域名为：" + oldDomainName);
+            console.log("获取主题信息失败，code为：" + response.code + "，msg为：" + response.msg +
+                "，领域ID为：" + oldDomainId + "，领域名为：" + oldDomainName);
+            $scope.topicDomain = oldDomainName;
+        });
+
+    };
+
+
 });
 
 
+
+
+
+/*******************************************************************************
+ ********************************* 领域 ****************************************
+ *******************************************************************************/
 // 领域插入 模态框对应的Controller
 myApp.controller('modalCtrlmodalInsertDomain', function($scope, $http, $uibModalInstance, sourceId, sourceName) {
 
@@ -343,5 +567,10 @@ myApp.controller('modalCtrlmodalDomainModify', function($scope, $http, $uibModal
 
 });
 
+
+
+/*******************************************************************************
+ ********************************* 主题 ****************************************
+ *******************************************************************************/
 
 
