@@ -54,15 +54,4 @@ public class SpiderTopicController {
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
 
-//    @RequestMapping(value = "/getTopicByDomainName", method = RequestMethod.GET)
-//    @ApiOperation(value = "根据领域名读取已有主题", notes = "输入领域名，读取主题信息")
-//    public ResponseEntity getTopicByDomainName(@RequestParam(value = "domainName", defaultValue = "计算机科学史") String domainName) throws Exception {
-//        // 根据领域名爬取主题信息
-//        Result result = spiderTopicService.storeByDomainName(domainName);
-//        if (result.getCode() != ResultEnum.SUCCESS.getCode()) {
-//            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(result);
-//        }
-//        return ResponseEntity.status(HttpStatus.OK).body(result);
-//    }
-
 }
