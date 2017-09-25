@@ -31,6 +31,20 @@ public class TopicRelation {
 
     private Long domainId;
 
+    @Override
+    public String toString() {
+        return "TopicRelation{" +
+                "relationId=" + relationId +
+                ", parentTopicId=" + parentTopicId +
+                ", parentTopicName='" + parentTopicName + '\'' +
+                ", parentTopicLayer=" + parentTopicLayer +
+                ", childTopicId=" + childTopicId +
+                ", childTopicName='" + childTopicName + '\'' +
+                ", childTopicLayer=" + childTopicLayer +
+                ", domainId=" + domainId +
+                '}';
+    }
+
     public TopicRelation() {
     }
 

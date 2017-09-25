@@ -1,4 +1,4 @@
-package Yotta.spider.service;
+package Yotta.spider.service.utils;
 
 import Yotta.spider.domain.AssembleImage;
 import Yotta.spider.domain.AssembleText;
@@ -11,7 +11,6 @@ import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.net.URL;
-import java.text.SimpleDateFormat;
 import java.util.*;
 
 /**

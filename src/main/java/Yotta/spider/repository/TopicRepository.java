@@ -15,6 +15,10 @@ public interface TopicRepository extends JpaRepository<Topic, Long>, JpaSpecific
 
     List<Topic> findByDomainId(Long domainId);
 
+    Topic findByDomainIdAndTopicName(Long domainId, String topicName);
+
+    Topic findByDomainIdAndTopicNameAndTopicLayer(Long domainId, String topicName, Long topicLayer);
+
     List<Topic> findAll();
 
 }

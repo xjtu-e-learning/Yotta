@@ -2,7 +2,7 @@ package Yotta.spider.controller;
 
 import Yotta.common.domain.Result;
 import Yotta.common.domain.ResultEnum;
-import Yotta.spider.service.SourceService;
+import Yotta.spider.service.source.SourceService;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

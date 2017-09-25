@@ -1,4 +1,4 @@
-package Yotta.spider.service;
+package Yotta.spider.service.utils;
 
 import Yotta.spider.domain.Topic;
 import com.spreada.utils.chinese.ZHConverter;

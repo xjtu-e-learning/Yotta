@@ -1,7 +1,7 @@
 package Yotta;
 
 import Yotta.spider.domain.Topic;
-import Yotta.spider.service.SpiderTopicService;
+import Yotta.spider.service.topic.SpiderTopicService;
 
 import java.util.ArrayList;
 import java.util.List;
