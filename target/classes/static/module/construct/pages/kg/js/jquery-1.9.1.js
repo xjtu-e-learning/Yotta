@@ -8054,7 +8054,7 @@ jQuery.extend({
 					isSuccess = !error;
 				}
 			} else {
-				// We extract error from statusText
+				// We utils error from statusText
 				// then normalize statusText and status for non-aborts
 				error = statusText;
 				if ( status || !statusText ) {

@@ -565,7 +565,7 @@
 
                                         <button class="btn btn-danger btn-xs" ng-click="domainDelete($index)">删除</button>
 
-                                        <button class="btn btn-primary btn-xs" ng-click="domainTopicInfo($index)">点我</button>
+                                        <button class="btn btn-primary btn-xs" ng-click="domainTopicInfo($index)">查看主题</button>
 
                                     </td>
                                 </tr>
@@ -629,6 +629,12 @@
                                                 </div>
                                             </div>
                                             <div class="form-group">
+                                                <label class="col-sm-2 control-label">主题层级</label>
+                                                <div class="col-sm-10">
+                                                    <input type="text" class="form-control" placeholder="主题层级" ng-model="insertTopicLayer">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
                                                 <label class="col-sm-2 control-label">父主题名</label>
                                                 <div class="col-sm-10">
                                                     <select class="form-control" ng-model="insertParentTopic" ng-options="opt for opt in insertParentTopicOpt"></select>
@@ -638,7 +644,7 @@
                                             <div class="form-group">
                                                 <label class="col-sm-2 control-label">领域名</label>
                                                 <div class="col-sm-10">
-                                                    <input type="text" class="form-control" placeholder="{{sourceName}}"  disabled="">
+                                                    <input type="text" class="form-control" placeholder="{{selectedDomainName}}"  disabled="">
                                                 </div>
                                             </div>
 
@@ -666,8 +672,7 @@
                                 <tbody><tr>
                                     <th>主题ID</th>
                                     <th>主题名</th>
-                                    <th>父主题</th>
-                                    <th>子主题</th>
+                                    <th>主题级数</th>
                                     <th>领域名</th>
                                     <th>操作</th>
                                 </tr>
@@ -675,7 +680,7 @@
                                 <tr data-ng-repeat="topic in topics track by $index">
                                     <td scope='row' data-ng-bind="topic.topicId" id="topicId"></td>
                                     <td><a href="{{ topic.topicUrl }}" id="topicUrl" target='_blank'>{{ topic.topicName }}</a></td>
-                                    <td data-ng-bind="childTopics"></td>
+                                    <td data-ng-bind="topic.topicLayer"></td>
                                     <td data-ng-bind="topicDomain"></td>
                                     <td align="">
 
@@ -861,7 +866,9 @@
 
                                         <button class="btn btn-danger btn-xs" ng-click="topicDelete($index)">删除</button>
 
-                                        <button class="btn btn-primary btn-xs" ng-click="domainTopicInfo($index)">点我</button>
+                                        <button class="btn btn-primary btn-xs" ng-click="topicRelationInfo($index)">主题关系</button>
+
+                                        <button class="btn btn-primary btn-xs" ng-click="topicFacetInfo($index)">查看分面</button>
 
                                     </td>
                                 </tr>
@@ -873,11 +880,11 @@
 
                     <!-- 分页  -->
                     <div class="text-right">
-                        <ul uib-pagination  total-items="totalItems" ng-model="currentPage"
-                            items-per-page = "numPerPage" max-size="maxSize"
+                        <ul uib-pagination  total-items="topicTotalItems" ng-model="topicCurrentPage"
+                            items-per-page = "topicNumPerPage" max-size="topicMaxSize"
                             class="pagination" first-text="首页"
                             previous-text="上一页" next-text="下一页" last-text="末页"
-                            boundary-links="true" ng-change="pageChanged()" force-ellipses="false">
+                            boundary-links="true" ng-change="topicPageChanged()" force-ellipses="false">
                         </ul>
                     </div>
 

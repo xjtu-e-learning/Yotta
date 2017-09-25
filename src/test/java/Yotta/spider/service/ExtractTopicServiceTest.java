@@ -1,7 +1,8 @@
 package Yotta.spider.service;
 
+import Yotta.spider.service.utils.DownloaderService;
+import Yotta.spider.service.utils.ExtractTopicService;
 import junit.framework.TestCase;
-import org.apache.xpath.operations.Bool;
 import org.jsoup.nodes.Document;
 import org.slf4j.LoggerFactory;
 
