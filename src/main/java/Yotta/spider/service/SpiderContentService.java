@@ -3,6 +3,8 @@ package Yotta.spider.service;
 import Yotta.common.Config;
 import Yotta.spider.domain.*;
 import Yotta.spider.repository.*;
+import Yotta.spider.service.utils.DownloaderService;
+import Yotta.spider.service.utils.ExtractContentService;
 import Yotta.utils.TimeUtil;
 import com.spreada.utils.chinese.ZHConverter;
 import org.jsoup.nodes.Document;

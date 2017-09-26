@@ -3884,7 +3884,7 @@ function annotate(fn, strictDi, name) {
  *
  * # Argument names
  *
- * The simplest form is to extract the dependencies from the arguments of the function. This is done
+ * The simplest form is to utils the dependencies from the arguments of the function. This is done
  * by converting the function into a string using `toString()` method and extracting the argument
  * names.
  * ```js
@@ -25755,7 +25755,7 @@ var ngModelOptionsDirective = function() {
       // Allow adding/overriding bound events
       if (isDefined(this.$options.updateOn)) {
         this.$options.updateOnDefault = false;
-        // extract "default" pseudo-event from list of events that can trigger a model update
+        // utils "default" pseudo-event from list of events that can trigger a model update
         this.$options.updateOn = trim(this.$options.updateOn.replace(DEFAULT_REGEXP, function() {
           that.$options.updateOnDefault = true;
           return ' ';
@@ -26207,7 +26207,7 @@ var ngOptionsDirective = ['$compile', '$parse', function($compile, $parse) {
       if (!keyName && isArrayLike(optionValues)) {
         optionValuesKeys = optionValues;
       } else {
-        // if object, extract keys, in enumeration order, unsorted
+        // if object, utils keys, in enumeration order, unsorted
         optionValuesKeys = [];
         for (var itemKey in optionValues) {
           if (optionValues.hasOwnProperty(itemKey) && itemKey.charAt(0) !== '$') {
@@ -27300,7 +27300,7 @@ var ngRepeatDirective = ['$parse', '$animate', function($parse, $animate) {
             trackByIdFn = trackByIdExpFn || trackByIdArrayFn;
           } else {
             trackByIdFn = trackByIdExpFn || trackByIdObjFn;
-            // if object, extract keys, in enumeration order, unsorted
+            // if object, utils keys, in enumeration order, unsorted
             collectionKeys = [];
             for (var itemKey in collection) {
               if (hasOwnProperty.call(collection, itemKey) && itemKey.charAt(0) !== '$') {

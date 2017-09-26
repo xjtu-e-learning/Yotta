@@ -20,6 +20,12 @@ public enum ResultEnum {
     DOMAININSERTNOTNULL_ERROR(110, "插入领域名不能为空"),
     DOMAINTOPICNOTSPIDER_ERROR(111, "领域ID对应的主题信息没有爬取"),
 
+    TOPICQUERY_ERROR(112, "主题查询失败，该领域的主题数据没有爬取"),
+    TOPICINSERTDUPLICATE_ERROR(113, "插入重复主题"),
+    TOPICINSERTNOTNULL_ERROR(114, "插入主题名不能为空"),
+    TOPICINSERT_ERROR(115, "主题插入失败"),
+    TOPICRELATIONINSERT_ERROR(116, "主题关系插入失败"),
+
     ;
 
     private Integer code;
