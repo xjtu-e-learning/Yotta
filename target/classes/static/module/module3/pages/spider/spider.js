@@ -257,7 +257,7 @@ myApp.controller('domainCtrl', function($scope, $uibModal, $http) {
     };
 
     /**
-     * 主题：添加主题信息 模态框
+     * 主题：添加主题信息 模态框（添加领域下的一级主题）
      */
     $scope.openModalInsertTopic = function() {
 
@@ -270,6 +270,28 @@ myApp.controller('domainCtrl', function($scope, $uibModal, $http) {
                 },
                 selectedDomainName : function() {//data作为modal的controller传入的参数
                     return selectedDomainName;//用于传递数据
+                }
+            }
+        })
+    };
+
+    /**
+     * 主题：添加子主题信息 模态框（添加主题下的子主题）
+     */
+    $scope.openModalInsertChildTopic = function($index) {
+
+        var modalInstance = $uibModal.open({
+            templateUrl : 'modalInsertChildTopic.html',//script标签中定义的id
+            controller : 'modalCtrlmodalInsertChildTopic',//modal对应的Controller
+            resolve : {
+                selectedDomainId : function () {
+                    return selectedDomainId;
+                },
+                selectedDomainName : function() {
+                    return selectedDomainName;
+                },
+                selectedTopicName : function() {
+                    return $scope.topics[$index].topicName;
                 }
             }
         })
@@ -448,7 +470,7 @@ myApp.controller('modalCtrlmodalInsertDomain', function($scope, $http, $uibModal
             + '&sourceId=' + sourceId,
             method : 'get'
         }).success(function(response) {
-            alert("插入成功");
+            // alert("插入成功");
             console.log("插入领域信息成功，code为：" + response.code + "，msg为：" + response.msg);
             console.log(response.data);
         }).error(function(response){
@@ -473,7 +495,7 @@ myApp.controller('modalCtrlmodalDomainDetail', function($scope, $http, $uibModal
         url : 'http://' + ip + '/topic/judgeTopicByDomainId?domainId=' + domainId,
         method : 'get'
     }).success(function(response) {
-        $scope.detailTopic = "主题已爬取，主题数为：" + response.data; // 记录的总条数
+        $scope.detailTopic = response.data; // 记录的总条数
         $scope.detailTopicSpiderDisabled = "disabled";
         console.log("领域下的主题数据已经爬取，code为：" + response.code + "，msg为：" + response.msg);
     }).error(function(response){
@@ -575,31 +597,67 @@ myApp.controller('modalCtrlmodalDomainModify', function($scope, $http, $uibModal
 /*******************************************************************************
  ********************************* 主题 ****************************************
  *******************************************************************************/
-// 主题插入 模态框对应的Controller
+// 主题及主题关系插入 模态框对应的Controller
 myApp.controller('modalCtrlmodalInsertTopic', function($scope, $http, $uibModalInstance, selectedDomainId, selectedDomainName) {
 
     $scope.selectedDomainName = selectedDomainName;
-    $scope.insertParentTopic = selectedDomainName;
-    $http({
-        url : 'http://' + ip + '/topic/getTopicByDomainId?domainId=' + domainId,
-        method : 'get'
-    }).success(function(response) {
-        var topics = response.data.content; // 记录的总条数
-        var insertParentTopicOpts = new Array(topics.length);
-        for (var i = 0; i < topics.length; i++) {
-            insertParentTopicOpts[i] = topics[i];
-        }
-        $scope.insertParentTopicOpt = insertParentTopicOpts;
-    });
+    // 设置插入主题的父主题：获取目前所有主题，供其选择（删除该部分逻辑，这里添加的主题都是领域的子主题）
+    // $scope.insertParentTopic = selectedDomainName;
+    // $http({
+    //     // http://localhost:8080/topic/getTopicByDomainId?domainId=28
+    //     url : 'http://' + ip + '/topic/getTopicByDomainId?domainId=' + selectedDomainId,
+    //     method : 'get'
+    // }).success(function(response) {
+    //     var topics = response.data; // 记录的总条数
+    //     var insertParentTopicOpts = new Array(topics.length + 1);
+    //     insertParentTopicOpts[0] = selectedDomainName;
+    //     for (var i = 0; i < topics.length; i++) {
+    //         insertParentTopicOpts[i + 1] = topics[i].topicName;
+    //     }
+    //     $scope.insertParentTopicOpt = insertParentTopicOpts;
+    // });
 
     //在这里处理要进行的操作
     $scope.ok = function() {
+        // 插入主题及主题关系
         $http({
-            url : 'http://' + ip + '/topic/insertTopic?topicName='
+            url : 'http://' + ip + '/topic/insertTopicUnderDomain?topicName='
             + ($scope.insertTopicName == null ? '' : $scope.insertTopicName)
             + '&topicUrl=' + ($scope.insertTopicUrl == null ? '' : $scope.insertTopicUrl)
-            + '&topicLayer=' + ($scope.insertTopicLayer == null ? '1' : $scope.insertTopicLayer)
             + '&domainId=' + selectedDomainId,
+            method : 'get'
+        }).success(function(response) {
+            alert("插入成功");
+            console.log("插入主题信息成功，code为：" + response.code + "，msg为：" + response.msg);
+            console.log(response.data);
+        }).error(function(response){
+            alert("插入主题信息失败，code为：" + response.code + "，msg为：" + response.msg);
+            console.log("插入主题信息失败，code为：" + response.code + "，msg为：" + response.msg);
+        });
+        $uibModalInstance.close();
+    };
+
+    $scope.cancel = function() {
+        $uibModalInstance.dismiss('cancel');
+    }
+
+});
+
+
+// 子主题及子主题关系插入 模态框对应的Controller
+myApp.controller('modalCtrlmodalInsertChildTopic', function($scope, $http, $uibModalInstance, selectedDomainId, selectedDomainName, selectedTopicName) {
+
+    $scope.selectedDomainName = selectedDomainName;
+    $scope.selectedTopicName = selectedTopicName;
+
+    //在这里处理要进行的操作
+    $scope.ok = function() {
+        // 插入主题及主题关系
+        $http({
+            url : 'http://' + ip + '/topic/insertTopicUnderTopic?topicName='
+            + ($scope.insertChildTopicName == null ? '' : $scope.insertChildTopicName)
+            + '&topicUrl=' + ($scope.insertChildTopicUrl == null ? '' : $scope.insertChildTopicUrl)
+            + '&domainId=' + selectedDomainId + '&parentTopicName=' + selectedTopicName,
             method : 'get'
         }).success(function(response) {
             alert("插入成功");

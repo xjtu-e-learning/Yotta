@@ -22,10 +22,20 @@ public class TopicController {
     @Autowired
     private TopicService topicService;
 
-    @GetMapping(value = "/insertTopic")
-    @ApiOperation(value = "新增主题", notes = "新增主题")
-    public ResponseEntity insertDomain(Topic topic) {
-        Result result = topicService.insertTopic(topic);
+    @GetMapping(value = "/insertTopicUnderTopic")
+    @ApiOperation(value = "新增主题下面的子主题", notes = "新增主题下的子主题")
+    public ResponseEntity insertTopicUnderTopic(Topic topic, String parentTopicName) {
+        Result result = topicService.insertTopicUnderTopic(topic, parentTopicName);
+        if (result.getCode() != ResultEnum.SUCCESS.getCode()) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(result);
+        }
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
+
+    @GetMapping(value = "/insertTopicUnderDomain")
+    @ApiOperation(value = "新增领域下面的主题", notes = "新增领域下的主题")
+    public ResponseEntity insertTopicUnderDomain(Topic topic) {
+        Result result = topicService.insertTopicUnderDomain(topic);
         if (result.getCode() != ResultEnum.SUCCESS.getCode()) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(result);
         }

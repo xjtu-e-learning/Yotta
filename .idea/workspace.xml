@@ -2,52 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="63165312-f4ce-4f87-b740-4e5f1a810523" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/Yotta/spider/service/topic/TopicService.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_io_1_3_2.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Yotta/common/domain/ResultEnum.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Yotta/spider/controller/DomainController.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Yotta/spider/controller/SourceController.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Yotta/spider/controller/SpiderTopicController.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Yotta/spider/repository/TopicRelationRepository.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Yotta/spider/service/DomainService.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Yotta/spider/service/DownloaderService.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Yotta/spider/service/ExtractContentService.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Yotta/spider/service/ExtractTopicService.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Yotta/spider/service/SourceService.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Yotta/spider/service/SpiderContentService.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Yotta/spider/service/SpiderTopicService.class" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/DEVELOP.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/Yotta/common/domain/ResultEnum.class" afterPath="$PROJECT_DIR$/target/classes/Yotta/common/domain/ResultEnum.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/Yotta/spider/repository/TopicRepository.class" afterPath="$PROJECT_DIR$/target/classes/Yotta/spider/repository/TopicRepository.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Yotta.iml" afterPath="$PROJECT_DIR$/Yotta.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Yotta/common/domain/ResultEnum.java" afterPath="$PROJECT_DIR$/src/main/java/Yotta/common/domain/ResultEnum.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Yotta/spider/controller/DomainController.java" afterPath="$PROJECT_DIR$/src/main/java/Yotta/spider/controller/DomainController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Yotta/spider/controller/SourceController.java" afterPath="$PROJECT_DIR$/src/main/java/Yotta/spider/controller/SourceController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Yotta/spider/domain/TopicRelation.java" afterPath="$PROJECT_DIR$/src/main/java/Yotta/spider/domain/TopicRelation.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Yotta/spider/repository/TopicRelationRepository.java" afterPath="$PROJECT_DIR$/src/main/java/Yotta/spider/repository/TopicRelationRepository.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Yotta/spider/controller/TopicController.java" afterPath="$PROJECT_DIR$/src/main/java/Yotta/spider/controller/TopicController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Yotta/spider/repository/TopicRepository.java" afterPath="$PROJECT_DIR$/src/main/java/Yotta/spider/repository/TopicRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Yotta/spider/service/SpiderContentService.java" afterPath="$PROJECT_DIR$/src/main/java/Yotta/spider/service/SpiderContentService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Yotta/spider/service/topic/TopicService.java" afterPath="$PROJECT_DIR$/src/main/java/Yotta/spider/service/topic/TopicService.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/resources/static/module/module3/pages/spider/index.html" afterPath="$PROJECT_DIR$/src/resources/static/module/module3/pages/spider/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/resources/static/module/module3/pages/spider/spider.js" afterPath="$PROJECT_DIR$/src/resources/static/module/module3/pages/spider/spider.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/resources/static/module/module3/plugins/angularjs/angular.js" afterPath="$PROJECT_DIR$/src/resources/static/module/module3/plugins/angularjs/angular.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/resources/static/module/module3/plugins/jQuery/jquery-1.7.2.js" afterPath="$PROJECT_DIR$/src/resources/static/module/module3/plugins/jQuery/jquery-1.7.2.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/Yotta/SpiderTest.java" afterPath="$PROJECT_DIR$/src/test/java/Yotta/SpiderTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/Yotta/spider/service/ExtractTopicServiceTest.java" afterPath="$PROJECT_DIR$/src/test/java/Yotta/spider/service/ExtractTopicServiceTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/static/module/construct/pages/facet/js/angularjs/angular.js" afterPath="$PROJECT_DIR$/target/classes/static/module/construct/pages/facet/js/angularjs/angular.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/static/module/construct/pages/facet/js/jQuery/jquery-1.7.2.js" afterPath="$PROJECT_DIR$/target/classes/static/module/construct/pages/facet/js/jQuery/jquery-1.7.2.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/static/module/construct/pages/kg/js/jquery-1.8.0.js" afterPath="$PROJECT_DIR$/target/classes/static/module/construct/pages/kg/js/jquery-1.8.0.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/static/module/construct/pages/kg/js/jquery-1.9.1.js" afterPath="$PROJECT_DIR$/target/classes/static/module/construct/pages/kg/js/jquery-1.9.1.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/static/module/construct/plugins/angularjs/angular.js" afterPath="$PROJECT_DIR$/target/classes/static/module/construct/plugins/angularjs/angular.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/static/module/construct/plugins/jQuery/jquery-1.7.2.js" afterPath="$PROJECT_DIR$/target/classes/static/module/construct/plugins/jQuery/jquery-1.7.2.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/static/module/module3/pages/spider/index.html" afterPath="$PROJECT_DIR$/target/classes/static/module/module3/pages/spider/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/static/module/module3/pages/spider/spider.js" afterPath="$PROJECT_DIR$/target/classes/static/module/module3/pages/spider/spider.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/static/module/module3/plugins/angularjs/angular.js" afterPath="$PROJECT_DIR$/target/classes/static/module/module3/plugins/angularjs/angular.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/static/module/module3/plugins/jQuery/jquery-1.7.2.js" afterPath="$PROJECT_DIR$/target/classes/static/module/module3/plugins/jQuery/jquery-1.7.2.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/Yotta/spider/controller/SpiderTopicController.java" afterPath="$PROJECT_DIR$/src/main/java/Yotta/spider/controller/TopicController.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/Yotta/spider/service/DomainService.java" afterPath="$PROJECT_DIR$/src/main/java/Yotta/spider/service/domain/DomainService.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/Yotta/spider/service/DownloaderService.java" afterPath="$PROJECT_DIR$/src/main/java/Yotta/spider/service/utils/DownloaderService.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/Yotta/spider/service/ExtractContentService.java" afterPath="$PROJECT_DIR$/src/main/java/Yotta/spider/service/utils/ExtractContentService.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/Yotta/spider/service/ExtractTopicService.java" afterPath="$PROJECT_DIR$/src/main/java/Yotta/spider/service/utils/ExtractTopicService.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/Yotta/spider/service/SourceService.java" afterPath="$PROJECT_DIR$/src/main/java/Yotta/spider/service/source/SourceService.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/Yotta/spider/service/SpiderTopicService.java" afterPath="$PROJECT_DIR$/src/main/java/Yotta/spider/service/topic/SpiderTopicService.java" />
     </list>
     <ignored path="Yotta.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -84,20 +50,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="DomainController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Yotta/spider/controller/DomainController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="504">
-              <caret line="50" column="44" lean-forward="true" selection-start-line="50" selection-start-column="44" selection-end-line="50" selection-end-column="44" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="DomainService.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Yotta/spider/service/domain/DomainService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
+            <state relative-caret-position="399">
               <caret line="41" column="18" lean-forward="false" selection-start-line="41" selection-start-column="18" selection-end-line="41" selection-end-column="18" />
               <folding />
             </state>
@@ -107,39 +63,27 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/resources/static/module/module3/pages/spider/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="291">
-              <caret line="639" column="157" lean-forward="false" selection-start-line="639" selection-start-column="137" selection-end-line="639" selection-end-column="157" />
+            <state relative-caret-position="278">
+              <caret line="397" column="69" lean-forward="false" selection-start-line="397" selection-start-column="62" selection-end-line="397" selection-end-column="69" />
               <folding>
                 <element signature="n#div#0;n#div#0;n#section#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#div#0;n#section#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#1;n#div#2;n#div#0;n#div#0;n#section#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#1;n#div#3;n#div#0;n#div#0;n#section#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#div#0;n#div#1;n#div#0;n#section#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#section#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#section#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#script#0;n#td#4;n#tr#1;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#1;n#div#1;n#div#0;n#section#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#script#1;n#td#4;n#tr#1;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#1;n#div#1;n#div#0;n#section#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#button#5;n#td#4;n#tr#1;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#1;n#div#1;n#div#0;n#section#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#script#2;n#td#4;n#tr#1;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#1;n#div#1;n#div#0;n#section#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#footer#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="spider.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="spider.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/resources/static/module/module3/pages/spider/spider.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="486">
-              <caret line="606" column="38" lean-forward="false" selection-start-line="606" selection-start-column="38" selection-end-line="606" selection-end-column="38" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+            <state relative-caret-position="708">
+              <caret line="498" column="63" lean-forward="true" selection-start-line="498" selection-start-column="63" selection-end-line="498" selection-end-column="63" />
               <folding />
             </state>
           </provider>
@@ -148,8 +92,8 @@
       <file leaf-file-name="TopicController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Yotta/spider/controller/TopicController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="231">
-              <caret line="48" column="44" lean-forward="false" selection-start-line="48" selection-start-column="26" selection-end-line="48" selection-end-column="44" />
+            <state relative-caret-position="392">
+              <caret line="70" column="61" lean-forward="true" selection-start-line="70" selection-start-column="61" selection-end-line="70" selection-end-column="61" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -160,8 +104,8 @@
       <file leaf-file-name="TopicService.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Yotta/spider/service/topic/TopicService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="236">
-              <caret line="123" column="5" lean-forward="true" selection-start-line="123" selection-start-column="5" selection-end-line="123" selection-end-column="5" />
+            <state relative-caret-position="351">
+              <caret line="189" column="80" lean-forward="true" selection-start-line="189" selection-start-column="80" selection-end-line="189" selection-end-column="80" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -169,11 +113,34 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="DEVELOP.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DEVELOP.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="FIRST">
+              <first_editor relative-caret-position="315">
+                <caret line="15" column="14" lean-forward="true" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="14" />
+                <folding />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SpiderTopicService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Yotta/spider/service/topic/SpiderTopicService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="309">
+              <caret line="203" column="34" lean-forward="true" selection-start-line="203" selection-start-column="34" selection-end-line="203" selection-end-column="34" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="ResultEnum.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Yotta/common/domain/ResultEnum.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="6" column="12" lean-forward="false" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
+            <state relative-caret-position="404">
+              <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -182,18 +149,8 @@
       <file leaf-file-name="TopicRepository.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Yotta/spider/repository/TopicRepository.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="231">
-              <caret line="15" column="16" lean-forward="false" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TopicRelationRepository.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Yotta/spider/repository/TopicRelationRepository.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="483">
-              <caret line="30" column="64" lean-forward="true" selection-start-line="30" selection-start-column="64" selection-end-line="30" selection-end-column="64" />
+            <state relative-caret-position="273">
+              <caret line="17" column="74" lean-forward="false" selection-start-line="17" selection-start-column="64" selection-end-line="17" selection-end-column="74" />
               <folding />
             </state>
           </provider>
@@ -213,36 +170,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>modalCtrl</find>
-      <find>domainId</find>
-      <find>openModalDomainDetail</find>
-      <find>modalDomainDetail</find>
-      <find>modalDomainModify</find>
-      <find>modalCtrlmodalDomainDetail</find>
-      <find>modalCtrlmodalDomainModify</find>
-      <find>更新领域信息失败</find>
-      <find>openModalDomainModify</find>
       <find>detailChildTopic</find>
       <find>detailTopicSpiderDisabled</find>
-      <find>sourceChanged</find>
       <find>openModal</find>
       <find>点我</find>
       <find>topicCurrentPage</find>
-      <find>openModalInsertTopic</find>
       <find>modalInsertTopic</find>
       <find>sourceName</find>
       <find>sourceId</find>
       <find>selectedDomainId</find>
       <find>domainName</find>
-      <find>modalCtrlmodalInsertTopic</find>
       <find>selectedDomainName</find>
-      <find>modalCtrlmodalInsertDomain</find>
       <find>modalCtrlmodalInsert</find>
       <find>modalInsertDomain</find>
       <find>sourceNameopenModalTopicModify</find>
       <find>openModalTopicModify</find>
       <find>detailDomainSourceOpt</find>
       <find>getTopicByDomainId</find>
+      <find>modalCtrlmodalInsertTopic</find>
+      <find>openModalInsertTopic</find>
+      <find>topicDomain</find>
+      <find>openModalInsertChildTopic</find>
+      <find>modalCtrlmodalDomainDetail</find>
+      <find>domainNote</find>
+      <find>judgeTopicByDomainId</find>
+      <find>modalDomainDetail</find>
+      <find>sourceChanged</find>
+      <find>ascOrder</find>
+      <find>openModalInsertDomain</find>
+      <find>modalCtrlmodalInsertDomain</find>
+      <find>domains</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -264,8 +221,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/Yotta/spider/wikicn/DownloaderService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Yotta/spider/wikicn/ExtractTopicService.java" />
         <option value="$PROJECT_DIR$/src/main/java/Yotta/common/Config.java" />
         <option value="$PROJECT_DIR$/src/resources/application.properties" />
         <option value="$PROJECT_DIR$/src/main/java/Yotta/common/domain/Error.java" />
@@ -308,12 +263,14 @@
         <option value="$PROJECT_DIR$/src/main/java/Yotta/spider/domain/TopicRelation.java" />
         <option value="$PROJECT_DIR$/src/main/java/Yotta/spider/repository/TopicRelationRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/Yotta/spider/service/topic/SpiderTopicService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Yotta/spider/repository/TopicRepository.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Yotta/common/domain/ResultEnum.java" />
         <option value="$PROJECT_DIR$/src/main/java/Yotta/spider/service/domain/DomainService.java" />
-        <option value="$PROJECT_DIR$/src/resources/static/module/module3/pages/spider/index.html" />
-        <option value="$PROJECT_DIR$/src/main/java/Yotta/spider/service/topic/TopicService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Yotta/common/domain/ResultEnum.java" />
         <option value="$PROJECT_DIR$/src/main/java/Yotta/spider/controller/TopicController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Yotta/spider/repository/TopicRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Yotta/spider/service/topic/TopicService.java" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/DEVELOP.md" />
+        <option value="$PROJECT_DIR$/src/resources/static/module/module3/pages/spider/index.html" />
         <option value="$PROJECT_DIR$/src/resources/static/module/module3/pages/spider/spider.js" />
       </list>
     </option>
@@ -361,8 +318,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -795,23 +752,9 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Yotta" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Yotta" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value=".idea" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -831,21 +774,21 @@
     <key name="CreateTestDialog.RecentsKey">
       <recent name="Yotta.spider.service" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\workspace\java\Yotta\src\resources\static\module\module3\pages\test" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="Yotta" />
-    </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="junit.framework.TestCase" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\workspace\IdeaProjects\Yotta" />
       <recent name="C:\workspace\java\Yotta\src\resources\static\module\module3\pages\spider" />
       <recent name="C:\workspace\java\Yotta\src\resources\static\module\module3" />
       <recent name="D:\workspace\IdeaProjects\Yotta\src\resources\phantomjs" />
       <recent name="D:\workspace\IdeaProjects\Yotta\src\resources" />
-      <recent name="D:\workspace\IdeaProjects\Yotta\src\main\java\Yotta" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="Yotta" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\workspace\java\Yotta\src\resources\static\module\module3\pages\test" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -1448,7 +1391,8 @@
       <workItem from="1505721791047" duration="34000" />
       <workItem from="1505915421210" duration="1209000" />
       <workItem from="1506168452544" duration="615000" />
-      <workItem from="1506326335419" duration="18060000" />
+      <workItem from="1506326335419" duration="18832000" />
+      <workItem from="1506393694714" duration="14112000" />
     </task>
     <servers />
   </component>
@@ -1485,7 +1429,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="288146000" />
+    <option name="totallyTimeSpent" value="303030000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1498,6 +1442,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1507,7 +1452,7 @@
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.13859275" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17537314" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.49303135" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1520,17 +1465,17 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38503253" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3275488" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21481876" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21695095" sideWeight="0.49566162" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991362" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3275488" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21695095" sideWeight="0.5043384" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5069686" order="9" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3275488" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1618,20 +1563,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/resources/static/module/module3/dist/js/shileiUtils.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="9" column="19" lean-forward="true" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/resources/static/module/module3/pages/spider/spiderold1.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/resources/static/module/module3/plugins/datatables/jquery.dataTables.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="269">
@@ -1738,7 +1669,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
           <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1746,7 +1676,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
           <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1762,7 +1691,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1770,7 +1698,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
           <caret line="18" column="23" lean-forward="false" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1794,7 +1721,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="231">
           <caret line="22" column="13" lean-forward="false" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1818,7 +1744,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="21">
           <caret line="35" column="13" lean-forward="false" selection-start-line="35" selection-start-column="13" selection-end-line="35" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1826,7 +1751,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="455">
           <caret line="79" column="19" lean-forward="false" selection-start-line="79" selection-start-column="19" selection-end-line="79" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1850,7 +1774,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="1623" column="0" lean-forward="false" selection-start-line="1623" selection-start-column="0" selection-end-line="1623" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1858,7 +1781,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="228" column="30" lean-forward="false" selection-start-line="228" selection-start-column="30" selection-end-line="228" selection-end-column="30" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1881,58 +1803,117 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Yotta/spider/domain/TopicRelation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="212">
-          <caret line="27" column="34" lean-forward="true" selection-start-line="27" selection-start-column="34" selection-end-line="27" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Yotta/spider/service/topic/SpiderTopicService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="506">
-          <caret line="209" column="31" lean-forward="true" selection-start-line="209" selection-start-column="31" selection-end-line="209" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Yotta/spider/repository/TopicRelationRepository.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="483">
-          <caret line="30" column="64" lean-forward="true" selection-start-line="30" selection-start-column="64" selection-end-line="30" selection-end-column="64" />
+          <caret line="30" column="64" lean-forward="false" selection-start-line="30" selection-start-column="64" selection-end-line="30" selection-end-column="64" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Yotta/spider/controller/DomainController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="819">
+          <caret line="50" column="44" lean-forward="false" selection-start-line="50" selection-start-column="44" selection-end-line="50" selection-end-column="44" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="34" lean-forward="true" selection-start-line="0" selection-start-column="34" selection-end-line="0" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Yotta/spider/domain/TopicRelation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="47" column="11" lean-forward="false" selection-start-line="47" selection-start-column="11" selection-end-line="47" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Yotta/spider/service/domain/DomainService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="41" column="18" lean-forward="false" selection-start-line="41" selection-start-column="18" selection-end-line="41" selection-end-column="18" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Yotta/spider/repository/DomainRepository.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="21" column="11" lean-forward="false" selection-start-line="21" selection-start-column="11" selection-end-line="21" selection-end-column="11" />
+        <state relative-caret-position="252">
+          <caret line="19" column="11" lean-forward="false" selection-start-line="19" selection-start-column="11" selection-end-line="19" selection-end-column="11" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Yotta/common/domain/ResultEnum.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/Yotta/spider/service/topic/SpiderTopicService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="6" column="12" lean-forward="false" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
+        <state relative-caret-position="309">
+          <caret line="203" column="34" lean-forward="true" selection-start-line="203" selection-start-column="34" selection-end-line="203" selection-end-column="34" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Yotta/spider/repository/TopicRepository.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="15" column="16" lean-forward="false" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
+        <state relative-caret-position="273">
+          <caret line="17" column="74" lean-forward="false" selection-start-line="17" selection-start-column="64" selection-end-line="17" selection-end-column="74" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Yotta/common/domain/ResultEnum.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="404">
+          <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Yotta/spider/service/topic/TopicService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="236">
-          <caret line="123" column="5" lean-forward="true" selection-start-line="123" selection-start-column="5" selection-end-line="123" selection-end-column="5" />
+        <state relative-caret-position="351">
+          <caret line="189" column="80" lean-forward="true" selection-start-line="189" selection-start-column="80" selection-end-line="189" selection-end-column="80" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="42">
+            <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DEVELOP.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="315">
+            <caret line="15" column="14" lean-forward="true" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="14" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Yotta/spider/controller/TopicController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="392">
+          <caret line="70" column="61" lean-forward="true" selection-start-line="70" selection-start-column="61" selection-end-line="70" selection-end-column="61" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1941,61 +1922,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/resources/static/module/module3/pages/spider/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="291">
-          <caret line="639" column="157" lean-forward="false" selection-start-line="639" selection-start-column="137" selection-end-line="639" selection-end-column="157" />
+        <state relative-caret-position="278">
+          <caret line="397" column="69" lean-forward="false" selection-start-line="397" selection-start-column="62" selection-end-line="397" selection-end-column="69" />
           <folding>
             <element signature="n#div#0;n#div#0;n#section#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#div#0;n#section#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#div#2;n#div#0;n#div#0;n#section#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#div#3;n#div#0;n#div#0;n#section#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#div#0;n#div#1;n#div#0;n#section#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#section#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#section#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#script#0;n#td#4;n#tr#1;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#1;n#div#1;n#div#0;n#section#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#script#1;n#td#4;n#tr#1;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#1;n#div#1;n#div#0;n#section#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#button#5;n#td#4;n#tr#1;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#1;n#div#1;n#div#0;n#section#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#script#2;n#td#4;n#tr#1;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#1;n#div#1;n#div#0;n#section#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#footer#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Yotta/spider/service/domain/DomainService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="41" column="18" lean-forward="false" selection-start-line="41" selection-start-column="18" selection-end-line="41" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Yotta/spider/controller/DomainController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="50" column="44" lean-forward="true" selection-start-line="50" selection-start-column="44" selection-end-line="50" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Yotta/spider/controller/TopicController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="48" column="44" lean-forward="false" selection-start-line="48" selection-start-column="26" selection-end-line="48" selection-end-column="44" />
-          <folding>
-            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/resources/static/module/module3/pages/spider/spider.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="606" column="38" lean-forward="false" selection-start-line="606" selection-start-column="38" selection-end-line="606" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+        <state relative-caret-position="708">
+          <caret line="498" column="63" lean-forward="true" selection-start-line="498" selection-start-column="63" selection-end-line="498" selection-end-column="63" />
           <folding />
         </state>
       </provider>
