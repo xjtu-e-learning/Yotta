@@ -628,19 +628,12 @@
                                                     <input type="text" class="form-control" placeholder="主题链接" ng-model="insertTopicUrl">
                                                 </div>
                                             </div>
-                                            <div class="form-group">
-                                                <label class="col-sm-2 control-label">主题层级</label>
-                                                <div class="col-sm-10">
-                                                    <input type="text" class="form-control" placeholder="主题层级" ng-model="insertTopicLayer">
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="col-sm-2 control-label">父主题名</label>
-                                                <div class="col-sm-10">
-                                                    <select class="form-control" ng-model="insertParentTopic" ng-options="opt for opt in insertParentTopicOpt"></select>
-                                                </div>
-                                            </div>
-
+                                            <!--<div class="form-group">-->
+                                                <!--<label class="col-sm-2 control-label">父主题名</label>-->
+                                                <!--<div class="col-sm-10">-->
+                                                    <!--<select class="form-control" ng-model="insertParentTopic" ng-options="opt for opt in insertParentTopicOpt"></select>-->
+                                                <!--</div>-->
+                                            <!--</div>-->
                                             <div class="form-group">
                                                 <label class="col-sm-2 control-label">领域名</label>
                                                 <div class="col-sm-10">
@@ -684,8 +677,8 @@
                                     <td data-ng-bind="topicDomain"></td>
                                     <td align="">
 
-                                        <button class="btn btn-primary btn-xs" data-toggle="modal" ng-click="openModalTopicDetail($index)">详情</button>
                                         <!--主题详情信息-->
+                                        <button class="btn btn-primary btn-xs" data-toggle="modal" ng-click="openModalTopicDetail($index)">详情</button>
                                         <script type="text/ng-template" id="modalTopicDetail.html">
                                             <div class="modal-header">
                                                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true" ng-click="cancel()">
@@ -794,8 +787,8 @@
                                         </script>
                                         <!--结束主题详情信息-->
 
-                                        <button class="btn btn-primary btn-xs" data-toggle="modal" ng-click="openModalTopicModify($index)">修改</button>
                                         <!--主题修改信息-->
+                                        <button class="btn btn-primary btn-xs" data-toggle="modal" ng-click="openModalTopicModify($index)">修改</button>
                                         <script type="text/ng-template" id="modalTopicModify.html">
                                             <div class="modal-header">
                                                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true" ng-click="cancel()">
@@ -869,6 +862,65 @@
                                         <button class="btn btn-primary btn-xs" ng-click="topicRelationInfo($index)">主题关系</button>
 
                                         <button class="btn btn-primary btn-xs" ng-click="topicFacetInfo($index)">查看分面</button>
+
+                                        <!--增加子主题-->
+                                        <!-- 按钮触发模态框 -->
+                                        <button class="btn btn-primary btn-xs" data-toggle="modal" ng-click="openModalInsertChildTopic($index)">
+                                            添加子主题
+                                        </button>
+                                        <script type="text/ng-template" id="modalInsertChildTopic.html">
+                                            <!-- 模态框（Modal） -->
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"  ng-click="cancel()">
+                                                    &times;
+                                                </button>
+                                                <h4 class="modal-title">
+                                                    添加子主题
+                                                </h4>
+                                            </div>
+                                            <!--添加子主题的字段信息-->
+                                            <div class="modal-body">
+                                                <!--  模态框内容，我在此处添加一个表单 -->
+                                                <form class="form-horizontal" role="form">
+                                                    <div class="box-body">
+                                                        <div class="form-group">
+                                                            <label class="col-sm-2 control-label">子主题名</label>
+                                                            <div class="col-sm-10">
+                                                                <input type="text" class="form-control" placeholder="子主题名" ng-model="insertChildTopicName">
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="col-sm-2 control-label">子主题链接</label>
+                                                            <div class="col-sm-10">
+                                                                <input type="text" class="form-control" placeholder="子主题链接" ng-model="insertChildTopicUrl">
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="col-sm-2 control-label">父主题名</label>
+                                                            <div class="col-sm-10">
+                                                                <input type="text" class="form-control" placeholder="{{ selectedTopicName }}"  disabled="">
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <label class="col-sm-2 control-label">领域名</label>
+                                                            <div class="col-sm-10">
+                                                                <input type="text" class="form-control" placeholder="{{ selectedDomainName }}"  disabled="">
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </form>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-default pull-left" data-dismiss="modal" ng-click="cancel()">关闭
+                                                </button>
+                                                <button type="button" class="btn btn-primary" ng-click="ok()">
+                                                    确定
+                                                </button>
+                                            </div>
+                                        </script>
+                                        <!--结束增加子主题-->
 
                                     </td>
                                 </tr>

@@ -5,6 +5,7 @@ import Yotta.common.domain.ResultEnum;
 import Yotta.spider.domain.Domain;
 import Yotta.spider.domain.Topic;
 import Yotta.spider.domain.TopicComplex;
+import Yotta.spider.domain.TopicRelation;
 import Yotta.spider.repository.DomainRepository;
 import Yotta.spider.repository.TopicRelationRepository;
 import Yotta.spider.repository.TopicRepository;
@@ -51,22 +52,77 @@ public class TopicService {
 
 
     /**
-     * 插入主题
-     * @param topic 插入主题
+     * 插入主题下的子主题及子主题关系
+     * @param topic 插入子主题
+     * @param parentTopicName 父主题名
      * @return 插入结果
      */
-    public Result insertTopic(Topic topic) {
+    public Result insertTopicUnderTopic(Topic topic, String parentTopicName) {
         // 插入主题名不能为空
         if (topic.getTopicName() == null || "".equals(topic.getTopicName()) || topic.getTopicName().length() == 0) {
             return ResultUtil.error(ResultEnum.TOPICINSERTNOTNULL_ERROR.getCode(), ResultEnum.TOPICINSERTNOTNULL_ERROR.getMsg());
         }
-        // 插入主题不存在
+        // 插入主题不存在，可以插入
         if (topicRepository.findByDomainIdAndTopicName(topic.getDomainId(), topic.getTopicName()) == null) {
+            // 设置主题关系
+            TopicRelation topicRelation = new TopicRelation();
+            topicRelation.setDomainId(topic.getDomainId());
+            topicRelation.setChildTopicName(topic.getTopicName());
+            topicRelation.setParentTopicName(parentTopicName);
+            Topic parentTopic = topicRepository.findByDomainIdAndTopicName(topic.getDomainId(), parentTopicName);
+            Long parentTopicLayer = parentTopic.getTopicLayer();
+            topicRelation.setParentTopicLayer(parentTopicLayer);
+            topicRelation.setChildTopicLayer(parentTopicLayer + 1); // 子主题的layer是父主题的layer加1
+            // 插入主题
+            topic.setTopicLayer(parentTopicLayer + 1);
             Topic topic1 = topicRepository.save(topic);
-            if (topic1 != null) {
+            // 插入主题关系
+            topicRelation.setChildTopicId(topic.getTopicId());
+            topicRelation.setParentTopicId(parentTopic.getTopicId());
+            TopicRelation topicRelation1 = topicRelationRepository.save(topicRelation);
+
+            if (topic1 != null && topicRelation1 != null) {
                 return ResultUtil.success(ResultEnum.SUCCESS.getCode(), ResultEnum.SUCCESS.getMsg(), topic1);
-            } else {
+            } else if (topic1 == null) { // 主题插入失败
                 return ResultUtil.error(ResultEnum.TOPICINSERT_ERROR.getCode(), ResultEnum.TOPICINSERT_ERROR.getMsg());
+            } else { // 主题关系插入失败
+                return ResultUtil.error(ResultEnum.TOPICRELATIONINSERT_ERROR.getCode(), ResultEnum.TOPICRELATIONINSERT_ERROR.getMsg());
+            }
+        }
+        // 插入主题已存在
+        return ResultUtil.error(ResultEnum.TOPICINSERTDUPLICATE_ERROR.getCode(), ResultEnum.TOPICINSERTDUPLICATE_ERROR.getMsg());
+    }
+
+    /**
+     * 插入领域下的主题及主题关系
+     * @param topic 插入主题及主题关系
+     * @return 插入结果
+     */
+    public Result insertTopicUnderDomain(Topic topic) {
+        // 插入主题名不能为空
+        if (topic.getTopicName() == null || "".equals(topic.getTopicName()) || topic.getTopicName().length() == 0) {
+            return ResultUtil.error(ResultEnum.TOPICINSERTNOTNULL_ERROR.getCode(), ResultEnum.TOPICINSERTNOTNULL_ERROR.getMsg());
+        }
+        // 插入主题不存在，可以插入
+        if (topicRepository.findByDomainIdAndTopicName(topic.getDomainId(), topic.getTopicName()) == null) {
+            // 插入主题
+            topic.setTopicLayer(1L);
+            Topic topic1 = topicRepository.save(topic);
+            // 插入主题关系
+            TopicRelation topicRelation = new TopicRelation();
+            topicRelation.setDomainId(topic.getDomainId());
+            topicRelation.setChildTopicName(topic.getTopicName());
+            topicRelation.setChildTopicLayer(1L);
+            topicRelation.setChildTopicId(topic.getTopicId());
+            topicRelation.setParentTopicName(domainRepository.findByDomainId(topic.getDomainId()).getDomainName());
+            topicRelation.setParentTopicLayer(0L);
+            TopicRelation topicRelation1 = topicRelationRepository.save(topicRelation);
+            if (topic1 != null && topicRelation1 != null) {
+                return ResultUtil.success(ResultEnum.SUCCESS.getCode(), ResultEnum.SUCCESS.getMsg(), topic1);
+            } else if (topic1 == null) { // 主题插入失败
+                return ResultUtil.error(ResultEnum.TOPICINSERT_ERROR.getCode(), ResultEnum.TOPICINSERT_ERROR.getMsg());
+            } else { // 主题关系插入失败
+                return ResultUtil.error(ResultEnum.TOPICRELATIONINSERT_ERROR.getCode(), ResultEnum.TOPICRELATIONINSERT_ERROR.getMsg());
             }
         }
         // 插入主题已存在
@@ -130,7 +186,11 @@ public class TopicService {
      */
     public Result judgeTopicByDomainId(Long domainId) {
         if (topicRepository.findByDomainId(domainId).size() != 0) { // 判断是否已经爬取过该领域的主题信息
-            return ResultUtil.success(ResultEnum.SUCCESS.getCode(), ResultEnum.SUCCESS.getMsg(), topicRepository.findByDomainId(domainId).size());
+            String result = "主题已爬取，主题总数为：" + topicRepository.findByDomainId(domainId).size()
+                    + "，一级主题数为：" + topicRepository.findByDomainIdAndTopicLayer(domainId, 1L).size()
+                    + "，二级主题数为：" + topicRepository.findByDomainIdAndTopicLayer(domainId, 2L).size()
+                    + "，三级主题数为：" + topicRepository.findByDomainIdAndTopicLayer(domainId, 3L).size();
+            return ResultUtil.success(ResultEnum.SUCCESS.getCode(), ResultEnum.SUCCESS.getMsg(), result);
         } else {
             logger.info("领域ID为：" + domainId + "，对应的主题信息没有爬取");
             return ResultUtil.error(ResultEnum.DOMAINTOPICNOTSPIDER_ERROR.getCode(), ResultEnum.DOMAINTOPICNOTSPIDER_ERROR.getMsg());

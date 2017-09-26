@@ -24,6 +24,7 @@ public enum ResultEnum {
     TOPICINSERTDUPLICATE_ERROR(113, "插入重复主题"),
     TOPICINSERTNOTNULL_ERROR(114, "插入主题名不能为空"),
     TOPICINSERT_ERROR(115, "主题插入失败"),
+    TOPICRELATIONINSERT_ERROR(116, "主题关系插入失败"),
 
     ;
 
