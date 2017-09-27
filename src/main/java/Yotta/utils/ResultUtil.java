@@ -36,4 +36,18 @@ public class ResultUtil {
         return result;
     }
 
+    /**
+     * 失败状态：
+     * @param code 失败状态码
+     * @param msg 失败回传信息，一般为失败原因
+     * @return 请求失败状态
+     */
+    public static Result error(Integer code, String msg, Object object) {
+        Result result = new Result();
+        result.setCode(code);
+        result.setMsg(msg);
+        result.setData(object);
+        return result;
+    }
+
 }

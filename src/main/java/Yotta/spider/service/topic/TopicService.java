@@ -25,7 +25,7 @@ import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 
 /**
- * 取中文维基的主题及其上下位关系：主题及其上下位关系的 “爬取、增、删、改、查”
+ * 中文维基的主题及其上下位关系：主题及其上下位关系的 “爬取、增、删、改、查”
  * Created by yuanhao on 2017/9/25.
  */
 @Service

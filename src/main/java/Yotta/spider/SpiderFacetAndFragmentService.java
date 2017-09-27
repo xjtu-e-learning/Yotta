@@ -1,4 +1,4 @@
-package Yotta.spider.service;
+package Yotta.spider;
 
 import Yotta.common.Config;
 import Yotta.spider.domain.*;
@@ -12,6 +12,7 @@ import org.jsoup.select.Elements;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -23,14 +24,15 @@ import java.util.List;
  * 爬取中文维基百科知识主题对应的分面及其碎片信息，包括分面之间的关系及碎片与分面之间的映射关系
  * Created by yuanhao on 2017/5/3.
  */
-@RestController("/spiderWikiContent")
-public class SpiderContentService {
+@RestController
+@RequestMapping("/spiderWikiContent")
+public class SpiderFacetAndFragmentService {
 
     private final org.slf4j.Logger logger = LoggerFactory.getLogger(this.getClass());
     private static ZHConverter converter = ZHConverter.getInstance(ZHConverter.SIMPLIFIED);// 转化为简体中文
     private static DownloaderService downloaderService = new DownloaderService();
     private static ExtractContentService extractContentService = new ExtractContentService();
-    private static SpiderContentService spiderContentService = new SpiderContentService();
+    private static SpiderFacetAndFragmentService spiderFacetService = new SpiderFacetAndFragmentService();
 
     @Autowired
     private DomainRepository domainRepository;
@@ -52,11 +54,11 @@ public class SpiderContentService {
      * @param classId
      * @throws Exception
      */
-    @GetMapping(value = "/wikiContent")
+    @GetMapping(value = "/storeByClassID")
     public void storeByClassID(@RequestParam(value = "classId", defaultValue = "1") Long classId) throws Exception {
         Domain domain = domainRepository.findByDomainId(classId);
         logger.info(domain.getDomainName());
-        storeAllFacetAndContent(domain);
+        storeAllFacetAndContentByDomain(domain);
     }
 
 
@@ -64,7 +66,8 @@ public class SpiderContentService {
      * 将领域术语网页内容按照分面存储到数据库
      * @throws Exception
      */
-    public void storeAllFacetAndContent(Domain domain) throws Exception{
+    @GetMapping(value = "/storeAllFacetAndContentByDomain")
+    public void storeAllFacetAndContentByDomain(Domain domain) throws Exception{
         String className = domain.getDomainName();
         Long classId = domain.getDomainId();
 
@@ -75,97 +78,114 @@ public class SpiderContentService {
         List<Topic> topicList = topicRepository.findByDomainId(classId);
         for(int i = 0; i < topicList.size(); i++){
             Topic topic = topicList.get(i);
-            Long topicId = topic.getTopicId();
-            String topicName = topic.getTopicName();
-            String topicUrl = topic.getTopicUrl();
-
-            /**
-             * 判断数据是否已经存在
-             */
-            Boolean existFacet = facetRepository.findByTopicId(topicId).size() > 0;
-            Boolean existFacetRelation = facetRelationRepository.findByTopicId(topicId).size() > 0;
-            Boolean existAssembleText = assembleTextRepository.findByTopicId(topicId).size() > 0;
-            Boolean existAssembleImage = assembleImageRepository.findByTopicId(topicId).size() > 0;
-
-            /**
-             * 判断该主题的信息是不是在所有表格中已经存在
-             * 只要有一个不存在就需要再次爬取（再次模拟加载浏览器）
-             */
-            if(!existFacet || !existFacetRelation || !existAssembleText || !existAssembleImage){
-
-                /**
-                 * selenium解析网页
-                 */
-                topicUrl = extractContentService.dealUrl(topicUrl);
-                String topicHtml = downloaderService.seleniumWikiCNIE(topicUrl);
-                Document doc = downloaderService.parseHtmlText(topicHtml);
-
-                /**
-                 * 获取并存储所有分面信息Facet
-                 */
-                List<Facet> facetList = getAllFacet(doc);
-                if(!existFacet){
-                    storeFacet(topicId, facetList);
-                    logger.info("domain : " + domain + ", topicName : " + topicName + " ---> store in facet...");
-                } else {
-                    logger.info("domain : " + domain + ", topicName : " + topicName + " ---> is already existing in facet...");
-                }
-
-                /**
-                 * 获取并存储各级分面之间的关系FacetRelation
-                 */
-                List<FacetRelation> facetRelationList = getFacetRelation(doc);
-                if(!existFacetRelation){
-                    storeFacetRelation(topicId, facetRelationList);
-                    logger.info("domain : " + domain + ", topicName : " + topicName + " ---> store in facet_relation...");
-                } else {
-                    logger.info("domain : " + domain + ", topicName : " + topicName + " ---> is already existing in facet_relation...");
-                }
-
-                /**
-                 * 获得网页所有内容
-                 */
-                boolean flagFirst = true; // 一级标题
-                boolean flagSecond = true; // 二级标题
-                boolean flagThird = true; // 三级标题
-                String postTime = extractContentService.getPostTime(doc);
-                // 获取所有分面及其文本
-//				List<Assemble> assembleList = CrawlerContentDAO.getAllContent(doc, flagFirst, flagSecond, flagThird);
-//				List<AssembleImage> assembleImageList = CrawlerContentDAO.getAllImage(domain, flagFirst, flagSecond, flagThird);
-                // 一级分面下如果有二级分面，那么一级分面应该没有碎片文本
-                List<AssembleText> assembleList = getAllContentNew(doc, flagFirst, flagSecond, flagThird, facetRelationList);
-                // 一级分面下如果有二级分面，那么一级分面应该没有图片文本
-                List<AssembleImage> assembleImageList = getAllImageNew(doc, flagFirst, flagSecond, flagThird, facetRelationList);
-
-                /**
-                 * 获得Assemble_text
-                 * 存储前进行判断，已经存在的不用存储
-                 */
-                if(!existAssembleText){
-                    storeAssembleText(topicId, topicUrl, postTime, assembleList);
-                    logger.info("domain : " + domain + ", topicName : " + topicName + " ---> store in assemble_text...");
-                } else {
-                    logger.info("domain : " + domain + ", topicName : " + topicName + " ---> is already existing in assemble_text...");
-                }
-
-                /**
-                 * 获得Assemble_image
-                 * 存储前进行判断，已经存在的不用存储
-                 */
-                if(!existAssembleImage){
-                    storeAssembleImage(topicId, topicUrl, assembleImageList);
-                    logger.info("domain : " + domain + ", topicName : " + topicName + " ---> store in assemble_image...");
-                } else {
-                    logger.info("domain : " + domain + ", topicName : " + topicName + " ---> is already existing in assemble_image...");
-                }
-
-            } else {
-                logger.info("domain : " + domain + ", topicName : " + topicName
-                        + " ---> is already existing in facet, spider_text, assemble_text, spider_image, assemble_image...");
-            }
-
+            storeAllFacetAndContentByTopic(topic);
         }
 
+    }
+
+    /**
+     * 按照主题爬取所有分面和碎片
+     * @param topic 主题
+     * @throws Exception
+     */
+    @GetMapping(value = "/storeAllFacetAndContentByTopic")
+    public List<Object> storeAllFacetAndContentByTopic(Topic topic) throws Exception {
+        Long topicId = topic.getTopicId();
+        String topicName = topic.getTopicName();
+        String topicUrl = topic.getTopicUrl();
+
+        /**
+         * 判断数据是否已经存在
+         */
+        Boolean existFacet = facetRepository.findByTopicId(topicId).size() > 0;
+        Boolean existFacetRelation = facetRelationRepository.findByTopicId(topicId).size() > 0;
+        Boolean existAssembleText = assembleTextRepository.findByTopicId(topicId).size() > 0;
+        Boolean existAssembleImage = assembleImageRepository.findByTopicId(topicId).size() > 0;
+
+        /**
+         * 返回结果
+         */
+        List<Object> result = new ArrayList<>();
+
+        /**
+         * 判断该主题的信息是不是在所有表格中已经存在
+         * 只要有一个不存在就需要再次爬取（再次模拟加载浏览器）
+         */
+        if(!existFacet || !existFacetRelation || !existAssembleText || !existAssembleImage){
+
+            /**
+             * selenium解析网页
+             */
+            topicUrl = extractContentService.dealUrl(topicUrl);
+            String topicHtml = downloaderService.seleniumWikiCNIE(topicUrl);
+            Document doc = downloaderService.parseHtmlText(topicHtml);
+
+            /**
+             * 获取并存储所有分面信息Facet
+             */
+            List<Facet> facetList = getAllFacet(doc);
+            if(!existFacet){
+                storeFacet(topicId, facetList);
+                result.add(facetList);
+                logger.info("topicName : " + topicName + " ---> store in facet...");
+            } else {
+                logger.info("topicName : " + topicName + " ---> is already existing in facet...");
+            }
+
+            /**
+             * 获取并存储各级分面之间的关系FacetRelation
+             */
+            List<FacetRelation> facetRelationList = getFacetRelation(doc);
+            if(!existFacetRelation){
+                storeFacetRelation(topicId, facetRelationList);
+                result.add(facetRelationList);
+                logger.info("topicName : " + topicName + " ---> store in facet_relation...");
+            } else {
+                logger.info("topicName : " + topicName + " ---> is already existing in facet_relation...");
+            }
+
+            /**
+             * 获得网页所有内容
+             */
+            boolean flagFirst = true; // 一级标题
+            boolean flagSecond = true; // 二级标题
+            boolean flagThird = true; // 三级标题
+            String postTime = extractContentService.getPostTime(doc);
+            // 获取所有分面及其文本
+//				List<Assemble> assembleList = CrawlerContentDAO.getAssembleText(doc, flagFirst, flagSecond, flagThird);
+//				List<AssembleImage> assembleImageList = CrawlerContentDAO.getAssembleImage(domain, flagFirst, flagSecond, flagThird);
+            // 一级分面下如果有二级分面，那么一级分面应该没有碎片文本
+            List<AssembleText> assembleList = getAllContentNew(doc, flagFirst, flagSecond, flagThird, facetRelationList);
+            result.add(assembleList);
+            // 一级分面下如果有二级分面，那么一级分面应该没有图片文本
+            List<AssembleImage> assembleImageList = getAllImageNew(doc, flagFirst, flagSecond, flagThird, facetRelationList);
+            result.add(assembleImageList);
+
+            /**
+             * 获得Assemble_text
+             * 存储前进行判断，已经存在的不用存储
+             */
+            if(!existAssembleText){
+                storeAssembleText(topicId, topicUrl, postTime, assembleList);
+                logger.info("topicName : " + topicName + " ---> store in assemble_text...");
+            } else {
+                logger.info("topicName : " + topicName + " ---> is already existing in assemble_text...");
+            }
+
+            /**
+             * 获得Assemble_image
+             * 存储前进行判断，已经存在的不用存储
+             */
+            if(!existAssembleImage){
+                storeAssembleImage(topicId, topicUrl, assembleImageList);
+                logger.info("topicName : " + topicName + " ---> store in assemble_image...");
+            } else {
+                logger.info("topicName : " + topicName + " ---> is already existing in assemble_image...");
+            }
+        } else {
+            logger.info("topicName : " + topicName + " ---> is already existing in facet, spider_text, assemble_text, spider_image, assemble_image...");
+        }
+        return result;
     }
 
 
@@ -310,7 +330,6 @@ public class SpiderContentService {
 
     /**
      * 得到一个主题的所有分面及其分面级数
-     * 1. 数据结构为: FacetSimple
      * @param doc
      * @return
      */
@@ -656,20 +675,20 @@ public class SpiderContentService {
 //        /**
 //         * 测试解析小程序
 //         */
-//        List<FacetRelation> facetRelationList = spiderContentService.getFacetRelation(doc);
+//        List<FacetRelation> facetRelationList = spiderFacetService.storeFacetRelation(doc);
 //
 //        /**
 //         * 解析所有内容
 //         */
-////        spiderContentService.getAllContent(doc, false, false, false); // 只有summary内容
-////        spiderContentService.getAllContent(doc, true, false, false); // summary内容 + 一级标题内容
-////        spiderContentService.getAllContent(doc, true, true, false); // summary内容 + 一级和二级标题内容
-//        spiderContentService.getAllContent(doc, true, true, true); // summary内容 + 一级/二级/三级标题内容
+////        spiderFacetService.getAssembleText(doc, false, false, false); // 只有summary内容
+////        spiderFacetService.getAssembleText(doc, true, false, false); // summary内容 + 一级标题内容
+////        spiderFacetService.getAssembleText(doc, true, true, false); // summary内容 + 一级和二级标题内容
+//        spiderFacetService.getAssembleText(doc, true, true, true); // summary内容 + 一级/二级/三级标题内容
 //
 //        /**
 //         * 解析图片内容
 //         */
-//        spiderContentService.getAllImage(doc, true, true, true);
+//        spiderFacetService.getAssembleImage(doc, true, true, true);
 //    }
 
 
