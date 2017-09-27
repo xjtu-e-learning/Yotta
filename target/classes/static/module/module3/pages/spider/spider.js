@@ -105,6 +105,15 @@ myApp.controller('domainCtrl', function($scope, $uibModal, $http) {
                 },
                 sourceName : function() {//data作为modal的controller传入的参数
                     return $scope.sourceName;//用于传递数据
+                },
+                sourceType : function() {//data作为modal的controller传入的参数
+                    return $scope.sourceType;//用于传递数据
+                },
+                ascOrder : function () {
+                    return ascOrder;
+                },
+                numPerPage : function () {
+                    return $scope.numPerPage;
                 }
             }
         })
@@ -235,6 +244,14 @@ myApp.controller('domainCtrl', function($scope, $uibModal, $http) {
      ********************************* 主题 ****************************************
      *******************************************************************************/
     /**
+     * selectedDomainId 为选中领域Id
+     * selectedDomainName 为选中领域名
+     * sourceId = "1";
+     * $scope.sourceName = "中文维基百科";
+     * $scope.sourceType = "百科类";
+     */
+
+    /**
      * 主题：主题分页点击下一页等的操作
      */
     $scope.topicPageChanged = function() {
@@ -297,42 +314,42 @@ myApp.controller('domainCtrl', function($scope, $uibModal, $http) {
         })
     };
 
-    // /**
-    //  * 主题：主题信息详情 模态框
-    //  */
-    // $scope.openModalTopicDetail = function($index) {
-    //
-    //     var modalInstance = $uibModal.open({
-    //         templateUrl : 'modalDomainDetail.html',//script标签中定义的id
-    //         controller : 'modalCtrlmodalDomainDetail',//modal对应的Controller
-    //         resolve : {
-    //             domainId : function() { // 领域Id
-    //                 console.log($scope.domains[$index]);
-    //                 console.log($index);
-    //                 return $scope.domains[$index].domainId;
-    //             },
-    //             domainName : function() { // 领域名
-    //                 return $scope.domains[$index].domainName;
-    //             },
-    //             domainUrl : function() { // 领域链接
-    //                 return $scope.domains[$index].domainUrl;
-    //             },
-    //             domainNote : function() { // 领域说明
-    //                 return $scope.domains[$index].note;
-    //             },
-    //             sourceId : function() { // 数据源Id
-    //                 return sourceId;
-    //             },
-    //             sourceName : function() { // 数据源名
-    //                 return $scope.sourceName;
-    //             },
-    //             sourceType : function() { // 数据源类型
-    //                 return $scope.sourceType;
-    //             }
-    //         }
-    //     })
-    // };
-    //
+    /**
+     * 主题：主题信息详情 模态框
+     */
+    $scope.openModalTopicDetail = function($index) {
+
+        var modalInstance = $uibModal.open({
+            templateUrl : 'modalTopicDetail.html',//script标签中定义的id
+            controller : 'modalCtrlmodalTopicDetail',//modal对应的Controller
+            resolve : {
+                topicId : function() { // 主题Id
+                    console.log($scope.topics[$index]);
+                    console.log($index);
+                    return $scope.topics[$index].topicId;
+                },
+                topicName : function() { // 主题名
+                    return $scope.topics[$index].topicName;
+                },
+                topicUrl : function() { // 主题链接
+                    return $scope.topics[$index].topicUrl;
+                },
+                topicLayer : function() { // 主题层级
+                    return $scope.topics[$index].topicLayer;
+                },
+                selectedDomainId : function() { // 领域Id
+                    return selectedDomainId;
+                },
+                selectedDomainName : function() { // 领域名
+                    return selectedDomainName;
+                },
+                sourceName : function() { // 数据源名
+                    return $scope.sourceName;
+                }
+            }
+        })
+    };
+
     // /**
     //  * 主题：修改主题信息 模态框
     //  */
@@ -455,7 +472,7 @@ myApp.controller('domainCtrl', function($scope, $uibModal, $http) {
  ********************************* 领域 ****************************************
  *******************************************************************************/
 // 领域插入 模态框对应的Controller
-myApp.controller('modalCtrlmodalInsertDomain', function($scope, $http, $uibModalInstance, sourceId, sourceName) {
+myApp.controller('modalCtrlmodalInsertDomain', function($scope, $http, $uibModalInstance, sourceId, sourceName, numPerPage, ascOrder) {
 
     $scope.sourceName = sourceName;
 
@@ -470,13 +487,27 @@ myApp.controller('modalCtrlmodalInsertDomain', function($scope, $http, $uibModal
             + '&sourceId=' + sourceId,
             method : 'get'
         }).success(function(response) {
-            // alert("插入成功");
+            $http({
+                url : 'http://' + ip + '/domain/getDomainBySourceIdAndPagingAndSorting?page=1&size='
+                + numPerPage + '&ascOrder=' + ascOrder + '&sourceId=' + sourceId,
+                method : 'get'
+            }).success(function(response) {
+                $scope.totalItems = response.data.totalElements;
+                $scope.domains = response.data.content;
+                console.log($scope.domains);
+                console.log("刷新页面显示插入的数据");
+            }).error(function(response){
+                console.log("获取领域信息失败，code为：" + response.code + "，msg为：" + response.msg +
+                    "，数据源ID为：" + sourceId + "，数据源名为：" + sourceName);
+            });
+            alert("插入成功");
             console.log("插入领域信息成功，code为：" + response.code + "，msg为：" + response.msg);
             console.log(response.data);
         }).error(function(response){
             alert("插入领域信息失败，code为：" + response.code + "，msg为：" + response.msg);
             console.log("插入领域信息失败，code为：" + response.code + "，msg为：" + response.msg);
         });
+
         $uibModalInstance.close();
     };
 
@@ -672,6 +703,65 @@ myApp.controller('modalCtrlmodalInsertChildTopic', function($scope, $http, $uibM
 
     $scope.cancel = function() {
         $uibModalInstance.dismiss('cancel');
+    }
+
+});
+
+
+// 主题详情 模态框对应的Controller
+myApp.controller('modalCtrlmodalTopicDetail', function($scope, $http, $uibModalInstance,
+                                                       topicId, topicName, topicUrl, topicLayer, selectedDomainId, selectedDomainName, sourceName) {
+
+    $http({
+        url : 'http://' + ip + '/facet/judgeFacetByTopicId?topicId=' + topicId,
+        method : 'get'
+    }).success(function(response) {
+        $scope.detailFacetAndFragment = response.data[2]; // 第3个元素是分面信息
+        $scope.detailFacetAndFragmentSpiderDisabled = "disabled";
+        $scope.detailParentTopics = response.data[1]; // 第2个元素是父主题数量
+        $scope.detailChildTopics = response.data[0]; // 第1个元素是子主题数量
+        console.log("主题下的分面和碎片数据已经爬取，code为：" + response.code + "，msg为：" + response.msg);
+    }).error(function(response){
+        $scope.detailFacetAndFragment = "分面和碎片未爬取，需要重新爬取";
+        $scope.detailFacetAndFragmentSpiderDisabled = "";
+        $scope.detailParentTopics = response.data[1]; // 第2个元素是父主题数量
+        $scope.detailChildTopics = response.data[0]; // 第1个元素是子主题数量
+
+        console.log("主题下的分面和碎片数据还没有爬取，code为：" + response.code + "，msg为：" + response.msg);
+    });
+
+
+    $scope.detailTopicId = topicId;
+    $scope.detailTopicName = topicName;
+    $scope.detailTopicUrl = topicUrl;
+    $scope.detailTopicLayer = topicLayer;
+    $scope.detailDomainId = selectedDomainId;
+    $scope.detailDomainName = selectedDomainName;
+    $scope.detailSourceName = sourceName;
+
+    //在这里处理要进行的操作
+    $scope.ok = function() {
+        $uibModalInstance.close();
+    };
+
+    // 点击“关闭”按钮
+    $scope.cancel = function() {
+        $uibModalInstance.dismiss('cancel');
+    };
+
+    // 点击“爬取分面和碎片”后进行主题爬取
+    $scope.spiderFacetAndFragmentByTopic = function() {
+        alert("开始爬取分面和碎片");
+        $http({
+            url : 'http://' + ip + '/storeFacetAndRelationByTopic?topicId=' + topicId + "&topicName=" + topicName + "&topicUrl=" + topicUrl,
+            method : 'get'
+        }).success(function(response) {
+            alert("爬取分面和碎片成功");
+            console.log("主题下的分面和碎片数据爬取成功，code为：" + response.code + "，msg为：" + response.msg + "，分面和碎片信息为：" + response.data);
+        }).error(function(response){
+            alert("爬取分面和碎片失败");
+            console.log("主题下的分面和碎片数据爬取失败，code为：" + response.code + "，msg为：" + response.msg);
+        });
     }
 
 });

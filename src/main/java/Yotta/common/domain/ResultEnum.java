@@ -26,6 +26,9 @@ public enum ResultEnum {
     TOPICINSERT_ERROR(115, "主题插入失败"),
     TOPICRELATIONINSERT_ERROR(116, "主题关系插入失败"),
 
+    FACETQUERY_ERROR(117, "分面查询失败，该主题的分面没有爬取"),
+    FACETDUPLICATEDCRAWLER_ERROR(118, "分面和碎片信息已经爬取，不需要再次爬取"),
+
     ;
 
     private Integer code;

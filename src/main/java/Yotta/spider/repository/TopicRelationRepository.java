@@ -18,6 +18,10 @@ public interface TopicRelationRepository extends JpaRepository<TopicRelation, Lo
 
     List<TopicRelation> findByDomainId(Long domainId);
 
+    List<TopicRelation> findByChildTopicId(Long childTopicId);
+
+    List<TopicRelation> findByParentTopicId(Long parentTopicId);
+
     List<TopicRelation> findAll();
 
     @Modifying(clearAutomatically = true)
