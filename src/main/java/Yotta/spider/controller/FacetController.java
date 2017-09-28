@@ -2,6 +2,7 @@ package Yotta.spider.controller;
 
 import Yotta.common.domain.Result;
 import Yotta.common.domain.ResultEnum;
+import Yotta.spider.domain.Topic;
 import Yotta.spider.service.Facet.FacetService;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,6 +30,17 @@ public class FacetController {
     ) {
         // 根据主题，返回该主题的子主题数、父主题数、分面数
         Result result = facetService.judgeFacetByTopicId(topicId);
+        if (result.getCode() != ResultEnum.SUCCESS.getCode()) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(result);
+        }
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
+
+    @RequestMapping(value = "/storeAllFacetAndContentByTopic")
+    @ApiOperation(value = "根据主题，爬取主题的分面及分面关系", notes = "根据主题，爬取主题的分面及分面关系")
+    public ResponseEntity storeAllFacetAndContentByTopic(Topic topic) throws Exception {
+        // 根据主题，爬取主题的分面及分面关系
+        Result result = facetService.storeAllFacetAndContentByTopic(topic);
         if (result.getCode() != ResultEnum.SUCCESS.getCode()) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(result);
         }

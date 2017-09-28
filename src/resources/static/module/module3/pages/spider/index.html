@@ -429,20 +429,22 @@
                                                             <label class="col-sm-2 control-label">领域名</label>
                                                             <div class="col-sm-10">
                                                                 <label class="control-label">
-                                                                    <span class="badge bg-yellow">{{ detailDomainName }}</span>
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label class="col-sm-2 control-label">领域链接</label>
-                                                            <div class="col-sm-10">
-                                                                <label class="control-label">
-                                                                    <!--<span class="badge bg-light-blue">-->
-                                                                        <a href="{{ detailDomainUrl }}" target='_blank'>{{ detailDomainUrl }}</a>
+                                                                    <!--<span class="badge bg-yellow">-->
+                                                                        <a href="{{ detailDomainUrl }}" target='_blank'>{{ detailDomainName }}</a>
                                                                     <!--</span>-->
                                                                 </label>
                                                             </div>
                                                         </div>
+                                                        <!--<div class="form-group">-->
+                                                            <!--<label class="col-sm-2 control-label">领域链接</label>-->
+                                                            <!--<div class="col-sm-10">-->
+                                                                <!--<label class="control-label">-->
+                                                                    <!--&lt;!&ndash;<span class="badge bg-light-blue">&ndash;&gt;-->
+                                                                        <!--<a href="{{ detailDomainUrl }}" target='_blank'>{{ detailDomainUrl }}</a>-->
+                                                                    <!--&lt;!&ndash;</span>&ndash;&gt;-->
+                                                                <!--</label>-->
+                                                            <!--</div>-->
+                                                        <!--</div>-->
                                                         <div class="form-group">
                                                             <label class="col-sm-2 control-label">领域说明</label>
                                                             <div class="col-sm-10">
@@ -696,7 +698,9 @@
                                                             <label class="col-sm-2 control-label">主题ID</label>
                                                             <div class="col-sm-10">
                                                                 <label class="control-label">
-                                                                    <span class="badge bg-red">{{ detailTopicId }}</span>
+                                                                    <span class="badge bg-light-blue">
+                                                                        {{ detailTopicId }}
+                                                                    </span>
                                                                 </label>
                                                             </div>
                                                         </div>
@@ -704,20 +708,22 @@
                                                             <label class="col-sm-2 control-label">主题名</label>
                                                             <div class="col-sm-10">
                                                                 <label class="control-label">
-                                                                    <span class="badge bg-yellow">{{ detailTopicName }}</span>
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label class="col-sm-2 control-label">主题链接</label>
-                                                            <div class="col-sm-10">
-                                                                <label class="control-label">
-                                                                    <!--<span class="badge bg-light-blue">-->
-                                                                    <a href="{{ detailTopicUrl }}" target='_blank'>{{ detailTopicUrl }}</a>
+                                                                    <!--<span class="badge bg-yellow">-->
+                                                                        <a href="{{ detailTopicUrl }}" target='_blank'>{{ detailTopicName }}</a>
                                                                     <!--</span>-->
                                                                 </label>
                                                             </div>
                                                         </div>
+                                                        <!--<div class="form-group">-->
+                                                            <!--<label class="col-sm-2 control-label">主题链接</label>-->
+                                                            <!--<div class="col-sm-10">-->
+                                                                <!--<label class="control-label">-->
+                                                                    <!--&lt;!&ndash;<span class="badge bg-light-blue">&ndash;&gt;-->
+                                                                    <!--<a href="{{ detailTopicUrl }}" target='_blank'>{{ detailTopicUrl }}</a>-->
+                                                                    <!--&lt;!&ndash;</span>&ndash;&gt;-->
+                                                                <!--</label>-->
+                                                            <!--</div>-->
+                                                        <!--</div>-->
                                                         <div class="form-group">
                                                             <label class="col-sm-2 control-label">主题层级</label>
                                                             <div class="col-sm-10">
@@ -746,7 +752,9 @@
                                                             <label class="col-sm-2 control-label">领域ID</label>
                                                             <div class="col-sm-10">
                                                                 <label class="control-label">
-                                                                    <span class="badge bg-green">{{ detailDomainId }}</span>
+                                                                    <!--<span class="badge bg-orange">-->
+                                                                        <a>{{ detailDomainId }}</a>
+                                                                    <!--</span>-->
                                                                 </label>
                                                             </div>
                                                         </div>
@@ -754,7 +762,9 @@
                                                             <label class="col-sm-2 control-label">领域名</label>
                                                             <div class="col-sm-10">
                                                                 <label class="control-label">
-                                                                    <span class="badge bg-red">{{ detailDomainName }}</span>
+                                                                    <!--<span class="badge bg-orange">-->
+                                                                    <a>{{ detailDomainName }}</a>
+                                                                    <!--</span>-->
                                                                 </label>
                                                             </div>
                                                         </div>
@@ -762,16 +772,31 @@
                                                             <label class="col-sm-2 control-label">数据源名</label>
                                                             <div class="col-sm-10">
                                                                 <label class="control-label">
-                                                                    <span class="badge bg-red">{{ detailSourceName }}</span>
+                                                                    <!--<span class="badge bg-orange">-->
+                                                                    <a>{{ detailSourceName }}</a>
+                                                                    <!--</span>-->
                                                                 </label>
                                                             </div>
                                                         </div>
                                                         <div class="form-group">
-                                                            <label class="col-sm-2 control-label">分面及碎片信息
+                                                            <label class="col-sm-2 control-label">分面信息
                                                             </label>
                                                             <div class="col-sm-10">
                                                                 <label class="control-label">
-                                                                    <span class="badge bg-light-blue">{{ detailFacetAndFragment }}</span>
+                                                                    <!--<span class="badge bg-orange">-->
+                                                                    <a>{{ detailFacetAndFragment }}</a>
+                                                                    <!--</span>-->
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="col-sm-2 control-label">说明
+                                                            </label>
+                                                            <div class="col-sm-10">
+                                                                <label class="control-label">
+                                                                    <!--<span class="badge bg-orange">-->
+                                                                    <a>{{ detailTopicNote }}</a>
+                                                                    <!--</span>-->
                                                                 </label>
                                                             </div>
                                                         </div>
@@ -779,7 +804,7 @@
                                                             <label class="col-sm-2 control-label">爬取
                                                             </label>
                                                             <div class="col-sm-10">
-                                                                <button type="button" class="btn btn-success {{detailFacetAndFragmentSpiderDisabled}}" ng-click="spiderFacetAndFragmentByTopic()">爬取分面及碎片</button>
+                                                                <button type="button" class="btn btn-success {{detailFacetAndFragmentSpiderDisabled}}" ng-click="spiderFacetAndFragmentByTopic()">爬取分面</button>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -811,7 +836,7 @@
                                                 <form class="form-horizontal" role="form">
                                                     <div class="box-body">
                                                         <div class="form-group">
-                                                            <label class="col-sm-2 control-label">主题ID</label>
+                                                            <label class="col-sm-2 control-label">主题Id</label>
                                                             <div class="col-sm-10">
                                                                 <input type="text" class="form-control" value="{{ detailTopicId }}" ng-model="detailTopicId" >
                                                             </div>
@@ -829,21 +854,9 @@
                                                             </div>
                                                         </div>
                                                         <div class="form-group">
-                                                            <label class="col-sm-2 control-label">主题级数</label>
+                                                            <label class="col-sm-2 control-label">主题层级</label>
                                                             <div class="col-sm-10">
                                                                 <input type="text" class="form-control" value="{{ detailTopicLayer }}" ng-model="detailTopicLayer" >
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label class="col-sm-2 control-label">父主题</label>
-                                                            <div class="col-sm-10">
-                                                                <input type="text" class="form-control" value="{{ detailParentTopics }}" ng-model="detailParentTopics" >
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label class="col-sm-2 control-label">子主题</label>
-                                                            <div class="col-sm-10">
-                                                                <input type="text" class="form-control" value="{{ detailChildTopics }}" ng-model="detailChildTopics" >
                                                             </div>
                                                         </div>
                                                         <div class="form-group">

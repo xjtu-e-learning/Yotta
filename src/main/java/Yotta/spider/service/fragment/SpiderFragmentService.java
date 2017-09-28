@@ -11,6 +11,7 @@ import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -25,7 +26,7 @@ import java.util.List;
  * Created by yuanhao on 2017/5/3.
  */
 @RestController
-@RequestMapping("/spiderFragmentService")
+@RequestMapping("SpiderFragmentService")
 public class SpiderFragmentService {
 
     private final org.slf4j.Logger logger = LoggerFactory.getLogger(this.getClass());
@@ -53,7 +54,6 @@ public class SpiderFragmentService {
      * @param domainId 领域Id
      * @throws Exception
      */
-    @GetMapping(value = "/storeFragmentByDomainId")
     public void storeFragmentByDomainId(@RequestParam(value = "domainId", defaultValue = "1") Long domainId) throws Exception {
         List<Topic> topicList = topicRepository.findByDomainId(domainId);
         for(int i = 0; i < topicList.size(); i++){
@@ -68,7 +68,7 @@ public class SpiderFragmentService {
      * @param topic 主题
      * @throws Exception
      */
-    @GetMapping(value = "/storeFragmentByTopic")
+    @GetMapping("/storeFragmentByTopic")
     public List<Object> storeFragmentByTopic(Topic topic) throws Exception {
         Long topicId = topic.getTopicId();
         String topicName = topic.getTopicName();
@@ -93,6 +93,8 @@ public class SpiderFragmentService {
             // 一级分面下如果有二级分面，那么一级分面应该没有碎片文本
             List<AssembleText> assembleTextList = getAssembleTextAd(doc, flagFirst, flagSecond, flagThird, facetRelationList);
             List<AssembleImage> assembleImageList = getAssembleImageAd(doc, flagFirst, flagSecond, flagThird, facetRelationList);
+//            logger.error(assembleTextList.size()+"");
+//            logger.error(assembleImageList.size()+"");
             // 存储前进行判断，已经存在的不用存储
             if(assembleTextRepository.findByTopicId(topicId).size() == 0){
                 storeAssembleText(topicId, topicUrl, postTime, assembleTextList);
@@ -135,8 +137,7 @@ public class SpiderFragmentService {
              * 获取标题
              */
             Elements titles = doc.select("div#toc").select("li");
-            logger.info(titles.size() + "");
-            if(titles.size()!=0){
+            if(titles.size() != 0){
                 for(int i = 0; i < titles.size(); i++){
                     String index = titles.get(i).child(0).child(0).text();
                     String text = titles.get(i).child(0).child(1).text();
@@ -207,6 +208,7 @@ public class SpiderFragmentService {
     public List<AssembleText> getAssembleTextAd(Document doc, boolean flagFirst, boolean flagSecond, boolean flagThird, List<FacetRelation> facetRelationList){
         List<AssembleText> assembleTextResultList = new ArrayList<>();
         List<AssembleText> assembleTextList = getAssembleText(doc, flagFirst, flagSecond, flagThird);
+        logger.error("处理前数据量大小：" + assembleTextList.size() + "");
         for(int i = 0; i < assembleTextList.size(); i++){
             AssembleText assemble = assembleTextList.get(i);
             /**
@@ -309,6 +311,7 @@ public class SpiderFragmentService {
             assembleText.setTextPostTime(postTime);
             assembleText.setTextScratchTime(TimeUtil.getSystemTime());
             assembleText.setFacetId(facetRepository.findByTopicIdAndFacetLayerAndFacetName(topicId, assembleText.getFacetLayer(), assembleText.getFacetName()).getFacetId());
+            logger.info(assembleText.toString());
             assembleTextRepository.save(assembleText);
         }
     }
@@ -452,6 +455,7 @@ public class SpiderFragmentService {
                 assembleImage.setImageContent(imageContent); // 设置图片内容为二进制流
                 assembleImage.setImageScratchTime(TimeUtil.getSystemTime());
                 assembleImage.setFacetId(facetRepository.findByTopicIdAndFacetLayerAndFacetName(topicId, assembleImage.getFacetLayer(), assembleImage.getFacetName()).getFacetId());
+                logger.info(assembleImage.toString());
                 assembleImageRepository.save(assembleImage);
             } catch (Exception e) {
                 logger.error("图片内容为null，不进行存储。。。" + e);

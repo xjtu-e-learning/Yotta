@@ -25,9 +25,11 @@ public enum ResultEnum {
     TOPICINSERTNOTNULL_ERROR(114, "插入主题名不能为空"),
     TOPICINSERT_ERROR(115, "主题插入失败"),
     TOPICRELATIONINSERT_ERROR(116, "主题关系插入失败"),
+    TOPICUPDATE_ERROR(117, "主题关系更新失败"),
+    TOPICDELETE_ERROR(118, "主题关系删除失败"),
 
-    FACETQUERY_ERROR(117, "分面查询失败，该主题的分面没有爬取"),
-    FACETDUPLICATEDCRAWLER_ERROR(118, "分面和碎片信息已经爬取，不需要再次爬取"),
+    FACETQUERY_ERROR(119, "分面查询失败，该主题的分面没有爬取"),
+    FACETDUPLICATEDCRAWLER_ERROR(120, "分面和碎片信息已经爬取，不需要再次爬取"),
 
     ;
 

@@ -56,7 +56,7 @@ public class FacetService {
         results.add(childTopics.size() + "");
         results.add(parentTopics.size() + "");
         if (facetRepository.findByTopicId(topicId).size() != 0) {
-            facetInfo = "分面已爬取，分面总数为：" + facetRepository.findByTopicId(topicId).size()
+            facetInfo = "分面已爬取，总数为：" + facetRepository.findByTopicId(topicId).size()
                     + "，一级分面数为：" + facetRepository.findByTopicIdAndFacetLayer(topicId, 1L).size()
                     + "，二级分面数为：" + facetRepository.findByTopicIdAndFacetLayer(topicId, 2L).size()
                     + "，三级分面数为：" + facetRepository.findByTopicIdAndFacetLayer(topicId, 3L).size();

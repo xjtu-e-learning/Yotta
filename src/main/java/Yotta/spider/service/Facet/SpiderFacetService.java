@@ -9,6 +9,7 @@ import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -22,18 +23,21 @@ import java.util.List;
  * 中文维基的分面及其分面关系：分面及其分面关系的 “爬取、增、删、改、查”
  * Created by yuanhao on 2017/5/3.
  */
-@RestController
-@RequestMapping("/spiderFacetService")
+@Service
 public class SpiderFacetService {
 
     private final org.slf4j.Logger logger = LoggerFactory.getLogger(this.getClass());
-    private static ZHConverter converter = ZHConverter.getInstance(ZHConverter.SIMPLIFIED);// 转化为简体中文
-    private static DownloaderService downloaderService = new DownloaderService();
-    private static ExtractContentService extractContentService = new ExtractContentService();
-    private static SpiderFacetService spiderFacetService = new SpiderFacetService();
+    private ZHConverter converter = ZHConverter.getInstance(ZHConverter.SIMPLIFIED);// 转化为简体中文
 
     @Autowired
-    private DomainRepository domainRepository;
+    public SpiderFacetService() {
+    }
+
+    @Autowired
+    private DownloaderService downloaderService;
+    @Autowired
+    private ExtractContentService extractContentService;
+
     @Autowired
     private TopicRepository topicRepository;
     @Autowired
@@ -47,7 +51,6 @@ public class SpiderFacetService {
      * @param domainId 领域Id
      * @throws Exception
      */
-    @GetMapping(value = "/storeFacetAndRelationByDomainId")
     public void storeFacetAndRelationByDomainId(@RequestParam(value = "domainId", defaultValue = "1") Long domainId) throws Exception {
         List<Topic> topicList = topicRepository.findByDomainId(domainId);
         for(int i = 0; i < topicList.size(); i++){
@@ -61,7 +64,6 @@ public class SpiderFacetService {
      * @param topic 主题
      * @throws Exception
      */
-    @GetMapping(value = "/storeFacetAndRelationByTopic")
     public List<Object> storeFacetAndRelationByTopic(Topic topic) throws Exception {
         Long topicId = topic.getTopicId();
         String topicName = topic.getTopicName();

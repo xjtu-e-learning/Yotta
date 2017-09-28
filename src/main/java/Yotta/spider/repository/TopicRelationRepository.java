@@ -26,6 +26,12 @@ public interface TopicRelationRepository extends JpaRepository<TopicRelation, Lo
 
     @Modifying(clearAutomatically = true)
     @Transactional
+    void deleteAllByChildTopicIdOrParentTopicId(Long childTopicId, Long parentTopicId); // 删除子主题id或者父主题id为某个id的主题关系
+
+    void deleteAllByChildTopicIdIsOrParentTopicIdIs(Long childTopicId, Long parentTopicId);
+
+
+    @Transactional
     @Query("update TopicRelation t set t.childTopicId = ?2, t.parentTopicId = ?3 where t.relationId = ?1")
     void updateByRelationId(Long relationId, Long childTopicId, Long parentTopicId);
 

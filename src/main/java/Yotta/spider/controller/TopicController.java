@@ -22,6 +22,31 @@ public class TopicController {
     @Autowired
     private TopicService topicService;
 
+    @GetMapping(value = "/deleteTopic")
+    @ApiOperation(value = "删除主题", notes = "删除主题")
+    public ResponseEntity deleteTopic(@RequestParam(
+            value = "topicId", defaultValue = "1") Long topicId
+    ) {
+        Result result = topicService.deleteTopic(topicId);
+        if (result.getCode() != ResultEnum.SUCCESS.getCode()) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(result);
+        }
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
+
+    @GetMapping(value = "/updateTopic")
+    @ApiOperation(value = "更新主题", notes = "更新主题")
+    public ResponseEntity updateTopic(
+            @RequestParam(value = "topicId", defaultValue = "1") Long topicId,
+            Topic newTopic
+    ) {
+        Result result = topicService.updateTopic(topicId, newTopic);
+        if (result.getCode() != ResultEnum.SUCCESS.getCode()) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(result);
+        }
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
+
     @GetMapping(value = "/insertTopicUnderTopic")
     @ApiOperation(value = "新增主题下面的子主题", notes = "新增主题下的子主题")
     public ResponseEntity insertTopicUnderTopic(Topic topic, String parentTopicName) {

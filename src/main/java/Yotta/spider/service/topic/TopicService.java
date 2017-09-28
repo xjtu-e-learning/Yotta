@@ -2,13 +2,8 @@ package Yotta.spider.service.topic;
 
 import Yotta.common.domain.Result;
 import Yotta.common.domain.ResultEnum;
-import Yotta.spider.domain.Domain;
-import Yotta.spider.domain.Topic;
-import Yotta.spider.domain.TopicComplex;
-import Yotta.spider.domain.TopicRelation;
-import Yotta.spider.repository.DomainRepository;
-import Yotta.spider.repository.TopicRelationRepository;
-import Yotta.spider.repository.TopicRepository;
+import Yotta.spider.domain.*;
+import Yotta.spider.repository.*;
 import Yotta.spider.service.utils.DownloaderService;
 import Yotta.spider.service.utils.ExtractTopicService;
 import Yotta.utils.ResultUtil;
@@ -49,7 +44,51 @@ public class TopicService {
     private TopicRepository topicRepository;
     @Autowired
     private TopicRelationRepository topicRelationRepository;
+    @Autowired
+    private FacetRepository facetRepository;
+    @Autowired
+    private FacetRelationRepository facetRelationRepository;
+    @Autowired
+    private AssembleTextRepository assembleTextRepository;
+    @Autowired
+    private AssembleImageRepository assembleImageRepository;
 
+
+    /**
+     * 根据主题Id 删除主题
+     * @param topicId 主题id
+     * @return 删除结果
+     */
+    public Result deleteTopic(Long topicId) {
+        try {
+            topicRepository.delete(topicId);
+            topicRelationRepository.deleteAllByChildTopicIdOrParentTopicId(topicId, topicId);
+            facetRepository.deleteAllByTopicId(topicId);
+            facetRelationRepository.deleteAllByTopicId(topicId);
+            assembleTextRepository.deleteAllByTopicId(topicId);
+            assembleImageRepository.deleteAllByTopicId(topicId);
+            return ResultUtil.success(ResultEnum.SUCCESS.getCode(), ResultEnum.SUCCESS.getMsg(), "删除成功");
+        } catch (Exception e) {
+            logger.error("删除失败");
+            return ResultUtil.error(ResultEnum.TOPICDELETE_ERROR.getCode(), ResultEnum.TOPICDELETE_ERROR.getMsg());
+        }
+    }
+
+    /**
+     * 根据主题Id 更新主题
+     * @param topicId 主题id
+     * @param newTopic 新增加的主题信息
+     * @return 更新结果
+     */
+    public Result updateTopic(Long topicId, Topic newTopic) {
+        try {
+            topicRepository.updateByTopicId(topicId, newTopic.getTopicId(), newTopic.getTopicName(), newTopic.getTopicUrl(), newTopic.getTopicLayer(), newTopic.getDomainId());
+            return ResultUtil.success(ResultEnum.SUCCESS.getCode(), ResultEnum.SUCCESS.getMsg(), "更新成功");
+        } catch (Exception e) {
+            logger.error("更新失败");
+            return ResultUtil.error(ResultEnum.TOPICUPDATE_ERROR.getCode(), ResultEnum.TOPICUPDATE_ERROR.getMsg());
+        }
+    }
 
     /**
      * 插入主题下的子主题及子主题关系
@@ -186,7 +225,7 @@ public class TopicService {
      */
     public Result judgeTopicByDomainId(Long domainId) {
         if (topicRepository.findByDomainId(domainId).size() != 0) { // 判断是否已经爬取过该领域的主题信息
-            String result = "主题已爬取，主题总数为：" + topicRepository.findByDomainId(domainId).size()
+            String result = "主题已爬取，总数为：" + topicRepository.findByDomainId(domainId).size()
                     + "，一级主题数为：" + topicRepository.findByDomainIdAndTopicLayer(domainId, 1L).size()
                     + "，二级主题数为：" + topicRepository.findByDomainIdAndTopicLayer(domainId, 2L).size()
                     + "，三级主题数为：" + topicRepository.findByDomainIdAndTopicLayer(domainId, 3L).size();
