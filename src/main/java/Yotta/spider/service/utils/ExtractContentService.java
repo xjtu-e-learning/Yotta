@@ -8,6 +8,7 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Service;
 
 import java.io.IOException;
 import java.net.URL;
@@ -20,6 +21,7 @@ import java.util.*;
  * 3. 每一级分面有多个碎片，按照一个p标签作为一个碎片文本
  * Created by yuanhao on 2017/5/3.
  */
+@Service
 public class ExtractContentService {
 
     private final org.slf4j.Logger logger = LoggerFactory.getLogger(this.getClass());
@@ -291,6 +293,9 @@ public class ExtractContentService {
         if(len > indexLen){
             len = indexLen;
         }
+
+        logger.error("一级标题数量为：" + firstTitle.size());
+        logger.error("一级标题下标数量为：" + firstTitleIndex.size());
 
         logger.info("------------------ 一级标题内容 ----------------------");
 
@@ -811,7 +816,7 @@ public class ExtractContentService {
      * @return
      */
     public LinkedList<Element> getNodes(Document doc){
-        Element mainContent = doc.select("div.mw-content-ltr").get(0);
+        Element mainContent = doc.select("div.mw-content-ltr").get(0).child(0);
         Elements childs = mainContent.children();
         LinkedList<Element> list = new LinkedList<Element>();
         for (Element e : childs) {
