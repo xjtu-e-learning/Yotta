@@ -2,24 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="63165312-f4ce-4f87-b740-4e5f1a810523" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/Yotta/spider/service/fragment/SpiderFragmentServiceTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DAY.md" afterPath="$PROJECT_DIR$/DAY.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Yotta/common/domain/ResultEnum.java" afterPath="$PROJECT_DIR$/src/main/java/Yotta/common/domain/ResultEnum.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Yotta/spider/controller/FacetController.java" afterPath="$PROJECT_DIR$/src/main/java/Yotta/spider/controller/FacetController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Yotta/spider/controller/TopicController.java" afterPath="$PROJECT_DIR$/src/main/java/Yotta/spider/controller/TopicController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Yotta/spider/repository/AssembleImageRepository.java" afterPath="$PROJECT_DIR$/src/main/java/Yotta/spider/repository/AssembleImageRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Yotta/spider/repository/AssembleTextRepository.java" afterPath="$PROJECT_DIR$/src/main/java/Yotta/spider/repository/AssembleTextRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Yotta/spider/repository/FacetRelationRepository.java" afterPath="$PROJECT_DIR$/src/main/java/Yotta/spider/repository/FacetRelationRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Yotta/spider/repository/FacetRepository.java" afterPath="$PROJECT_DIR$/src/main/java/Yotta/spider/repository/FacetRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Yotta/spider/repository/TopicRelationRepository.java" afterPath="$PROJECT_DIR$/src/main/java/Yotta/spider/repository/TopicRelationRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Yotta/spider/repository/TopicRepository.java" afterPath="$PROJECT_DIR$/src/main/java/Yotta/spider/repository/TopicRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Yotta/spider/service/Facet/FacetService.java" afterPath="$PROJECT_DIR$/src/main/java/Yotta/spider/service/Facet/FacetService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Yotta/spider/service/Facet/SpiderFacetService.java" afterPath="$PROJECT_DIR$/src/main/java/Yotta/spider/service/Facet/SpiderFacetService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Yotta/spider/service/fragment/SpiderFragmentService.java" afterPath="$PROJECT_DIR$/src/main/java/Yotta/spider/service/fragment/SpiderFragmentService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Yotta/spider/service/topic/TopicService.java" afterPath="$PROJECT_DIR$/src/main/java/Yotta/spider/service/topic/TopicService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Yotta/spider/service/utils/ExtractContentService.java" afterPath="$PROJECT_DIR$/src/main/java/Yotta/spider/service/utils/ExtractContentService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/resources/static/module/module3/pages/spider/index.html" afterPath="$PROJECT_DIR$/src/resources/static/module/module3/pages/spider/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/resources/static/module/module3/pages/spider/spider.js" afterPath="$PROJECT_DIR$/src/resources/static/module/module3/pages/spider/spider.js" />
     </list>
     <ignored path="Yotta.iws" />
@@ -57,12 +40,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="DAY.md" pinned="false" current-in-tab="true">
+      <file leaf-file-name="DAY.md" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/DAY.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="609">
-                <caret line="29" column="37" lean-forward="false" selection-start-line="29" selection-start-column="37" selection-end-line="29" selection-end-column="37" />
+              <first_editor relative-caret-position="441">
+                <caret line="21" column="37" lean-forward="true" selection-start-line="21" selection-start-column="37" selection-end-line="21" selection-end-column="37" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -73,8 +56,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/resources/static/module/module3/pages/spider/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="528">
-              <caret line="571" column="41" lean-forward="true" selection-start-line="571" selection-start-column="41" selection-end-line="571" selection-end-column="41" />
+            <state relative-caret-position="360">
+              <caret line="882" column="113" lean-forward="false" selection-start-line="882" selection-start-column="107" selection-end-line="882" selection-end-column="113" />
               <folding>
                 <element signature="n#div#0;n#div#0;n#section#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#script#0;n#td#4;n#tr#1;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#section#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
@@ -89,11 +72,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="spider.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="spider.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/resources/static/module/module3/pages/spider/spider.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="267">
-              <caret line="392" column="73" lean-forward="true" selection-start-line="392" selection-start-column="73" selection-end-line="392" selection-end-column="73" />
+            <state relative-caret-position="294">
+              <caret line="413" column="20" lean-forward="false" selection-start-line="413" selection-start-column="20" selection-end-line="413" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -165,7 +148,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>selectedDomainId</find>
       <find>domainName</find>
       <find>selectedDomainName</find>
       <find>modalCtrlmodalInsert</find>
@@ -193,8 +175,9 @@
       <find>openModalTopicModify</find>
       <find>modalCtrlmodalTopicModify</find>
       <find>detailDomainSourceOpt</find>
-      <find>topicDelete</find>
       <find>domainTopicInfo</find>
+      <find>modalDomainModify</find>
+      <find>topicDelete</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -262,7 +245,6 @@
         <option value="$PROJECT_DIR$/src/main/java/Yotta/spider/repository/TopicRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/Yotta/common/domain/ResultEnum.java" />
         <option value="$PROJECT_DIR$/src/main/java/Yotta/spider/controller/TopicController.java" />
-        <option value="$PROJECT_DIR$/src/resources/static/module/module3/pages/spider/spider.js" />
         <option value="$PROJECT_DIR$/src/main/java/Yotta/spider/repository/TopicRelationRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/Yotta/spider/repository/FacetRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/Yotta/spider/repository/FacetRelationRepository.java" />
@@ -270,6 +252,7 @@
         <option value="$PROJECT_DIR$/src/main/java/Yotta/spider/repository/AssembleImageRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/Yotta/spider/service/topic/TopicService.java" />
         <option value="$PROJECT_DIR$/DAY.md" />
+        <option value="$PROJECT_DIR$/src/resources/static/module/module3/pages/spider/spider.js" />
       </list>
     </option>
   </component>
@@ -1438,7 +1421,7 @@
       <workItem from="1506326335419" duration="18832000" />
       <workItem from="1506393694714" duration="18912000" />
       <workItem from="1506501239813" duration="13943000" />
-      <workItem from="1506523810002" duration="25565000" />
+      <workItem from="1506523810002" duration="29212000" />
     </task>
     <servers />
   </component>
@@ -1475,7 +1458,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="347338000" />
+    <option name="totallyTimeSpent" value="350985000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -2011,18 +1994,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/resources/static/module/module3/pages/spider/spider.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
-          <caret line="392" column="73" lean-forward="true" selection-start-line="392" selection-start-column="73" selection-end-line="392" selection-end-column="73" />
-          <folding />
+    <entry file="file://$PROJECT_DIR$/DAY.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="441">
+            <caret line="21" column="37" lean-forward="true" selection-start-line="21" selection-start-column="37" selection-end-line="21" selection-end-column="37" />
+            <folding />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/resources/static/module/module3/pages/spider/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="571" column="41" lean-forward="true" selection-start-line="571" selection-start-column="41" selection-end-line="571" selection-end-column="41" />
+        <state relative-caret-position="360">
+          <caret line="882" column="113" lean-forward="false" selection-start-line="882" selection-start-column="107" selection-end-line="882" selection-end-column="113" />
           <folding>
             <element signature="n#div#0;n#div#0;n#section#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#script#0;n#td#4;n#tr#1;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#section#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
@@ -2036,14 +2022,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DAY.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="609">
-            <caret line="29" column="37" lean-forward="false" selection-start-line="29" selection-start-column="37" selection-end-line="29" selection-end-column="37" />
-            <folding />
-          </first_editor>
-          <second_editor />
+    <entry file="file://$PROJECT_DIR$/src/resources/static/module/module3/pages/spider/spider.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="413" column="20" lean-forward="false" selection-start-line="413" selection-start-column="20" selection-end-line="413" selection-end-column="20" />
+          <folding />
         </state>
       </provider>
     </entry>
