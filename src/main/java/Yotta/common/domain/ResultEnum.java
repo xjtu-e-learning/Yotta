@@ -31,6 +31,9 @@ public enum ResultEnum {
     FACETQUERY_ERROR(119, "分面查询失败，该主题的分面没有爬取"),
     FACETDUPLICATEDCRAWLER_ERROR(120, "分面和碎片信息已经爬取，不需要再次爬取"),
 
+    TOPICRELATIONQUERY_ERROR(121, "主题关系查询失败"),
+    TOPICRELATIONDELETE_ERROR(122, "主题关系删除失败"),
+
     ;
 
     private Integer code;

@@ -880,8 +880,6 @@
 
                                         <button class="btn btn-danger btn-xs" ng-click="topicDelete($index)">删除</button>
 
-                                        <button class="btn btn-primary btn-xs" ng-click="topicRelationInfo($index)">主题关系</button>
-
                                         <button class="btn btn-primary btn-xs" ng-click="topicFacetInfo($index)">查看分面</button>
 
                                         <!--增加子主题-->
@@ -965,6 +963,62 @@
                 <!--主题信息结束-->
 
 
+
+                <!-- 主题关系信息开始 -->
+                <div id="topicRelation" class="row">
+                    <div class="box">
+                        <div class="box-header">
+                            <h3 class="box-title">主题关系列表</h3>
+                        </div>
+                        <!-- /.box-header -->
+
+                        <!--主题关系记录-->
+                        <div class="box-body table-responsive no-padding">
+                            <table class="table table-hover">
+                                <tbody><tr>
+                                    <th>主题关系ID</th>
+                                    <th>父主题ID</th>
+                                    <th>父主题名</th>
+                                    <th>父主题级数</th>
+                                    <th>子主题ID</th>
+                                    <th>子主题名</th>
+                                    <th>子主题级数</th>
+                                    <th>领域名</th>
+                                    <th>操作</th>
+                                </tr>
+                                <!-- $index指示第几行数据，可以回传js控制 -->
+                                <tr data-ng-repeat="topicRelation in topicRelations track by $index">
+                                    <td scope='row' data-ng-bind="topicRelation.relationId" id="relationId"></td>
+                                    <td scope='row' data-ng-bind="topicRelation.parentTopicId"></td>
+                                    <td scope='row' data-ng-bind="topicRelation.parentTopicName"></td>
+                                    <td scope='row' data-ng-bind="topicRelation.parentTopicLayer"></td>
+                                    <td scope='row' data-ng-bind="topicRelation.childTopicId"></td>
+                                    <td scope='row' data-ng-bind="topicRelation.childTopicName"></td>
+                                    <td scope='row' data-ng-bind="topicRelation.childTopicLayer"></td>
+                                    <!--<td><a href="{{ topic.topicUrl }}" id="topicUrl" target='_blank'>{{ topic.topicName }}</a></td>-->
+                                    <td data-ng-bind="topicDomain"></td>
+                                    <td align="">
+                                        <button class="btn btn-danger btn-xs" ng-click="topicRelationDelete($index)">删除</button>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- /.box-body -->
+                    </div>
+
+                    <!-- 分页  -->
+                    <div class="text-right">
+                        <ul uib-pagination  total-items="topicRelationTotalItems" ng-model="topicRelationCurrentPage"
+                            items-per-page = "topicRelationNumPerPage" max-size="topicRelationMaxSize"
+                            class="pagination" first-text="首页"
+                            previous-text="上一页" next-text="下一页" last-text="末页"
+                            boundary-links="true" ng-change="topicRelationPageChanged()" force-ellipses="false">
+                        </ul>
+                    </div>
+
+                </div>
+                <!--主题信息结束-->
 
 
             </div>

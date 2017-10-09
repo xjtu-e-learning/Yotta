@@ -21,6 +21,13 @@ myApp.controller('domainCtrl', function($scope, $uibModal, $http) {
     $scope.topicMaxSize = 100;
     var selectedDomainId = 1; // 保存需要查看的领域Id信息
     var selectedDomainName = '空'; // 保存需要查看的领域名信息
+    // 主题关系分页设置
+    $scope.topicRelationCurrentPage = 1; // 当前页
+    $scope.topicRelationNumPerPage = 5; // 每页显示的条数
+    $scope.topicRelationMaxSize = 100;
+
+    var selectedTopicId = 1; // 保存需要查看的主题Id信息
+    var selectedTopicName = '空'; // 保存需要查看的主题名信息
 
     /**
      * 页面加载时默认显示的数据源下的领域信息
@@ -209,13 +216,15 @@ myApp.controller('domainCtrl', function($scope, $uibModal, $http) {
 
 
     /**
-     * 领域：显示该领域下的主题信息
+     * 领域：显示该领域下的主题及主题关系
      */
     $scope.domainTopicInfo = function($index) {
         selectedDomainId = $scope.domains[$index].domainId; // 保存选中的领域信息，用于分页的时候使用
         selectedDomainName = $scope.domains[$index].domainName; // 保存选中的领域信息，用于分页的时候使用
         var oldDomainId = $scope.domains[$index].domainId; // 保存点击前的领域信息，用户恢复现场
         var oldDomainName = $scope.domains[$index].domainName;
+
+        // 显示该领域下的主题
         $http({
             url : 'http://' + ip + '/topic/getTopicByDomainIdAndPagingAndSorting?page=1&size='
             + $scope.topicNumPerPage + '&ascOrder=' + ascOrder + '&domainId=' + $scope.domains[$index].domainId,
@@ -231,6 +240,26 @@ myApp.controller('domainCtrl', function($scope, $uibModal, $http) {
             alert("获取主题信息失败，code为：" + response.code + "，msg为：" + response.msg +
                 "，领域ID为：" + oldDomainId + "，领域名为：" + oldDomainName);
             console.log("获取主题信息失败，code为：" + response.code + "，msg为：" + response.msg +
+                "，领域ID为：" + oldDomainId + "，领域名为：" + oldDomainName);
+            $scope.topicDomain = oldDomainName;
+        });
+
+        // 显示该领域下的主题关系
+        $http({
+            url : 'http://' + ip + '/topic/getTopicRelationByDomainIdAndPagingAndSorting?page=1&size='
+            + $scope.topicNumPerPage + '&ascOrder=' + ascOrder + '&domainId=' + $scope.domains[$index].domainId,
+            method : 'get'
+        }).success(function(response) {
+            $scope.topicDomain = $scope.domains[$index].domainName;
+            console.log("$scope.domains[$index].domainName: " + $scope.domains[$index].domainName);
+            $scope.topicRelationTotalItems = response.data.totalElements;
+            $scope.topicRelations = response.data.content;
+            console.log("获取主题关系成功，code为：" + response.code + "，msg为：" + response.msg);
+            console.log(response.data);
+        }).error(function(response){
+            alert("获取主题关系失败，code为：" + response.code + "，msg为：" + response.msg +
+                "，领域ID为：" + oldDomainId + "，领域名为：" + oldDomainName);
+            console.log("获取主题关系失败，code为：" + response.code + "，msg为：" + response.msg +
                 "，领域ID为：" + oldDomainId + "，领域名为：" + oldDomainName);
             $scope.topicDomain = oldDomainName;
         });
@@ -269,6 +298,28 @@ myApp.controller('domainCtrl', function($scope, $uibModal, $http) {
             alert("获取主题信息失败，code为：" + response.code + "，msg为：" + response.msg +
                 "，领域ID为：" + selectedDomainId + "，领域名为：" + selectedDomainName);
             console.log("获取主题信息失败，code为：" + response.code + "，msg为：" + response.msg +
+                "，领域ID为：" + selectedDomainId + "，领域名为：" + selectedDomainName);
+        });
+    };
+
+    /**
+     * 主题：主题分页点击下一页等的操作
+     */
+    $scope.topicRelationPageChanged = function() {
+        console.log("进入主题关系页面切换状态");
+        $http({
+            url : 'http://' + ip + '/topic/getTopicRelationByDomainIdAndPagingAndSorting?page='
+            + $scope.topicRelationCurrentPage + '&size=' + $scope.topicRelationNumPerPage + '&ascOrder=' + ascOrder + '&domainId=' + selectedDomainId,
+            method : 'get'
+        }).success(function(response) {
+            $scope.topicRelationTotalItems = response.data.totalElements;
+            $scope.topicRelations = response.data.content;
+            console.log("获取主题关系成功，code为：" + response.code + "，msg为：" + response.msg);
+            console.log(response.data);
+        }).error(function(response){
+            alert("获取主题关系失败，code为：" + response.code + "，msg为：" + response.msg +
+                "，领域ID为：" + selectedDomainId + "，领域名为：" + selectedDomainName);
+            console.log("获取主题关系失败，code为：" + response.code + "，msg为：" + response.msg +
                 "，领域ID为：" + selectedDomainId + "，领域名为：" + selectedDomainName);
         });
     };
@@ -400,35 +451,24 @@ myApp.controller('domainCtrl', function($scope, $uibModal, $http) {
         });
     };
 
+    /**
+     * 主题：删除主题关系信息
+     */
+    $scope.topicRelationDelete = function($index) {
+        $http({
+            url : 'http://' + ip + '/topic/deleteTopic?topicId=' + $scope.topics[$index].topicId,
+            method : 'get'
+        }).success(function(response) {
+            alert("删除主题成功，code为：" + response.code + "，msg为：" + response.msg);
+            console.log("删除主题成功，code为：" + response.code + "，msg为：" + response.msg);
+        }).error(function(response){
+            alert("删除主题失败，code为：" + response.code + "，msg为：" + response.msg +
+                "，主题Id为：" + $scope.topics[$index].topicId);
+            console.log("获取主题失败，code为：" + response.code + "，msg为：" + response.msg +
+                "，主题Id为：" + $scope.topics[$index].topicId);
+        });
+    };
 
-    // /**
-    //  * 主题：显示该主题下的主题上下位关系信息
-    //  */
-    // $scope.topicRelationInfo = function($index) {
-    //     selectedDomainId = $scope.domains[$index].domainId; // 保存选中的领域信息，用于分页的时候使用
-    //     selectedDomainName = $scope.domains[$index].domainName; // 保存选中的领域信息，用于分页的时候使用
-    //     var oldDomainId = $scope.domains[$index].domainId; // 保存点击前的领域信息，用户恢复现场
-    //     var oldDomainName = $scope.domains[$index].domainName;
-    //     $http({
-    //         url : 'http://' + ip + '/topic/getTopicByDomainIdAndPagingAndSorting?page=1&size='
-    //         + $scope.topicNumPerPage + '&ascOrder=' + ascOrder + '&domainId=' + $scope.domains[$index].domainId,
-    //         method : 'get'
-    //     }).success(function(response) {
-    //         $scope.topicDomain = $scope.domains[$index].domainName;
-    //         console.log("$scope.domains[$index].domainName: " + $scope.domains[$index].domainName);
-    //         $scope.topicTotalItems = response.data.totalElements;
-    //         $scope.topics = response.data.content;
-    //         console.log("获取主题信息成功，code为：" + response.code + "，msg为：" + response.msg);
-    //         console.log(response.data);
-    //     }).error(function(response){
-    //         alert("获取主题信息失败，code为：" + response.code + "，msg为：" + response.msg +
-    //             "，领域ID为：" + oldDomainId + "，领域名为：" + oldDomainName);
-    //         console.log("获取主题信息失败，code为：" + response.code + "，msg为：" + response.msg +
-    //             "，领域ID为：" + oldDomainId + "，领域名为：" + oldDomainName);
-    //         $scope.topicDomain = oldDomainName;
-    //     });
-    //
-    // };
 
     // /**
     //  * 主题：显示该主题下的分面信息
