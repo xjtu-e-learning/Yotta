@@ -22,6 +22,32 @@ public class TopicController {
     @Autowired
     private TopicService topicService;
 
+    @GetMapping(value = "/deleteTopicRelation")
+    @ApiOperation(value = "删除主题", notes = "删除主题")
+    public ResponseEntity deleteTopicRelation(@RequestParam(
+            value = "topicRelationId", defaultValue = "1") Long topicRelationId
+    ) {
+        Result result = topicService.deleteTopicRelation(topicRelationId);
+        if (result.getCode() != ResultEnum.SUCCESS.getCode()) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(result);
+        }
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
+
+    @GetMapping(value = "/getTopicRelationByDomainIdAndPagingAndSorting")
+    @ApiOperation(value = "根据查询条件，分页查询主题关系", notes = "根据查询条件，分页查询主题关系")
+    public ResponseEntity getTopicRelationByDomainIdAndPagingAndSorting(
+            @RequestParam(value = "page", defaultValue = "1") Integer page,
+            @RequestParam(value = "size", defaultValue = "3") Integer size,
+            @RequestParam(value = "ascOrder", defaultValue = "true") boolean ascOrder,
+            @RequestParam(value = "domainId", defaultValue = "1") Long domainId) {
+        Result result = topicService.getTopicRelationByDomainIdAndPagingAndSorting(page - 1, size, ascOrder, domainId);
+        if (result.getCode() != ResultEnum.SUCCESS.getCode()) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(result);
+        }
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
+
     @GetMapping(value = "/deleteTopic")
     @ApiOperation(value = "删除主题", notes = "删除主题")
     public ResponseEntity deleteTopic(@RequestParam(

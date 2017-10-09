@@ -55,7 +55,64 @@ public class TopicService {
 
 
     /**
+     * 根据主题关系Id 删除主题关系
+     * @param topicRelationId 主题id
+     * @return 删除结果
+     */
+    public Result deleteTopicRelation(Long topicRelationId) {
+        try {
+            topicRelationRepository.deleteAllByRelationId(topicRelationId);
+            return ResultUtil.success(ResultEnum.SUCCESS.getCode(), ResultEnum.SUCCESS.getMsg(), "删除成功");
+        } catch (Exception e) {
+            logger.error("删除失败");
+            return ResultUtil.error(ResultEnum.TOPICRELATIONDELETE_ERROR.getCode(), ResultEnum.TOPICRELATIONDELETE_ERROR.getMsg());
+        }
+    }
+
+    /**
+     * 获取分页主题关系数据，按照主题ID排序 (带查询条件：根据同一领域Id下的数据)
+     * @param page 第几页的数据
+     * @param size 每页数据的大小
+     * @param ascOrder 是否升序
+     * @param domainId 领域Id (查询条件)
+     * @return 分页排序的数据
+     */
+    public Result getTopicRelationByDomainIdAndPagingAndSorting(Integer page, Integer size, boolean ascOrder, Long domainId) {
+        // 页数是从0开始计数的
+        Sort.Direction direction = Sort.Direction.ASC;
+        if (!ascOrder) {
+            direction = Sort.Direction.DESC;
+        }
+        Pageable pageable = new PageRequest(page, size, direction, "domainId");
+        // lamada表达式的写法
+        Page<TopicRelation> topicRelationPage = topicRelationRepository.findAll(
+                (Root<TopicRelation> root, CriteriaQuery<?> query, CriteriaBuilder criteriaBuilder) -> {
+                    return criteriaBuilder.equal(root.get("domainId").as(Long.class), domainId);
+                }, pageable);
+        return topicRelationPageJudge(topicRelationPage);
+    }
+
+    /**
+     * 根据分页查询的结果，返回不同的状态。
+     * 1. totalElements为 0：说明没有查到数据，查询领域失败
+     * 2. number大于totalPages：说明查询的页数大于最大页数，返回失败
+     * 3. 成功返回分页数据
+     * @param topicRelationPage 分页查询结果
+     * @return 返回查询结果
+     */
+    public Result topicRelationPageJudge(Page<TopicRelation> topicRelationPage) {
+        if (topicRelationPage.getTotalElements() == 0) { // 没有查到数据
+            return ResultUtil.error(ResultEnum.TOPICRELATIONQUERY_ERROR.getCode(), ResultEnum.TOPICRELATIONQUERY_ERROR.getMsg());
+        } else if (topicRelationPage.getNumber() >= topicRelationPage.getTotalPages()) { // 查询的页数超过最大页数
+            return ResultUtil.error(ResultEnum.PAGE_ERROR.getCode(), ResultEnum.PAGE_ERROR.getMsg());
+        }
+        // 返回查询的内容
+        return ResultUtil.success(ResultEnum.SUCCESS.getCode(), ResultEnum.SUCCESS.getMsg(), topicRelationPage);
+    }
+
+    /**
      * 根据主题Id 删除主题
+     * 同时删除主题关系表，分面表，分面关系表，碎片表中该主题的所有数据
      * @param topicId 主题id
      * @return 删除结果
      */
@@ -76,6 +133,7 @@ public class TopicService {
 
     /**
      * 根据主题Id 更新主题
+     * 因为是通过主键id来连接关系的，所以不用修改分面表和主题表等表格数据的信息
      * @param topicId 主题id
      * @param newTopic 新增加的主题信息
      * @return 更新结果
