@@ -25,9 +25,19 @@ myApp.controller('domainCtrl', function($scope, $uibModal, $http) {
     $scope.topicRelationCurrentPage = 1; // 当前页
     $scope.topicRelationNumPerPage = 5; // 每页显示的条数
     $scope.topicRelationMaxSize = 100;
-
     var selectedTopicId = 1; // 保存需要查看的主题Id信息
     var selectedTopicName = '空'; // 保存需要查看的主题名信息
+
+    // 分面分页设置
+    $scope.facetCurrentPage = 1; // 当前页
+    $scope.facetNumPerPage = 5; // 每页显示的条数
+    $scope.facetMaxSize = 100;
+    var selectedFacetId = 1;
+    var selectedFacetName = '空';
+    // 分面关系分页设置
+    $scope.facetRelationCurrentPage = 1; // 当前页
+    $scope.facetRelationNumPerPage = 5; // 每页显示的条数
+    $scope.facetRelationMaxSize = 100;
 
     /**
      * 页面加载时默认显示的数据源下的领域信息
@@ -475,50 +485,49 @@ myApp.controller('domainCtrl', function($scope, $uibModal, $http) {
      * 主题：显示该主题下的分面信息
      */
     $scope.topicFacetInfo = function($index) {
-        selectedDomainId = $scope.domains[$index].domainId; // 保存选中的领域信息，用于分页的时候使用
-        selectedDomainName = $scope.domains[$index].domainName; // 保存选中的领域信息，用于分页的时候使用
-        $scope.selectedDomainName = $scope.domains[$index].domainName;
-        var oldDomainId = $scope.domains[$index].domainId; // 保存点击前的领域信息，用户恢复现场
-        var oldDomainName = $scope.domains[$index].domainName;
+        selectedTopicId = $scope.topics[$index].topicId; // 保存选中的领域信息，用于分页的时候使用
+        selectedTopicName = $scope.topics[$index].topicName; // 保存选中的领域信息，用于分页的时候使用
+        $scope.selectedTopicName = $scope.topics[$index].topicName;
+        var oldTopicId = $scope.topics[$index].topicId; // 保存点击前的领域信息，用户恢复现场
+        var oldTopicName = $scope.topics[$index].topicName;
 
-        // 显示该领域下的主题
+        // 显示该主题下的分面
         $http({
-            url : 'http://' + ip + '/topic/getTopicByDomainIdAndPagingAndSorting?page=1&size='
-            + $scope.topicNumPerPage + '&ascOrder=' + ascOrder + '&domainId=' + $scope.domains[$index].domainId,
+            url : 'http://' + ip + '/facet/getFacetByTopicIdAndPagingAndSorting?page=1&size='
+            + $scope.facetNumPerPage + '&ascOrder=' + ascOrder + '&topicId=' + $scope.topics[$index].topicId,
             method : 'get'
         }).success(function(response) {
-            $scope.topicDomain = $scope.domains[$index].domainName;
-            console.log("$scope.domains[$index].domainName: " + $scope.domains[$index].domainName);
-            $scope.topicTotalItems = response.data.totalElements;
-            $scope.topics = response.data.content;
-            console.log("获取主题信息成功，code为：" + response.code + "，msg为：" + response.msg);
+            $scope.facetTopic = $scope.topics[$index].topicName;
+            $scope.facetTotalItems = response.data.totalElements;
+            $scope.facets = response.data.content;
+            console.log("获取分面信息成功，code为：" + response.code + "，msg为：" + response.msg);
             console.log(response.data);
         }).error(function(response){
-            alert("获取主题信息失败，code为：" + response.code + "，msg为：" + response.msg +
-                "，领域ID为：" + oldDomainId + "，领域名为：" + oldDomainName);
-            console.log("获取主题信息失败，code为：" + response.code + "，msg为：" + response.msg +
-                "，领域ID为：" + oldDomainId + "，领域名为：" + oldDomainName);
-            $scope.topicDomain = oldDomainName;
+            alert("该主题没有分面，获取分面失败，code为：" + response.code + "，msg为：" + response.msg +
+                "，主题ID为：" + oldTopicId + "，主题名为：" + oldTopicName);
+            console.log("获取分面失败，code为：" + response.code + "，msg为：" + response.msg +
+                "，主题ID为：" + oldTopicId + "，主题名为：" + oldTopicName);
+            // $scope.facetTopic = oldTopicName;
         });
 
-        // 显示该领域下的主题关系
+        // 显示该主题下的分面关系
         $http({
-            url : 'http://' + ip + '/topic/getTopicRelationByDomainIdAndPagingAndSorting?page=1&size='
-            + $scope.topicNumPerPage + '&ascOrder=' + ascOrder + '&domainId=' + $scope.domains[$index].domainId,
+            url : 'http://' + ip + '/facet/getFacetRelationByTopicIdAndPagingAndSorting?page=1&size='
+            + $scope.facetRelationNumPerPage + '&ascOrder=' + ascOrder + '&topicId=' + $scope.topics[$index].topicId,
             method : 'get'
         }).success(function(response) {
-            $scope.topicDomain = $scope.domains[$index].domainName;
-            console.log("$scope.domains[$index].domainName: " + $scope.domains[$index].domainName);
-            $scope.topicRelationTotalItems = response.data.totalElements;
-            $scope.topicRelations = response.data.content;
-            console.log("获取主题关系成功，code为：" + response.code + "，msg为：" + response.msg);
+            $scope.facetTopic = $scope.topics[$index].topicName;
+            // console.log($scope.topics[$index].topicId + ", " + $scope.topics[$index].topicName);
+            $scope.facetRelationTotalItems = response.data.totalElements;
+            $scope.facetRelations = response.data.content;
+            console.log("获取分面关系成功，code为：" + response.code + "，msg为：" + response.msg);
             console.log(response.data);
         }).error(function(response){
-            alert("获取主题关系失败，code为：" + response.code + "，msg为：" + response.msg +
-                "，领域ID为：" + oldDomainId + "，领域名为：" + oldDomainName);
-            console.log("获取主题关系失败，code为：" + response.code + "，msg为：" + response.msg +
-                "，领域ID为：" + oldDomainId + "，领域名为：" + oldDomainName);
-            $scope.topicDomain = oldDomainName;
+            alert("该主题没有分面关系，获取分面关系失败，code为：" + response.code + "，msg为：" + response.msg +
+                "，主题ID为：" + oldTopicId + "，主题名为：" + oldTopicName);
+            console.log("获取分面关系失败，code为：" + response.code + "，msg为：" + response.msg +
+                "，主题ID为：" + oldTopicId + "，主题名为：" + oldTopicName);
+            // $scope.facetTopic = oldTopicName;
         });
 
     };
@@ -526,60 +535,209 @@ myApp.controller('domainCtrl', function($scope, $uibModal, $http) {
 
 
 
-    // /*******************************************************************************
-    //  ********************************* 分面 ****************************************
-    //  *******************************************************************************/
-    // /**
-    //  * selectedDomainId 为选中领域Id
-    //  * selectedDomainName 为选中领域名
-    //  * sourceId = "1";
-    //  * $scope.sourceName = "中文维基百科";
-    //  * $scope.sourceType = "百科类";
-    //  */
-    //
-    // /**
-    //  * 主题：主题分页点击下一页等的操作
-    //  */
-    // $scope.topicPageChanged = function() {
-    //     console.log("进入主题页面切换状态");
-    //     $http({
-    //         url : 'http://' + ip + '/topic/getTopicByDomainIdAndPagingAndSorting?page='
-    //         + $scope.topicCurrentPage + '&size=' + $scope.topicNumPerPage + '&ascOrder=' + ascOrder + '&domainId=' + selectedDomainId,
-    //         method : 'get'
-    //     }).success(function(response) {
-    //         $scope.topicTotalItems = response.data.totalElements;
-    //         $scope.topics = response.data.content;
-    //         console.log("获取主题信息成功，code为：" + response.code + "，msg为：" + response.msg);
-    //         console.log(response.data);
-    //     }).error(function(response){
-    //         alert("获取主题信息失败，code为：" + response.code + "，msg为：" + response.msg +
-    //             "，领域ID为：" + selectedDomainId + "，领域名为：" + selectedDomainName);
-    //         console.log("获取主题信息失败，code为：" + response.code + "，msg为：" + response.msg +
-    //             "，领域ID为：" + selectedDomainId + "，领域名为：" + selectedDomainName);
-    //     });
-    // };
-    //
-    // /**
-    //  * 主题：主题分页点击下一页等的操作
-    //  */
-    // $scope.topicRelationPageChanged = function() {
-    //     console.log("进入主题关系页面切换状态");
-    //     $http({
-    //         url : 'http://' + ip + '/topic/getTopicRelationByDomainIdAndPagingAndSorting?page='
-    //         + $scope.topicRelationCurrentPage + '&size=' + $scope.topicRelationNumPerPage + '&ascOrder=' + ascOrder + '&domainId=' + selectedDomainId,
-    //         method : 'get'
-    //     }).success(function(response) {
-    //         $scope.topicRelationTotalItems = response.data.totalElements;
-    //         $scope.topicRelations = response.data.content;
-    //         console.log("获取主题关系成功，code为：" + response.code + "，msg为：" + response.msg);
-    //         console.log(response.data);
-    //     }).error(function(response){
-    //         alert("获取主题关系失败，code为：" + response.code + "，msg为：" + response.msg +
-    //             "，领域ID为：" + selectedDomainId + "，领域名为：" + selectedDomainName);
-    //         console.log("获取主题关系失败，code为：" + response.code + "，msg为：" + response.msg +
-    //             "，领域ID为：" + selectedDomainId + "，领域名为：" + selectedDomainName);
-    //     });
-    // };
+    /*******************************************************************************
+     ********************************* 分面 ****************************************
+     *******************************************************************************/
+    /**
+     * selectedDomainId 为选中领域Id
+     * selectedDomainName 为选中领域名
+     * sourceId = "1";
+     * $scope.sourceName = "中文维基百科";
+     * $scope.sourceType = "百科类";
+
+    // 分面分页设置
+    $scope.facetCurrentPage = 1; // 当前页
+    $scope.facetNumPerPage = 5; // 每页显示的条数
+    $scope.facetMaxSize = 100;
+    var selectedFacetId = 1;
+    var selectedFacetName = '空';
+    // 分面关系分页设置
+    $scope.facetRelationCurrentPage = 1; // 当前页
+    $scope.facetRelationNumPerPage = 5; // 每页显示的条数
+    $scope.facetRelationMaxSize = 100;
+     */
+
+    /**
+     * 分面：分面分页点击下一页等的操作
+     */
+    $scope.facetPageChanged = function() {
+        console.log("进入分面页面切换状态");
+        $http({
+            url : 'http://' + ip + '/facet/getFacetByTopicIdAndPagingAndSorting?page='
+            + $scope.facetCurrentPage + '&size=' + $scope.facetNumPerPage + '&ascOrder=' + ascOrder + '&topicId=' + selectedTopicId,
+            method : 'get'
+        }).success(function(response) {
+            $scope.facetTotalItems = response.data.totalElements;
+            $scope.facets = response.data.content;
+            console.log("获取分面信息成功，code为：" + response.code + "，msg为：" + response.msg);
+            console.log(response.data);
+        }).error(function(response){
+            alert("获取分面信息失败，code为：" + response.code + "，msg为：" + response.msg +
+                "，主题ID为：" + selectedTopicId + "，主题名为：" + selectedTopicName);
+            console.log("获取分面信息失败，code为：" + response.code + "，msg为：" + response.msg +
+                "，主题ID为：" + selectedTopicId + "，主题名为：" + selectedTopicName);
+        });
+    };
+
+    /**
+     * 分面：主题分页点击下一页等的操作
+     */
+    $scope.facetRelationPageChanged = function() {
+        console.log("进入分面关系页面切换状态");
+        $http({
+            url : 'http://' + ip + '/facet/getFacetRelationByTopicIdAndPagingAndSorting?page='
+            + $scope.facetRelationCurrentPage + '&size=' + $scope.facetRelationNumPerPage + '&ascOrder=' + ascOrder + '&topicId=' + selectedTopicId,
+            method : 'get'
+        }).success(function(response) {
+            $scope.facetRelationTotalItems = response.data.totalElements;
+            $scope.facetRelations = response.data.content;
+            console.log("获取分面关系成功，code为：" + response.code + "，msg为：" + response.msg);
+            console.log(response.data);
+        }).error(function(response){
+            alert("获取分面关系失败，code为：" + response.code + "，msg为：" + response.msg +
+                "，主题ID为：" + selectedTopicId + "，主题名为：" + selectedTopicName);
+            console.log("获取主题关系失败，code为：" + response.code + "，msg为：" + response.msg +
+                "，主题ID为：" + selectedTopicId + "，主题名为：" + selectedTopicName);
+        });
+    };
+
+    /**
+     * 分面：添加分面信息 模态框（添加主题下的一级分面）
+     */
+    $scope.openModalInsertFacet = function() {
+
+        var modalInstance = $uibModal.open({
+            templateUrl : 'modalInsertFacet.html',//script标签中定义的id
+            controller : 'modalCtrlmodalInsertFacet',//modal对应的Controller
+            resolve : {
+                selectedTopicId : function () {
+                    return selectedTopicId;
+                },
+                selectedTopicName : function() {//data作为modal的controller传入的参数
+                    return selectedTopicName;//用于传递数据
+                }
+            }
+        })
+    };
+
+    /**
+     * 分面：添加子分面信息 模态框（添加分面下的子分面）
+     */
+    $scope.openModalInsertChildFacet = function($index) {
+
+        var modalInstance = $uibModal.open({
+            templateUrl : 'modalInsertChildFacet.html',//script标签中定义的id
+            controller : 'modalCtrlmodalInsertChildFacet',//modal对应的Controller
+            resolve : {
+                selectedTopicId : function () {
+                    return selectedTopicId;
+                },
+                selectedTopicName : function() {
+                    return selectedTopicName;
+                },
+                selectedFacetName : function() {
+                    return $scope.facets[$index].facetName;
+                }
+            }
+        })
+    };
+
+    /**
+     * 分面：分面信息详情 模态框
+     */
+    $scope.openModalFacetDetail = function($index) {
+
+        var modalInstance = $uibModal.open({
+            templateUrl : 'modalFacetDetail.html',//script标签中定义的id
+            controller : 'modalCtrlmodalFacetDetail',//modal对应的Controller
+            resolve : {
+                facetId : function() { // 分面Id
+                    console.log($index + ", " + $scope.facets[$index]);
+                    return $scope.facets[$index].facetId;
+                },
+                facetName : function() { // 分面名
+                    return $scope.facets[$index].facetName;
+                },
+                topicLayer : function() { // 主题层级
+                    return $scope.facets[$index].facetLayer;
+                },
+                selectedTopicName : function() { // 主题名
+                    return selectedTopicName;
+                },
+                selectedDomainName : function() { // 领域名
+                    return selectedDomainName;
+                },
+                sourceName : function() { // 数据源名
+                    return $scope.sourceName;
+                }
+            }
+        })
+    };
+
+    /**
+     * 分面：修改分面信息 模态框
+     */
+    $scope.openModalFacetModify = function($index) {
+
+        var modalInstance = $uibModal.open({
+            templateUrl : 'modalFacetModify.html',//script标签中定义的id
+            controller : 'modalCtrlmodalFacetModify',//modal对应的Controller
+            resolve : {
+                topicId : function() { // 主题Id
+                    return selectedTopicId;
+                },
+                facetId : function() { // 分面Id
+                    return $scope.facets[$index].facetId;
+                },
+                facetName : function() { // 分面名
+                    return $scope.facets[$index].facetName;
+                },
+                facetLayer : function() { // 分面层级
+                    return $scope.facets[$index].facetLayer;
+                },
+                selectedTopicName : function() { // 主题名
+                    return selectedTopicName;
+                }
+            }
+        })
+
+    };
+
+    /**
+     * 分面：删除分面信息
+     */
+    $scope.facetDelete = function($index) {
+        $http({
+            url : 'http://' + ip + '/facet/deleteFacet?facetId=' + $scope.facets[$index].facetId,
+            method : 'get'
+        }).success(function(response) {
+            alert("删除分面成功，code为：" + response.code + "，msg为：" + response.msg);
+            console.log("删除分面成功，code为：" + response.code + "，msg为：" + response.msg);
+        }).error(function(response){
+            alert("删除分面失败，code为：" + response.code + "，msg为：" + response.msg +
+                "，分面Id为：" + $scope.facets[$index].facetId);
+            console.log("获取分面失败，code为：" + response.code + "，msg为：" + response.msg +
+                "，分面Id为：" + $scope.facets[$index].facetId);
+        });
+    };
+
+    /**
+     * 分面：删除分面关系信息
+     */
+    $scope.facetRelationDelete = function($index) {
+        $http({
+            url : 'http://' + ip + '/facet/deleteFacetRelation?facetRelationId=' + $scope.facetRelations[$index].relationId,
+            method : 'get'
+        }).success(function(response) {
+            alert("删除分面关系成功，code为：" + response.code + "，msg为：" + response.msg);
+            console.log("删除分面关系成功，code为：" + response.code + "，msg为：" + response.msg);
+        }).error(function(response){
+            alert("删除分面关系失败，code为：" + response.code + "，msg为：" + response.msg +
+                "，分面Id为：" + $scope.facetRelations[$index].relationId);
+            console.log("获取分面关系失败，code为：" + response.code + "，msg为：" + response.msg +
+                "，分面Id为：" + $scope.facetRelations[$index].relationId);
+        });
+    };
 
 
 });
@@ -926,6 +1084,207 @@ myApp.controller('modalCtrlmodalTopicModify', function($scope, $http, $uibModalI
     		domainIds.push(data[i].domainId);
     	}
     	$scope.detailTopicDomainOpt = domainNames; // 领域名数组
+    }).error(function(response){
+        console.log("获取领域信息失败，code为：" + response.code + "，msg为：" + response.msg);
+    });
+
+    // 在这里处理要进行的操作
+    $scope.ok = function() {
+        // 得到更新后的数据源Id
+        var domainId = 1;
+        for(var i = 0; i < domainNames.length; i++){
+            if(domainNames[i] == $scope.detailTopicDomain){
+                domainId = domainIds[i];
+                console.log(domainId);
+            }
+        }
+        $http({
+            url : 'http://' + ip + '/topic/updateTopic?topicId=' + topicId
+            + '&topicId=' + $scope.detailTopicId
+            + '&topicName=' + $scope.detailTopicName
+            + '&topicUrl=' + $scope.detailTopicUrl
+            + '&topicLayer=' + $scope.detailTopicLayer
+            + '&domainId=' + domainId,
+            method : 'get'
+        }).success(function(response) {
+            alert("更新成功");
+            console.log("更新主题信息成功，code为：" + response.code + "，msg为：" + response.msg);
+            console.log(response.data);
+        }).error(function(response){
+            alert("更新主题信息失败，code为：" + response.code + "，msg为：" + response.msg);
+            console.log("更新主题信息失败，code为：" + response.code + "，msg为：" + response.msg);
+        });
+        $uibModalInstance.close();
+    };
+
+    $scope.cancel = function() {
+        $uibModalInstance.dismiss('cancel');
+    }
+
+});
+
+/*******************************************************************************
+ ********************************* 分面 ****************************************
+ *******************************************************************************/
+// 分面及分面关系插入 模态框对应的Controller
+myApp.controller('modalCtrlmodalInsertFacet', function($scope, $http, $uibModalInstance, selectedTopicId, selectedTopicName) {
+    $scope.selectedTopicName = selectedTopicName;
+    //在这里处理要进行的操作
+    $scope.ok = function() {
+        // 插入分面及分面关系
+        $http({
+            url : 'http://' + ip + '/facet/insertFacetUnderTopic?facetName='
+            + ($scope.insertFacetName == null ? '' : $scope.insertFacetName)
+            + '&facetLayer=1&topicId=' + selectedTopicId,
+            method : 'get'
+        }).success(function(response) {
+            alert("插入成功");
+            console.log("插入分面成功，code为：" + response.code + "，msg为：" + response.msg);
+            console.log(response.data);
+        }).error(function(response){
+            alert("插入分面失败，code为：" + response.code + "，msg为：" + response.msg);
+            console.log("插入分面失败，code为：" + response.code + "，msg为：" + response.msg);
+        });
+        $uibModalInstance.close();
+    };
+
+    $scope.cancel = function() {
+        $uibModalInstance.dismiss('cancel');
+    }
+
+});
+
+
+// 子分面及子分面关系插入 模态框对应的Controller
+myApp.controller('modalCtrlmodalInsertChildFacet', function($scope, $http, $uibModalInstance, selectedTopicId, selectedTopicName, selectedFacetName) {
+
+    $scope.selectedTopicName = selectedTopicName;
+    $scope.selectedFacetName = selectedFacetName;
+
+    //在这里处理要进行的操作
+    $scope.ok = function() {
+        // 插入分面及分面关系
+        $http({
+            url : 'http://' + ip + '/facet/insertFacetUnderFacet?facetName='
+            + ($scope.insertChildFacetName == null ? '' : $scope.insertChildFacetName)
+            + '&topicId=' + selectedTopicId + '&parentFacetName=' + selectedFacetName,
+            method : 'get'
+        }).success(function(response) {
+            alert("插入成功");
+            console.log("插入分面及分面关系成功，code为：" + response.code + "，msg为：" + response.msg);
+            console.log(response.data);
+        }).error(function(response){
+            alert("插入分面及分面关系失败，code为：" + response.code + "，msg为：" + response.msg);
+            console.log("插入分面及分面关系失败，code为：" + response.code + "，msg为：" + response.msg);
+        });
+        $uibModalInstance.close();
+    };
+
+    $scope.cancel = function() {
+        $uibModalInstance.dismiss('cancel');
+    }
+
+});
+
+
+// 分面详情 模态框对应的Controller
+myApp.controller('modalCtrlmodalFacetDetail', function($scope, $http, $uibModalInstance,
+                                                       facetId, facetName, topicLayer, selectedTopicName, selectedDomainName, sourceName) {
+
+    $http({
+        url : 'http://' + ip + '/facet/judgeFacetByTopicId?topicId=' + topicId,
+        method : 'get'
+    }).success(function(response) {
+        // 该主题对应的是目录页面，没有主题页面，不可爬取
+        if (topicUrl.indexOf("Category:") >= 0) {
+            $scope.detailFacetAndFragment = "分面和碎片无需爬取";
+            $scope.detailTopicNote = "该主题是目录主题，页面是目录页面，无需爬取";
+            $scope.detailFacetAndFragmentSpiderDisabled = "disabled";
+            console.log("该主题是目录主题，页面是目录页面，无需爬取");
+        } else {
+            $scope.detailFacetAndFragment = response.data[2]; // 第3个元素是分面信息
+            $scope.detailFacetAndFragmentSpiderDisabled = "disabled";
+            $scope.detailTopicNote = "主题页面，需要爬取分面和碎片";
+            console.log("主题下的分面和碎片数据已经爬取，code为：" + response.code + "，msg为：" + response.msg);
+        }
+        $scope.detailParentTopics = response.data[1]; // 第2个元素是父主题数量
+        $scope.detailChildTopics = response.data[0]; // 第1个元素是子主题数量
+    }).error(function(response){
+        // 该主题对应的是目录页面，没有主题页面，不可爬取
+        if (topicUrl.indexOf("Category:") >= 0) {
+            $scope.detailFacetAndFragment = "分面和碎片无需爬取";
+            $scope.detailTopicNote = "该主题是目录主题，页面是目录页面，无需爬取";
+            $scope.detailFacetAndFragmentSpiderDisabled = "disabled";
+            console.log("该主题是目录主题，页面是目录页面，无需爬取");
+        } else {
+            $scope.detailFacetAndFragment = "分面和碎片未爬取，需要重新爬取";
+            $scope.detailFacetAndFragmentSpiderDisabled = "";
+            $scope.detailTopicNote = "主题页面，需要爬取分面和碎片";
+            console.log("主题下的分面和碎片数据还没有爬取，code为：" + response.code + "，msg为：" + response.msg);
+        }
+        $scope.detailParentTopics = response.data[1]; // 第2个元素是父主题数量
+        $scope.detailChildTopics = response.data[0]; // 第1个元素是子主题数量
+    });
+
+    $scope.detailTopicId = topicId;
+    $scope.detailTopicName = topicName;
+    $scope.detailTopicUrl = topicUrl;
+    $scope.detailTopicLayer = topicLayer;
+    $scope.detailDomainId = selectedDomainId;
+    $scope.detailDomainName = selectedDomainName;
+    $scope.detailSourceName = sourceName;
+
+    //在这里处理要进行的操作
+    $scope.ok = function() {
+        $uibModalInstance.close();
+    };
+
+    // 点击“关闭”按钮
+    $scope.cancel = function() {
+        $uibModalInstance.dismiss('cancel');
+    };
+
+    // 点击“爬取分面和碎片”后进行主题爬取
+    $scope.spiderFacetAndFragmentByTopic = function() {
+        alert("开始爬取分面");
+        $http({
+            url : 'http://' + ip + '/facet/storeAllFacetAndContentByTopic?topicId=' + topicId + "&topicName=" + topicName + "&topicUrl=" + topicUrl,
+            method : 'get'
+        }).success(function(response) {
+            alert("爬取分面和碎片成功");
+            console.log("主题下的分面数据爬取成功，code为：" + response.code + "，msg为：" + response.msg + "，分面信息为：" + response.data);
+        }).error(function(response){
+            alert("爬取分面和碎片失败");
+            console.log("主题下的分面数据爬取失败，code为：" + response.code + "，msg为：" + response.msg);
+        });
+    }
+
+});
+
+
+// 主题修改 模态框对应的Controller
+myApp.controller('modalCtrlmodalTopicModify', function($scope, $http, $uibModalInstance,
+                                                       sourceId, topicId, topicName, topicUrl, topicLayer, selectedDomainName) {
+
+    $scope.detailTopicId = topicId;
+    $scope.detailTopicName = topicName;
+    $scope.detailTopicUrl = topicUrl;
+    $scope.detailTopicLayer = topicLayer;
+    $scope.detailTopicDomain = selectedDomainName;
+    // $scope.detailTopicDomainOpt = ["数据结构", "计算机科学史"];
+    // 获取所有领域信息
+    var domainIds = []; // 保存领域对应的领域id
+    var domainNames = []; // 保存领域名
+    $http({
+        url : 'http://' + ip + '/domain/getDomainBySourceID?sourceId=' + sourceId,
+        method : 'get'
+    }).success(function(response) {
+        var data = response.data;
+        for (var i = 0; i < data.length; i++) {
+            domainNames.push(data[i].domainName);
+            domainIds.push(data[i].domainId);
+        }
+        $scope.detailTopicDomainOpt = domainNames; // 领域名数组
     }).error(function(response){
         console.log("获取领域信息失败，code为：" + response.code + "，msg为：" + response.msg);
     });

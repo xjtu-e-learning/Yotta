@@ -19,4 +19,8 @@ public interface AssembleTextRepository extends JpaRepository<AssembleText, Long
     @Transactional
     void deleteAllByTopicId(Long topicId);
 
+    @Modifying(clearAutomatically = true)
+    @Transactional
+    void deleteAllByFacetId(Long facetId);
+
 }

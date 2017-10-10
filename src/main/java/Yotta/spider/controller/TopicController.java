@@ -23,7 +23,7 @@ public class TopicController {
     private TopicService topicService;
 
     @GetMapping(value = "/deleteTopicRelation")
-    @ApiOperation(value = "删除主题", notes = "删除主题")
+    @ApiOperation(value = "删除主题关系", notes = "删除主题关系")
     public ResponseEntity deleteTopicRelation(@RequestParam(
             value = "topicRelationId", defaultValue = "1") Long topicRelationId
     ) {

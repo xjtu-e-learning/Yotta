@@ -134,6 +134,7 @@ public class TopicService {
     /**
      * 根据主题Id 更新主题
      * 因为是通过主键id来连接关系的，所以不用修改分面表和主题表等表格数据的信息
+     * 删除主题对应的主题关系
      * @param topicId 主题id
      * @param newTopic 新增加的主题信息
      * @return 更新结果
@@ -141,6 +142,7 @@ public class TopicService {
     public Result updateTopic(Long topicId, Topic newTopic) {
         try {
             topicRepository.updateByTopicId(topicId, newTopic.getTopicId(), newTopic.getTopicName(), newTopic.getTopicUrl(), newTopic.getTopicLayer(), newTopic.getDomainId());
+            topicRelationRepository.deleteAllByChildTopicIdOrParentTopicId(topicId, topicId); // 修改主题，删除主题关系
             return ResultUtil.success(ResultEnum.SUCCESS.getCode(), ResultEnum.SUCCESS.getMsg(), "更新成功");
         } catch (Exception e) {
             logger.error("更新失败");
