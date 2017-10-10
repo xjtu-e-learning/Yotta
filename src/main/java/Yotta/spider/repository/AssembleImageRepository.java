@@ -18,4 +18,8 @@ public interface AssembleImageRepository extends JpaRepository<AssembleImage, Lo
     @Transactional
     void deleteAllByTopicId(Long topicId);
 
+    @Modifying(clearAutomatically = true)
+    @Transactional
+    void deleteAllByFacetId(Long facetId);
+
 }

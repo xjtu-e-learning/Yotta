@@ -27,12 +27,19 @@ public enum ResultEnum {
     TOPICRELATIONINSERT_ERROR(116, "主题关系插入失败"),
     TOPICUPDATE_ERROR(117, "主题关系更新失败"),
     TOPICDELETE_ERROR(118, "主题关系删除失败"),
-
     FACETQUERY_ERROR(119, "分面查询失败，该主题的分面没有爬取"),
     FACETDUPLICATEDCRAWLER_ERROR(120, "分面和碎片信息已经爬取，不需要再次爬取"),
-
     TOPICRELATIONQUERY_ERROR(121, "主题关系查询失败"),
     TOPICRELATIONDELETE_ERROR(122, "主题关系删除失败"),
+
+    FACETINSERTDUPLICATE_ERROR(123, "插入重复分面"),
+    FACETINSERTNOTNULL_ERROR(124, "插入分面名不能为空"),
+    FACETINSERT_ERROR(125, "分面插入失败"),
+    FACETRELATIONINSERT_ERROR(126, "分面关系插入失败"),
+    FACETUPDATE_ERROR(127, "分面关系更新失败"),
+    FACETDELETE_ERROR(128, "分面关系删除失败"),
+    FACETRELATIONQUERY_ERROR(121, "主题关系查询失败"),
+    FACETRELATIONDELETE_ERROR(122, "主题关系删除失败"),
 
     ;
 
