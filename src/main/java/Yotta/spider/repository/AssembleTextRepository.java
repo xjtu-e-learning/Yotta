@@ -15,6 +15,8 @@ public interface AssembleTextRepository extends JpaRepository<AssembleText, Long
 
     List<AssembleText> findByTopicId(Long topicId);
 
+    List<AssembleText> findByFacetId(Long facetId);
+
     @Modifying(clearAutomatically = true)
     @Transactional
     void deleteAllByTopicId(Long topicId);

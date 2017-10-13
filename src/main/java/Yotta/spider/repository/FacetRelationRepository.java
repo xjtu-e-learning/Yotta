@@ -16,6 +16,10 @@ public interface FacetRelationRepository extends JpaRepository<FacetRelation, Lo
 
     List<FacetRelation> findByTopicId(Long topicId);
 
+    List<FacetRelation> findByParentFacetId(Long parentFacetId);
+
+    List<FacetRelation> findByChildFacetId(Long childFacetId);
+
     @Modifying(clearAutomatically = true)
     @Transactional
     void deleteAllByTopicId(Long topicId);
