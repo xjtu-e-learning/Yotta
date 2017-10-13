@@ -8,11 +8,14 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 /**
+ *
  * Created by yuanhao on 2017/5/3.
  */
 public interface AssembleImageRepository extends JpaRepository<AssembleImage, Long> {
 
     List<AssembleImage> findByTopicId(Long topicId);
+
+    List<AssembleImage> findByFacetId(Long facetId);
 
     @Modifying(clearAutomatically = true)
     @Transactional

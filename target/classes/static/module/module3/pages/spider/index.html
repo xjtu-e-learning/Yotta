@@ -1198,6 +1198,22 @@
                                                             </div>
                                                         </div>
                                                         <div class="form-group">
+                                                            <label class="col-sm-2 control-label">父分面</label>
+                                                            <div class="col-sm-10">
+                                                                <label class="control-label">
+                                                                    <span class="badge bg-light-blue">{{ detailParentFacets }}</span>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="col-sm-2 control-label">子分面</label>
+                                                            <div class="col-sm-10">
+                                                                <label class="control-label">
+                                                                    <span class="badge bg-light-blue">{{ detailChildFacets }}</span>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
                                                             <label class="col-sm-2 control-label">主题名</label>
                                                             <div class="col-sm-10">
                                                                 <label class="control-label">
@@ -1236,24 +1252,24 @@
                                                                 </label>
                                                             </div>
                                                         </div>
-                                                        <div class="form-group">
-                                                            <label class="col-sm-2 control-label">说明
-                                                            </label>
-                                                            <div class="col-sm-10">
-                                                                <label class="control-label">
-                                                                    <!--<span class="badge bg-orange">-->
-                                                                    <a>{{ detailFacetNote }}</a>
-                                                                    <!--</span>-->
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label class="col-sm-2 control-label">爬取
-                                                            </label>
-                                                            <div class="col-sm-10">
-                                                                <button type="button" class="btn btn-success {{detailFragmentSpiderDisabled}}" ng-click="spiderFragmentByTopicAndFacet()">爬取碎片</button>
-                                                            </div>
-                                                        </div>
+                                                        <!--<div class="form-group">-->
+                                                            <!--<label class="col-sm-2 control-label">说明-->
+                                                            <!--</label>-->
+                                                            <!--<div class="col-sm-10">-->
+                                                                <!--<label class="control-label">-->
+                                                                    <!--&lt;!&ndash;<span class="badge bg-orange">&ndash;&gt;-->
+                                                                    <!--<a>{{ detailFacetNote }}</a>-->
+                                                                    <!--&lt;!&ndash;</span>&ndash;&gt;-->
+                                                                <!--</label>-->
+                                                            <!--</div>-->
+                                                        <!--</div>-->
+                                                        <!--<div class="form-group">-->
+                                                            <!--<label class="col-sm-2 control-label">爬取-->
+                                                            <!--</label>-->
+                                                            <!--<div class="col-sm-10">-->
+                                                                <!--<button type="button" class="btn btn-success {{detailFragmentSpiderDisabled}}" ng-click="spiderFragmentByTopicAndFacet()">爬取碎片</button>-->
+                                                            <!--</div>-->
+                                                        <!--</div>-->
                                                     </div>
                                                 </form>
                                             </div>
@@ -1275,7 +1291,7 @@
                                                     &times;
                                                 </button>
                                                 <h4 class="modal-title">
-                                                    分面详细信息
+                                                    分面详情信息
                                                 </h4>
                                             </div>
                                             <div class="modal-body">
@@ -1298,6 +1314,12 @@
                                                             <label class="col-sm-2 control-label">分面层级</label>
                                                             <div class="col-sm-10">
                                                                 <input type="text" class="form-control" value="{{ detailFacetLayer }}" ng-model="detailFacetLayer" >
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="col-sm-2 control-label">主题名</label>
+                                                            <div class="col-sm-10">
+                                                                <input type="text" class="form-control" value="{{ detailFacetTopic }}" ng-model="detailFacetTopic" disabled="">
                                                             </div>
                                                         </div>
                                                     </div>

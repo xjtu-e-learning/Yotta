@@ -1198,6 +1198,22 @@
                                                             </div>
                                                         </div>
                                                         <div class="form-group">
+                                                            <label class="col-sm-2 control-label">父分面</label>
+                                                            <div class="col-sm-10">
+                                                                <label class="control-label">
+                                                                    <span class="badge bg-light-blue">{{ detailParentFacets }}</span>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="col-sm-2 control-label">子分面</label>
+                                                            <div class="col-sm-10">
+                                                                <label class="control-label">
+                                                                    <span class="badge bg-light-blue">{{ detailChildFacets }}</span>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
                                                             <label class="col-sm-2 control-label">主题名</label>
                                                             <div class="col-sm-10">
                                                                 <label class="control-label">
@@ -1236,24 +1252,24 @@
                                                                 </label>
                                                             </div>
                                                         </div>
-                                                        <div class="form-group">
-                                                            <label class="col-sm-2 control-label">说明
-                                                            </label>
-                                                            <div class="col-sm-10">
-                                                                <label class="control-label">
-                                                                    <!--<span class="badge bg-orange">-->
-                                                                    <a>{{ detailFacetNote }}</a>
-                                                                    <!--</span>-->
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label class="col-sm-2 control-label">爬取
-                                                            </label>
-                                                            <div class="col-sm-10">
-                                                                <button type="button" class="btn btn-success {{detailFragmentSpiderDisabled}}" ng-click="spiderFragmentByTopicAndFacet()">爬取碎片</button>
-                                                            </div>
-                                                        </div>
+                                                        <!--<div class="form-group">-->
+                                                            <!--<label class="col-sm-2 control-label">说明-->
+                                                            <!--</label>-->
+                                                            <!--<div class="col-sm-10">-->
+                                                                <!--<label class="control-label">-->
+                                                                    <!--&lt;!&ndash;<span class="badge bg-orange">&ndash;&gt;-->
+                                                                    <!--<a>{{ detailFacetNote }}</a>-->
+                                                                    <!--&lt;!&ndash;</span>&ndash;&gt;-->
+                                                                <!--</label>-->
+                                                            <!--</div>-->
+                                                        <!--</div>-->
+                                                        <!--<div class="form-group">-->
+                                                            <!--<label class="col-sm-2 control-label">爬取-->
+                                                            <!--</label>-->
+                                                            <!--<div class="col-sm-10">-->
+                                                                <!--<button type="button" class="btn btn-success {{detailFragmentSpiderDisabled}}" ng-click="spiderFragmentByTopicAndFacet()">爬取碎片</button>-->
+                                                            <!--</div>-->
+                                                        <!--</div>-->
                                                     </div>
                                                 </form>
                                             </div>
@@ -1275,7 +1291,7 @@
                                                     &times;
                                                 </button>
                                                 <h4 class="modal-title">
-                                                    分面详细信息
+                                                    分面详情信息
                                                 </h4>
                                             </div>
                                             <div class="modal-body">
@@ -1298,6 +1314,12 @@
                                                             <label class="col-sm-2 control-label">分面层级</label>
                                                             <div class="col-sm-10">
                                                                 <input type="text" class="form-control" value="{{ detailFacetLayer }}" ng-model="detailFacetLayer" >
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="col-sm-2 control-label">主题名</label>
+                                                            <div class="col-sm-10">
+                                                                <input type="text" class="form-control" value="{{ detailFacetTopic }}" ng-model="detailFacetTopic" disabled="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1396,6 +1418,361 @@
 
                 </div>
                 <!--分面关系结束-->
+
+
+                <!-- 碎片开始 -->
+                <div id="fragment" class="row">
+                    <div class="box">
+                        <div class="box-header">
+                            <h3 class="box-title">碎片列表</h3>
+
+                            <!--增加碎片-->
+                            <!-- 按钮触发模态框 -->
+                            <button class="btn btn-danger  pull-right" data-toggle="modal" ng-click="openModalInsertFragment()">
+                                添加碎片
+                            </button>
+                            <script type="text/ng-template" id="modalInsertFragment.html">
+                                <!-- 模态框（Modal） -->
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"  ng-click="cancel()">
+                                        &times;
+                                    </button>
+                                    <h4 class="modal-title">
+                                        添加碎片
+                                    </h4>
+                                </div>
+                                <!--添加碎片信息-->
+                                <div class="modal-body">
+                                    <!--  模态框内容，我在此处添加一个表单 -->
+                                    <form class="form-horizontal" role="form">
+                                        <div class="box-body">
+                                            <div class="form-group">
+                                                <label class="col-sm-2 control-label">文本</label>
+                                                <div class="col-sm-10">
+                                                    <textarea class="form-control select2 select2-hidden-accessible" rows="3" placeholder="Enter ..."  ng-model="insertFacetName"></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-sm-2 control-label">图片</label>
+                                                <div class="col-sm-10">
+                                                    <input type="file" id="exampleInputFile">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-sm-2 control-label">分面名</label>
+                                                <div class="col-sm-10">
+                                                    <input type="text" class="form-control" placeholder="{{selectedFacetName}}"  disabled="">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-sm-2 control-label">主题名</label>
+                                                <div class="col-sm-10">
+                                                    <input type="text" class="form-control" placeholder="{{selectedTopicName}}"  disabled="">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-sm-2 control-label">领域名</label>
+                                                <div class="col-sm-10">
+                                                    <input type="text" class="form-control" placeholder="{{selectedDomainName}}"  disabled="">
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default pull-left" data-dismiss="modal" ng-click="cancel()">关闭
+                                    </button>
+                                    <button type="button" class="btn btn-primary" ng-click="ok()">
+                                        确定
+                                    </button>
+                                </div>
+                            </script>
+                            <!--结束增加碎片-->
+                        </div>
+                        <!-- /.box-header -->
+
+
+
+
+
+                        <div class="box-body table-responsive no-padding">
+                            <table class="table table-hover">
+                                <tbody><tr>
+                                    <th>碎片ID</th>
+                                    <th>碎片内容</th>
+                                    <th>爬取时间</th>
+                                    <th>分面名</th>
+                                    <th>主题名</th>
+                                    <th>操作</th>
+                                </tr>
+                                <!-- $index指示第几行数据，可以回传js控制 -->
+                                <tr data-ng-repeat="fragment in fragments track by $index">
+                                    <td scope='row' data-ng-bind="fragment.fragmentId" id="fragmentId"></td>
+                                    <td data-ng-bind="fragment.facetName"></td>
+                                    <td data-ng-bind="facet.facetLayer"></td>
+                                    <td data-ng-bind="facetTopic"></td>
+                                    <td align="">
+
+                                        <!--增加子分面-->
+                                        <!-- 按钮触发模态框 -->
+                                        <button class="btn btn-primary btn-xs" data-toggle="modal" ng-click="openModalInsertChildFacet($index)">
+                                            添加子分面
+                                        </button>
+                                        <script type="text/ng-template" id="modalInsertChildFacet.html">
+                                            <!-- 模态框（Modal） -->
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"  ng-click="cancel()">
+                                                    &times;
+                                                </button>
+                                                <h4 class="modal-title">
+                                                    添加子分面
+                                                </h4>
+                                            </div>
+                                            <!--添加子分面的字段信息-->
+                                            <div class="modal-body">
+                                                <!--  模态框内容，我在此处添加一个表单 -->
+                                                <form class="form-horizontal" role="form">
+                                                    <div class="box-body">
+                                                        <div class="form-group">
+                                                            <label class="col-sm-2 control-label">子分面名</label>
+                                                            <div class="col-sm-10">
+                                                                <input type="text" class="form-control" placeholder="子分面名" ng-model="insertChildFacetName">
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="col-sm-2 control-label">父分面名</label>
+                                                            <div class="col-sm-10">
+                                                                <input type="text" class="form-control" placeholder="{{ selectedFacetName }}"  disabled="">
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <label class="col-sm-2 control-label">主题名</label>
+                                                            <div class="col-sm-10">
+                                                                <input type="text" class="form-control" placeholder="{{ selectedTopicName }}"  disabled="">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-default pull-left" data-dismiss="modal" ng-click="cancel()">关闭
+                                                </button>
+                                                <button type="button" class="btn btn-primary" ng-click="ok()">
+                                                    确定
+                                                </button>
+                                            </div>
+                                        </script>
+                                        <!--结束增加子分面-->
+
+                                        <!--分面详情信息-->
+                                        <button class="btn btn-primary btn-xs" data-toggle="modal" ng-click="openModalFacetDetail($index)">详情</button>
+                                        <script type="text/ng-template" id="modalFacetDetail.html">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true" ng-click="cancel()">
+                                                    &times;
+                                                </button>
+                                                <h4 class="modal-title">
+                                                    分面详细信息
+                                                </h4>
+                                            </div>
+                                            <div class="modal-body">
+                                                <!--  模态框内容，我在此处添加一个表单 -->
+                                                <form class="form-horizontal" role="form">
+                                                    <div class="box-body">
+                                                        <div class="form-group">
+                                                            <label class="col-sm-2 control-label">分面ID</label>
+                                                            <div class="col-sm-10">
+                                                                <label class="control-label">
+                                                                    <span class="badge bg-light-blue">
+                                                                        {{ detailFacetId }}
+                                                                    </span>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="col-sm-2 control-label">分面名</label>
+                                                            <div class="col-sm-10">
+                                                                <label class="control-label">
+                                                                    <span class="badge bg-yellow">
+                                                                        {{ detailFacetName }}
+                                                                    </span>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="col-sm-2 control-label">分面级数</label>
+                                                            <div class="col-sm-10">
+                                                                <label class="control-label">
+                                                                    <span class="badge bg-light-blue">{{ detailFacetLayer }}</span>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="col-sm-2 control-label">父分面</label>
+                                                            <div class="col-sm-10">
+                                                                <label class="control-label">
+                                                                    <span class="badge bg-light-blue">{{ detailParentFacets }}</span>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="col-sm-2 control-label">子分面</label>
+                                                            <div class="col-sm-10">
+                                                                <label class="control-label">
+                                                                    <span class="badge bg-light-blue">{{ detailChildFacets }}</span>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="col-sm-2 control-label">主题名</label>
+                                                            <div class="col-sm-10">
+                                                                <label class="control-label">
+                                                                    <span class="badge bg-light-blue">{{ detailTopicName }}</span>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="col-sm-2 control-label">领域名</label>
+                                                            <div class="col-sm-10">
+                                                                <label class="control-label">
+                                                                    <!--<span class="badge bg-orange">-->
+                                                                    <a>{{ detailDomainName }}</a>
+                                                                    <!--</span>-->
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="col-sm-2 control-label">数据源名</label>
+                                                            <div class="col-sm-10">
+                                                                <label class="control-label">
+                                                                    <!--<span class="badge bg-orange">-->
+                                                                    <a>{{ detailSourceName }}</a>
+                                                                    <!--</span>-->
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="col-sm-2 control-label">碎片信息
+                                                            </label>
+                                                            <div class="col-sm-10">
+                                                                <label class="control-label">
+                                                                    <!--<span class="badge bg-orange">-->
+                                                                    <a>{{ detailFragment }}</a>
+                                                                    <!--</span>-->
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <!--<div class="form-group">-->
+                                                        <!--<label class="col-sm-2 control-label">说明-->
+                                                        <!--</label>-->
+                                                        <!--<div class="col-sm-10">-->
+                                                        <!--<label class="control-label">-->
+                                                        <!--&lt;!&ndash;<span class="badge bg-orange">&ndash;&gt;-->
+                                                        <!--<a>{{ detailFacetNote }}</a>-->
+                                                        <!--&lt;!&ndash;</span>&ndash;&gt;-->
+                                                        <!--</label>-->
+                                                        <!--</div>-->
+                                                        <!--</div>-->
+                                                        <!--<div class="form-group">-->
+                                                        <!--<label class="col-sm-2 control-label">爬取-->
+                                                        <!--</label>-->
+                                                        <!--<div class="col-sm-10">-->
+                                                        <!--<button type="button" class="btn btn-success {{detailFragmentSpiderDisabled}}" ng-click="spiderFragmentByTopicAndFacet()">爬取碎片</button>-->
+                                                        <!--</div>-->
+                                                        <!--</div>-->
+                                                    </div>
+                                                </form>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-default pull-left" data-dismiss="modal" ng-click="cancel()">关闭
+                                                </button>
+                                                <button type="button" class="btn btn-primary" ng-click="ok()">
+                                                    确定
+                                                </button>
+                                            </div>
+                                        </script>
+                                        <!--结束分面详情信息-->
+
+                                        <!--分面修改信息-->
+                                        <button class="btn btn-primary btn-xs" data-toggle="modal" ng-click="openModalFacetModify($index)">修改</button>
+                                        <script type="text/ng-template" id="modalFacetModify.html">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true" ng-click="cancel()">
+                                                    &times;
+                                                </button>
+                                                <h4 class="modal-title">
+                                                    分面详情信息
+                                                </h4>
+                                            </div>
+                                            <div class="modal-body">
+                                                <!--  模态框内容，我在此处添加一个表单 -->
+                                                <form class="form-horizontal" role="form">
+                                                    <div class="box-body">
+                                                        <div class="form-group">
+                                                            <label class="col-sm-2 control-label">分面Id</label>
+                                                            <div class="col-sm-10">
+                                                                <input type="text" class="form-control" value="{{ detailFacetId }}" ng-model="detailFacetId" >
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="col-sm-2 control-label">分面名</label>
+                                                            <div class="col-sm-10">
+                                                                <input type="text" class="form-control" value="{{ detailFacetName }}" ng-model="detailFacetName" >
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="col-sm-2 control-label">分面层级</label>
+                                                            <div class="col-sm-10">
+                                                                <input type="text" class="form-control" value="{{ detailFacetLayer }}" ng-model="detailFacetLayer" >
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="col-sm-2 control-label">主题名</label>
+                                                            <div class="col-sm-10">
+                                                                <input type="text" class="form-control" value="{{ detailFacetTopic }}" ng-model="detailFacetTopic" disabled="">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-default pull-left" data-dismiss="modal" ng-click="cancel()">关闭
+                                                </button>
+                                                <button type="button" class="btn btn-primary" ng-click="ok()">
+                                                    确定
+                                                </button>
+                                            </div>
+                                        </script>
+                                        <!--结束分面修改信息-->
+
+                                        <button class="btn btn-danger btn-xs" ng-click="facetDelete($index)">删除</button>
+
+                                        <button class="btn btn-primary btn-xs" ng-click="facetFragmentInfo($index)">查看碎片</button>
+
+
+
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- /.box-body -->
+                    </div>
+
+                    <!-- 分页  -->
+                    <div class="text-right">
+                        <ul uib-pagination  total-items="facetTotalItems" ng-model="facetCurrentPage"
+                            items-per-page = "facetNumPerPage" max-size="facetMaxSize"
+                            class="pagination" first-text="首页"
+                            previous-text="上一页" next-text="下一页" last-text="末页"
+                            boundary-links="true" ng-change="facetPageChanged()" force-ellipses="false">
+                        </ul>
+                    </div>
+
+                </div>
+                <!--碎片结束-->
 
 
 
